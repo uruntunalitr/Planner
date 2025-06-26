@@ -1,0 +1,40 @@
+{
+  "books": [
+    {
+      "id": 1750858408350,
+      "title": "Dune",
+      "creator": "Frank Herbert",
+      "genre": "Bilim Kurgu",
+      "rating": 5,
+      "notes": "Muhteşem bir evren."
+    }
+  ],
+  "movies": [
+    {
+      "id": 1750858446998,
+      "title": "Snatch",
+      "creator": "Guy Ritchie",
+      "genre": "Dark Comedy",
+      "rating": 5,
+      "notes": "Güzel bir yapıt"
+    },
+    {
+      "id": 1750858408351,
+      "title": "The Lord of the Rings",
+      "creator": "Peter Jackson",
+      "genre": "Fantastik",
+      "rating": 5,
+      "notes": "Defalarca izlenir."
+    }
+  ],
+  "series": [
+    {
+      "id": 1750858408352,
+      "title": "Breaking Bad",
+      "creator": "Vince Gilligan",
+      "genre": "Suç Draması",
+      "rating": 5,
+      "notes": "Karakter gelişimi inanılmaz."
+    }
+  ]
+}

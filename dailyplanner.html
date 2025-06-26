@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnteraktif Günlük Yaşam Planlayıcısı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: "Calm Teal" - Diğer planlayıcılarla görsel tutarlılık sağlamak için aynı renk paleti kullanıldı. -->
+    <!-- Application Structure Plan: Uygulama, diğer planlayıcılardaki başarılı gün odaklı 'dashboard' yapısını temel alır. Kullanıcılar gün sekmeleriyle hafta boyunca kolayca gezinebilir. Her güne tıklandığında, ana içerik alanı o gün için önerilen zaman bloklarını (sabah, odak zamanı, kişisel zaman, akşam) içeren bir zaman çizelgesiyle güncellenir. Bu yapı, günlük programı takip edilebilir ve yönetilebilir hale getirir. Sağ taraftaki grafik, gün içindeki zamanın nasıl dağıtıldığını göstererek dengeli bir yaşam tarzı kurmaya yardımcı olur. -->
+    <!-- Visualization & Content Choices: Bilgi: Genel yaşam prensipleri -> Hedef: Motive Etmek -> Yöntem: Başlık altında temel prensipler listesi -> Etkileşim: Statik bilgi -> Gerekçe: Kullanıcıya verimli bir gün için temel zihniyeti sunar (HTML). Bilgi: Günlük program -> Hedef: Rehberlik Etmek -> Yöntem: Zaman bloklarına ayrılmış, ikonlu ve açıklamalı 'zaman çizelgesi kartları' -> Etkileşim: Statik bilgi -> Gerekçe: Günlük akışı görsel ve anlaşılır bir şekilde sunar (HTML/JS). Bilgi: Zaman dağılımı -> Hedef: Özetlemek -> Yöntem: Chart.js ile 'Doughnut' grafik -> Etkileşim: Segmentler üzerine gelince saat görme -> Gerekçe: Bir gün içindeki zaman dağılımının hızlı bir görsel özetini sunar (Chart.js). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; height: 320px; }
+        .nav-button { transition: all 0.3s ease; }
+        .nav-button.active { background-color: #0d9488; color: white; }
+        .nav-button:not(.active):hover { background-color: #f0fdfa; }
+        .timeline-item { display: flex; align-items: flex-start; }
+        .timeline-icon { flex-shrink: 0; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-teal-700">İnteraktif Günlük Yaşam Planlayıcısı</h1>
+            <p class="mt-2 text-slate-600">Her gününüzü daha verimli, dengeli ve anlamlı kılın.</p>
+        </header>
+
+        <main>
+            <section id="principles" class="mb-8 p-6 bg-white rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold mb-3 text-teal-600">Verimli Bir Günün Prensipleri</h2>
+                <ul class="list-disc list-inside space-y-2 text-slate-700">
+                    <li><strong class="font-semibold">Güne Niyetle Başlayın:</strong> Her sabaha o gün neyi başarmak istediğinizi düşünerek başlayın. Bu, gününüze yön verir.</li>
+                    <li><strong class="font-semibold">Zaman Blokları Oluşturun:</strong> Benzer görevleri bir araya toplayarak belirli zaman dilimlerinde (bloklarda) yapın. Bu, odaklanmayı artırır.</li>
+                    <li><strong class="font-semibold">Mola Vermeyi Unutmayın:</strong> Özellikle yoğun çalışma dönemlerinde kısa molalar vermek, enerjinizi ve verimliliğinizi artırır.</li>
+                    <li><strong class="font-semibold">Esnek Olun:</strong> Planlar değişebilir. Önemli olan, beklenmedik durumlara adapte olabilmek ve ana hedeflere bağlı kalmaktır.</li>
+                    <li><strong class="font-semibold">Günü Değerlendirin:</strong> Akşamları gününüzün nasıl geçtiğini kısaca gözden geçirin. Nelerin iyi gittiğini ve neleri daha iyi yapabileceğinizi düşünün.</li>
+                </ul>
+            </section>
+
+            <section id="weekly-dashboard" class="mb-8">
+                <h2 class="text-2xl font-bold text-center mb-4 text-teal-600">Haftalık Plan</h2>
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button data-day="1" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">Pazartesi</button>
+                    <button data-day="2" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">Salı</button>
+                    <button data-day="3" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">Çarşamba</button>
+                    <button data-day="4" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">Perşembe</button>
+                    <button data-day="5" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">Cuma</button>
+                    <button data-day="6" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">Cumartesi</button>
+                    <button data-day="7" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">Pazar</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <div id="daily-plan" class="md:col-span-2 p-6 bg-white rounded-lg shadow-sm min-h-[300px]">
+                        <!-- Dinamik olarak doldurulacak -->
+                    </div>
+                    <div class="flex flex-col items-center sticky top-8">
+                         <h3 class="text-lg font-bold mb-2 text-teal-600">İdeal Gün Dağılımı</h3>
+                        <div class="chart-container">
+                            <canvas id="time-distribution-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 text-slate-500">
+            <p>Planınıza sadık kalın, ama hayatın tadını çıkarmayı da unutmayın!</p>
+        </footer>
+    </div>
+
+    <script>
+        const dailyPlanData = {
+            workday: {
+                title: 'Kişiselleştirilmiş Verimlilik Günü',
+                schedule: [
+                    { time: '07:00 - 08:30', icon: '☀️💪', activity: 'Uyanma, Sabah Rutini & Spor', description: 'Güne enerjik başla, esneme hareketleri yap ve antrenmanını tamamla.' },
+                    { time: '08:30 - 09:30', icon: '🚿', activity: 'Duş & Hazırlık', description: 'Güne taze bir başlangıç yap ve çalışmaya hazırlan.' },
+                    { time: '09:30 - 12:30', icon: '�', activity: 'Odak Zamanı I', description: 'En önemli ve zorlu görevlere odaklan.' },
+                    { time: '12:30 - 13:30', icon: '🥗', activity: 'Öğle Yemeği & Mola', description: 'Sağlıklı bir öğle yemeği ye ve zihnini dinlendir.' },
+                    { time: '13:30 - 17:30', icon: '💼', activity: 'Odak Zamanı II', description: 'Toplantılar, e-postalar ve diğer işler.' },
+                    { time: '17:30 - 19:00', icon: '🎨', activity: 'Kişisel Zaman', description: 'Hobilerine zaman ayır, kitap oku veya dinlen.' },
+                    { time: '19:00 - 20:00', icon: '🍲', activity: 'Akşam Yemeği', description: 'Hafif ve besleyici bir akşam yemeği.' },
+                    { time: '20:00 - 22:00', icon: '🛋️', activity: 'Serbest & Sosyal Zaman', description: 'Aile/arkadaşlarla vakit geçir, dizi/film izle.' },
+                    { time: '22:00 - 23:00', icon: '🌙', activity: 'Akşam Rutini', description: 'Ertesi günü planla, ekranlardan uzaklaş, rahatla.' }
+                ]
+            },
+            weekend: {
+                title: 'Yenilenme ve Sosyal Zaman',
+                schedule: [
+                    { time: '09:00 - 10:00', icon: '🧘', activity: 'Yavaş Başlangıç', description: 'Acele etmeden uyan, esne, kahve/çay keyfi yap.' },
+                    { time: '10:00 - 12:00', icon: '🥞', activity: 'Brunch / Geç Kahvaltı', description: 'Keyifli ve uzun bir kahvaltı yap.' },
+                    { time: '12:00 - 16:00', icon: '🌳', activity: 'Aktivite & Hobi', description: 'Dışarı çık, arkadaşlarla buluş, hobilerine zaman ayır.' },
+                    { time: '16:00 - 18:00', icon: '🛋️', activity: 'Dinlenme Zamanı', description: 'Kısa bir şekerleme yap, kitap oku veya müzik dinle.' },
+                    { time: '18:00 - 20:00', icon: '🍳', activity: 'Akşam Yemeği Hazırlığı ve Keyfi', description: 'Yeni bir tarif dene veya sevdiklerinle yemek yap.' },
+                    { time: '20:00 onwards', icon: '🎬', activity: 'Serbest Akşam', description: 'Film gecesi yap, oyun oyna veya sakin bir akşam geçir.' }
+                ]
+            }
+        };
+
+        function createTimelineItem(item) {
+            return `
+                <div class="timeline-item mb-6">
+                    <div class="timeline-icon w-12 h-12 bg-teal-100 text-2xl rounded-full flex items-center justify-center mr-4">${item.icon}</div>
+                    <div class="flex-grow">
+                        <p class="font-bold text-teal-700">${item.time}</p>
+                        <h4 class="text-lg font-semibold text-slate-800">${item.activity}</h4>
+                        <p class="text-slate-600">${item.description}</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function generateDayHtml(dayType) {
+            const data = dailyPlanData[dayType];
+            const scheduleHtml = data.schedule.map(createTimelineItem).join('');
+            return `<h3 class="text-2xl font-bold text-center mb-6 text-teal-600">${data.title}</h3><div>${scheduleHtml}</div>`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const dailyPlanContainer = document.getElementById('daily-plan');
+            const navButtons = document.querySelectorAll('.nav-button');
+            
+            const today = new Date().getDay(); 
+            const currentDayIndex = today === 0 ? 7 : today;
+
+            function renderDay(dayIndex) {
+                const dayType = (dayIndex >= 1 && dayIndex <= 5) ? 'workday' : 'weekend';
+                dailyPlanContainer.innerHTML = generateDayHtml(dayType);
+                
+                navButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (parseInt(btn.dataset.day) === dayIndex) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+            
+            navButtons.forEach((button, index) => {
+                const dayIndex = index + 1;
+                button.dataset.day = dayIndex;
+                button.addEventListener('click', () => {
+                    renderDay(dayIndex);
+                });
+            });
+            
+            renderDay(currentDayIndex);
+
+            const ctx = document.getElementById('time-distribution-chart').getContext('2d');
+            const timeChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Uyku', 'Odak/İş', 'Kişisel & Sosyal Zaman', 'Rutinler & Yemek'],
+                    datasets: [{
+                        label: 'Saat',
+                        data: [8, 7, 5, 4],
+                        backgroundColor: [
+                            '#14532d', // green-900
+                            '#0d9488', // teal-600
+                            '#f59e0b', // amber-500
+                            '#5eead4', // teal-300
+                        ],
+                        borderColor: '#f8fafc',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 15,
+                                color: '#475569',
+                                font: { family: "'Inter', sans-serif", size: 12 }
+                            }
+                        },
+                        tooltip: {
+                             callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) { label += ': '; }
+                                    if (context.parsed !== null) { label += '~' + context.parsed + ' saat'; }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+�

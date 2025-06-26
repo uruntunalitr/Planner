@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ana Menü - Planlayıcı Merkeziniz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: "Calm Teal" - Tüm planlayıcılarla görsel tutarlılık sağlamak için aynı renk paleti kullanıldı. -->
+    <!-- Application Structure Plan: Bu sayfa, kullanıcıyı dört ana uygulama arasında yönlendiren bir 'launchpad' (başlatma rampası) olarak tasarlanmıştır. Ortalanmış, büyük ve tıklanabilir dört kart, kullanıcının amacına göre net bir seçim yapmasını sağlar. Minimalist tasarım, karmaşayı önler ve doğrudan hedefe yönlendirir. -->
+    <!-- Visualization & Content Choices: Bilgi: Dört ana plan -> Hedef: Yönlendirmek -> Yöntem: İkonlu, açıklamalı büyük tıklanabilir kartlar -> Etkileşim: Tıklamayla ilgili HTML sayfasına gitme -> Gerekçe: Kullanıcıya net ve görsel olarak çekici bir seçim sunarak gezinmeyi basitleştirir (HTML/CSS). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .choice-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            background-color: white;
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-lg */
+        }
+        .choice-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); /* shadow-2xl */
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl text-center">
+        <header class="mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-teal-700">Kişisel Gelişim Paneli</h1>
+            <p class="mt-4 text-xl text-slate-600">Hedeflerinize ulaşmak için bir sonraki adımınızı seçin.</p>
+        </header>
+
+        <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+            
+            <!-- Egzersiz Planlayıcı Kartı -->
+            <a href="./exercise.html" class="choice-card block p-8 md:p-10">
+                <div class="text-6xl mb-4">💪</div>
+                <h2 class="text-2xl font-bold text-teal-600 mb-2">Egzersiz Planlayıcı</h2>
+                <p class="text-slate-500">Haftalık antrenman programınızı görüntüleyin ve formda kalın.</p>
+            </a>
+            
+            <!-- Beslenme Planlayıcı Kartı -->
+            <a href="./eatinghabit.html" class="choice-card block p-8 md:p-10">
+                <div class="text-6xl mb-4">🥗</div>
+                <h2 class="text-2xl font-bold text-teal-600 mb-2">Beslenme Planlayıcısı</h2>
+                <p class="text-slate-500">Dengeli öğün planlarınızı keşfedin ve sağlıklı alışkanlıklar edinin.</p>
+            </a>
+
+            <!-- Günlük Yaşam Planlayıcı Kartı -->
+            <a href="./dailyplanner.html" class="choice-card block p-8 md:p-10">
+                <div class="text-6xl mb-4">🗓️</div>
+                <h2 class="text-2xl font-bold text-teal-600 mb-2">Günlük Yaşam Planlayıcı</h2>
+                <p class="text-slate-500">Her gününüzü planlayarak zamanınızı verimli kullanın.</p>
+            </a>
+            
+            <!-- Medya Planlayıcı Kartı -->
+            <a href="./recorder.html" class="choice-card block p-8 md:p-10">
+                <div class="text-6xl mb-4">📚🎬</div>
+                <h2 class="text-2xl font-bold text-teal-600 mb-2">Medya Planlayıcısı</h2>
+                <p class="text-slate-500">Okuduğunuz kitapları, izlediğiniz film ve dizileri not alın.</p>
+            </a>
+
+        </main>
+
+        <footer class="text-center mt-16 text-slate-500">
+            <p>Her gün, hedeflerinize bir adım daha yaklaşmak için bir fırsattır.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

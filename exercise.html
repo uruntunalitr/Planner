@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnteraktif Haftalık Egzersiz Planlayıcı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: "Calm Teal" - Arka plan için yumuşak bir gri tonu (slate-50), ana metin için koyu bir ton (slate-800), interaktif elemanlar ve vurgular için sakinleştirici bir yeşil tonu (teal) ve kartlar için temiz bir beyaz kullanıldı. Bu palet, motivasyonu artırırken sakin ve odaklanmış bir atmosfer yaratır. -->
+    <!-- Application Structure Plan: Uygulama, kullanıcının "bugün ne yapmalıyım?" sorusuna anında yanıt veren, gün odaklı bir 'dashboard' yapısı üzerine kurulmuştur. Üstte yer alan hafta günü sekmeleri (Pazartesi, Salı, vb.) ana navigasyon görevi görür. Bir güne tıklandığında, ana içerik alanı o güne özel antrenman (kuvvet, kardiyo, dinlenme) detaylarıyla dinamik olarak güncellenir. Her egzersiz için eklenen video izleme butonu, kullanıcıların hareketleri doğru formda yapmalarını sağlayan bir modal pencere açar, bu da öğrenme sürecini ve güvenliği artırır. -->
+    <!-- Visualization & Content Choices: Rapor Bilgisi: Haftalık program -> Hedef: Organize Etmek -> Yöntem: İnteraktif gün sekmeleri -> Etkileşim: Tıklamayla içerik güncelleme -> Gerekçe: Kullanıcının hafta içinde kolayca gezinmesini sağlar (HTML/JS). Rapor Bilgisi: Egzersiz tablosu -> Hedef: Talimat Vermek -> Yöntem: Her egzersiz için video butonu içeren 'kartlar' -> Etkileşim: Tıklamayla modal içinde video oynatma -> Gerekçe: Karmaşık hareketlerin doğru formda öğrenilmesini sağlar (HTML/JS Modal). Rapor Bilgisi: Antrenman dağılımı -> Hedef: Özetlemek -> Yöntem: Chart.js ile 'Donut' grafik -> Gerekçe: Haftalık eforun hızlı bir görsel özetini sunar (Chart.js). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; height: 320px; }
+        .nav-button { transition: all 0.3s ease; }
+        .nav-button.active { background-color: #0d9488; color: white; }
+        .nav-button:not(.active):hover { background-color: #f0fdfa; }
+        .exercise-card { transition: transform 0.2s ease, box-shadow 0.2s ease; display: flex; flex-direction: column; justify-content: space-between; }
+        .exercise-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-teal-700">İnteraktif Egzersiz Planlayıcım</h1>
+            <p class="mt-2 text-slate-600">Sırt ağrılarını giderme, omuz genişletme ve formda kalma hedeflerinize ulaşın.</p>
+        </header>
+
+        <main>
+            <section id="principles" class="mb-8 p-6 bg-white rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold mb-3 text-teal-600">Temel Prensipler</h2>
+                <ul class="list-disc list-inside space-y-2 text-slate-700">
+                    <li><strong class="font-semibold">Bölgesel Yağ Yakımı Yoktur:</strong> Göbek eritmek için tüm vücut çalışılmalı ve kalori açığı oluşturulmalıdır. Bu program genel yağ yakımını hedefler.</li>
+                    <li><strong class="font-semibold">Sırt Sağlığı:</strong> Zayıf sırt ve merkez (core) kasları ağrıların ana nedenidir. Program bu bölgeleri güçlendirmeye odaklanır. Keskin bir ağrıda hemen durun.</li>
+                    <li><strong class="font-semibold">Doğru Form Her Şeydir:</strong> Az tekrarla mükemmel form, çok tekrarla yanlış formdan çok daha değerlidir. Artık videolarla formu kolayca öğrenebilirsiniz!</li>
+                    <li><strong class="font-semibold">Aşamalı Yüklenme:</strong> Gelişim için zamanla tekrar/set sayısını artırın veya daha sert direnç bantları kullanın.</li>
+                </ul>
+            </section>
+
+            <section id="weekly-dashboard" class="mb-8">
+                <h2 class="text-2xl font-bold text-center mb-4 text-teal-600">Haftalık Plan</h2>
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button data-day="1" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">1. Gün</button>
+                    <button data-day="2" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">2. Gün</button>
+                    <button data-day="3" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">3. Gün</button>
+                    <button data-day="4" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">4. Gün</button>
+                    <button data-day="5" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">5. Gün</button>
+                    <button data-day="6" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">6. Gün</button>
+                    <button data-day="7" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">7. Gün</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <div id="daily-plan" class="md:col-span-2 p-6 bg-white rounded-lg shadow-sm min-h-[300px]">
+                    </div>
+                    <div class="flex flex-col items-center sticky top-8">
+                         <h3 class="text-lg font-bold mb-2 text-teal-600">Haftalık Efor Dağılımı</h3>
+                        <div class="chart-container">
+                            <canvas id="weekly-focus-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 text-slate-500">
+            <p>Bu programa sadık kalarak ve vücudunuzu dinleyerek hedeflerinize ulaşın. Başarılar!</p>
+        </footer>
+    </div>
+
+    <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center hidden z-50 p-4">
+        <div class="bg-white rounded-lg shadow-xl w-11/12 md:w-2/3 lg:w-1/2 max-w-4xl">
+            <div class="flex justify-end p-2">
+                <button id="close-modal" class="text-slate-500 hover:text-slate-800 text-3xl leading-none">&times;</button>
+            </div>
+            <div class="video-wrapper">
+                <iframe id="youtube-player" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const exercises = {
+            bandedRow: { name: 'Banded Row', target: 'Sırt, Duruş', sets: '3x12-15', description: 'Kürek kemiklerinizi sıkarak bandı çekin.', videoId: 'S5cTdwO1Trk?si=k_Dcu5IJUpuvsy6j' },
+            lateralRaise: { name: 'Lateral Raise', target: 'Omuz Genişliği', sets: '3x12-15', description: 'Kolları yana omuz hizasına kadar kaldırın.', videoId: 'I0s4mvF2LYQ?si=i2E9h0cb_tTEXI2J' },
+            overheadPress: { name: 'Overhead Press', target: 'Omuz Gücü', sets: '3x10-12', description: 'Bandı kontrollü şekilde yukarı itin.', videoId: '1-VfJqjYquQ?si=hjo7ymw0fEV5w9ml' },
+            bandedSquat: { name: 'Banded Squat', target: 'Bacak, Kalça', sets: '3x15-20', description: 'Sandalyeye oturur gibi çömelip kalkın.', videoId: 'S5cTdwO1Trk?si=If5G6CJt3X2rlGYd' },
+            gluteBridge: { name: 'Glute Bridge', target: 'Sırt Desteği', sets: '3x15-20', description: 'Kalçayı sıkarak yukarı kaldırın.', videoId: 'X_IGw8U_e38?si=_K71DEoJnjUAZghU' },
+            plank: { name: 'Plank', target: 'Merkez Bölge', sets: '3x30-60sn', description: 'Vücudunuzu dümdüz tutun.', videoId: 'v25s_z0p1P4' },
+            birdDog: { name: 'Bird-Dog', target: 'Sırt Desteği', sets: '3x10-12', description: 'Kol ve bacağı yavaşça uzatın, dengeyi koruyun.', videoId: 'wiFNA3sqjCA' },
+        };
+
+        const planData = {
+            1: {
+                title: 'Tüm Vücut Kuvvet (Odak: Sırt & Omuz)',
+                workout: [exercises.bandedRow, exercises.lateralRaise, exercises.overheadPress, exercises.bandedSquat, exercises.gluteBridge, exercises.plank, exercises.birdDog],
+                cardio: { text: '20 dakika orta tempoda koşu.' }
+            },
+            2: { title: 'Aktif Dinlenme', type: 'custom', content: `<div class="flex flex-col items-center justify-center h-full text-center"><span class="text-6xl mb-4">🏃</span><h3 class="text-2xl font-bold text-teal-600">Aktif Dinlenme</h3><p class="text-slate-700 mt-2">30 dakika hafif tempoda koşu veya tempolu yürüyüş yapın. Sonrasında esnemeyi unutmayın.</p></div>`},
+            3: {
+                title: 'Tüm Vücut Kuvvet (Odak: Merkez & Bacak)',
+                workout: [exercises.bandedSquat, exercises.gluteBridge, exercises.bandedRow, exercises.lateralRaise, exercises.plank, exercises.birdDog, exercises.overheadPress],
+                cardio: { text: '20 dakika orta tempoda koşu.' }
+            },
+            4: { title: 'Aktif Dinlenme', type: 'custom', content: `<div class="flex flex-col items-center justify-center h-full text-center"><span class="text-6xl mb-4">🚶‍♂️</span><h3 class="text-2xl font-bold text-teal-600">Aktif Dinlenme</h3><p class="text-slate-700 mt-2">30 dakika hafif tempoda yürüyüş yapın. Vücudunuzun toparlanmasına izin verin. Sonrasında esneyin.</p></div>`},
+            5: {
+                title: 'Tüm Vücut Kuvvet + HIIT Kardiyo',
+                workout: [exercises.bandedRow, exercises.lateralRaise, exercises.bandedSquat, exercises.gluteBridge, exercises.plank, exercises.birdDog],
+                cardio: { title: '⚡ HIIT Kardiyo (Antrenman Sonrası)', text: `<p class="text-slate-700 mb-2">Toplam 15 dakika sürecek bu ip atlama antrenmanı ile yağ yakımını maksimize edin:</p><ul class="list-decimal list-inside text-slate-700 space-y-1"><li><strong>Isınma:</strong> 3 dakika yavaş tempoda ip atlama.</li><li><strong>HIIT (8 Tur):</strong> 30 saniye sprint (çok hızlı) ip atlama, ardından 60 saniye aktif dinlenme (yavaş tempo).</li><li><strong>Soğuma:</strong> 2 dakika yavaşça zıplayarak bitirin.</li></ul>`}
+            },
+            6: { title: 'Dinlenme', type: 'custom', content: `<div class="flex flex-col items-center justify-center h-full text-center"><span class="text-6xl mb-4">😴</span><h3 class="text-2xl font-bold text-teal-600">Dinlenme Günü</h3><p class="text-slate-700 mt-2">Kaslarınızın yenilenmesi ve gelişmesi için dinlenmek çok önemlidir. Vücudunuza zaman tanıyın.</p></div>`},
+            7: { title: 'Dinlenme', type: 'custom', content: `<div class="flex flex-col items-center justify-center h-full text-center"><span class="text-6xl mb-4">😌</span><h3 class="text-2xl font-bold text-teal-600">Dinlenme Günü</h3><p class="text-slate-700 mt-2">İyi bir uyku çekin ve bir sonraki haftanın antrenmanlarına enerji toplayın.</p></div>`},
+        };
+
+        function createExerciseCard(exercise) {
+            return `
+                <div class="exercise-card bg-slate-100 border border-slate-200 rounded-lg p-4">
+                    <div>
+                        <h5 class="font-bold text-md text-teal-700">${exercise.name}</h5>
+                        <p class="text-sm text-slate-500 mb-2">${exercise.target}</p>
+                        <p class="font-semibold text-slate-800 mb-2">${exercise.sets}</p>
+                        <p class="text-sm text-slate-600">${exercise.description}</p>
+                    </div>
+                    <button data-video-id="${exercise.videoId}" class="watch-video-btn mt-3 w-full bg-teal-100 text-teal-800 hover:bg-teal-200 text-sm font-semibold py-2 px-3 rounded-md transition-colors">
+                        Videoyu İzle ▶
+                    </button>
+                </div>
+            `;
+        }
+        
+        function generateWorkoutHtml(dayData) {
+            if (dayData.type === 'custom') return dayData.content;
+            
+            let html = '';
+            
+            if (dayData.workout) {
+                html += `
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg mb-2 text-teal-600">🔥 Isınma (5-10 dk)</h4>
+                        <ul class="list-disc list-inside text-slate-700">
+                            <li>3-5 dk yerinde koşu veya ip atlama</li>
+                            <li>Dinamik Esneme: Kol çevirme, gövde döndürme, bacak savurma, kedi-deve (10-12 tekrar)</li>
+                        </ul>
+                    </div>
+                    <div class="mb-6">
+                        <h4 class="font-bold text-lg mb-2 text-teal-600">💪 Kuvvet Antrenmanı</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            ${dayData.workout.map(createExerciseCard).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (dayData.cardio) {
+                 html += `
+                    <div class="mb-6">
+                         <h4 class="font-bold text-lg mb-2 text-teal-600">${dayData.cardio.title || '🏃‍♂️ Kardiyo (Antrenman Sonrası)'}</h4>
+                         ${dayData.cardio.text.startsWith('<') ? dayData.cardio.text : `<p class="text-slate-700">${dayData.cardio.text}</p>`}
+                    </div>
+                `;
+            }
+             
+            html += `
+                <div>
+                    <h4 class="font-bold text-lg mb-2 text-teal-600">🧘 Soğuma (5 dk)</h4>
+                    <p class="text-slate-700">Çocuk duruşu, dizi göğüse çekme, kobra pozu ve omuz esnetme hareketlerini 20-30 saniye tutarak yapın.</p>
+                </div>`;
+
+            return html;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const dailyPlanContainer = document.getElementById('daily-plan');
+            const navButtons = document.querySelectorAll('.nav-button');
+            const videoModal = document.getElementById('video-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const youtubePlayer = document.getElementById('youtube-player');
+            let currentDay = new Date().getDay();
+            if (currentDay === 0) currentDay = 7; 
+
+            function renderDay(day) {
+                const dayData = planData[day];
+                if (dayData) {
+                    let contentHtml = `<h3 class="text-2xl font-bold text-center mb-4 text-teal-600">${dayData.title}</h3>`;
+                    contentHtml += generateWorkoutHtml(dayData);
+                    dailyPlanContainer.innerHTML = contentHtml;
+                    
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.dataset.day === day) {
+                            btn.classList.add('active');
+                        }
+                    });
+                }
+            }
+            
+            function openModal(videoId) {
+                youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+                videoModal.classList.remove('hidden');
+            }
+
+            function closeModal() {
+                youtubePlayer.src = '';
+                videoModal.classList.add('hidden');
+            }
+
+            dailyPlanContainer.addEventListener('click', (e) => {
+                const target = e.target.closest('.watch-video-btn');
+                if (target && target.dataset.videoId) {
+                    openModal(target.dataset.videoId);
+                }
+            });
+
+            closeModalBtn.addEventListener('click', closeModal);
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) closeModal();
+            });
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const day = button.dataset.day;
+                    renderDay(day);
+                });
+            });
+            
+            renderDay(currentDay.toString());
+
+            const ctx = document.getElementById('weekly-focus-chart').getContext('2d');
+            const weeklyFocusChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Kuvvet Antrenmanı', 'Kardiyo & Aktif Dinlenme', 'Dinlenme'],
+                    datasets: [{
+                        label: 'Haftalık Efor',
+                        data: [3, 2, 2],
+                        backgroundColor: ['#0d9488', '#5eead4', '#a3a3a3'],
+                        borderColor: '#f8fafc',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false, cutout: '70%',
+                    plugins: {
+                        legend: { position: 'bottom', labels: { padding: 20, color: '#475569', font: { family: "'Inter', sans-serif", size: 12 } } },
+                        tooltip: { callbacks: { label: (c) => `${c.label || ''}: ${c.parsed} gün` } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

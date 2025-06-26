@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medya & Kültür Planlayıcısı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-button { transition: all 0.2s ease; border-bottom: 4px solid transparent; }
+        .tab-button.active { border-color: #0d9488; color: #0d9488; }
+        .tab-button:not(.active):hover { border-color: #ccfbf1; }
+        .rating-star { cursor: pointer; transition: color 0.2s ease; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-teal-700">Medya & Kültür Planlayıcısı</h1>
+            <p class="mt-2 text-slate-600">Okuduğunuz, izlediğiniz ve keşfettiğiniz her şeyi tek bir yerde toplayın.</p>
+        </header>
+
+        <main>
+            <!-- Tabs -->
+            <div class="mb-8 border-b border-slate-200">
+                <nav class="flex justify-center -mb-px space-x-6">
+                    <button data-tab="books" class="tab-button active py-4 px-1 text-lg font-semibold">📚 Kitaplar</button>
+                    <button data-tab="movies" class="tab-button py-4 px-1 text-lg font-semibold">🎬 Filmler</button>
+                    <button data-tab="series" class="tab-button py-4 px-1 text-lg font-semibold">📺 Diziler</button>
+                </nav>
+            </div>
+            
+            <!-- Tab Content -->
+            <div id="tab-content">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </main>
+        
+        <footer class="text-center mt-12 text-slate-500 space-x-4">
+             <button id="import-json-btn" class="bg-teal-100 hover:bg-teal-200 text-teal-800 font-bold py-2 px-4 rounded-lg">
+                JSON'dan İçe Aktar
+            </button>
+            <button id="export-json-btn" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold py-2 px-4 rounded-lg">
+                JSON Olarak Dışa Aktar
+            </button>
+        </footer>
+    </div>
+
+    <script>
+        // Default data structure if no saved data is found
+        let mediaData = {
+            books: [
+                { id: Date.now() + 1, title: 'Dune', creator: 'Frank Herbert', genre: 'Bilim Kurgu', rating: 5, notes: 'Muhteşem bir evren.' }
+            ],
+            movies: [
+                { id: Date.now() + 2, title: 'The Lord of the Rings', creator: 'Peter Jackson', genre: 'Fantastik', rating: 5, notes: 'Defalarca izlenir.' }
+            ],
+            series: [
+                { id: Date.now() + 3, title: 'Breaking Bad', creator: 'Vince Gilligan', genre: 'Suç Draması', rating: 5, notes: 'Karakter gelişimi inanılmaz.' }
+            ]
+        };
+
+        const creatorLabels = {
+            books: 'Yazar',
+            movies: 'Yönetmen',
+            series: 'Yaratıcı / Yönetmen'
+        };
+
+        let activeTab = 'books';
+        let currentRating = 0;
+
+        // --- Data Persistence Functions ---
+        // Verileri tarayıcının yerel deposuna JSON formatında kaydeder.
+        function saveDataToLocalStorage() {
+            localStorage.setItem('mediaPlannerData', JSON.stringify(mediaData));
+        }
+
+        // Sayfa yüklendiğinde verileri yerel depodan çeker.
+        function loadDataFromLocalStorage() {
+            const savedData = localStorage.getItem('mediaPlannerData');
+            if (savedData) {
+                mediaData = JSON.parse(savedData);
+            }
+        }
+
+        function renderContent(tab) {
+            const contentEl = document.getElementById('tab-content');
+            const creatorLabel = creatorLabels[tab];
+            const items = mediaData[tab] || [];
+
+            const formHtml = `
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold mb-4 text-teal-600">Yeni Ekle</h2>
+                    <form id="media-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="md:col-span-2">
+                            <label for="title" class="block text-sm font-medium text-slate-700">Başlık</label>
+                            <input type="text" id="title" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" required>
+                        </div>
+                        <div>
+                            <label for="creator" class="block text-sm font-medium text-slate-700">${creatorLabel}</label>
+                            <input type="text" id="creator" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        </div>
+                        <div>
+                            <label for="genre" class="block text-sm font-medium text-slate-700">Tür</label>
+                            <input type="text" id="genre" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        </div>
+                        <div class="md:col-span-2">
+                             <label class="block text-sm font-medium text-slate-700">Puan</label>
+                             <div id="rating-stars" class="flex items-center text-3xl text-slate-300 mt-1">
+                                ${[1,2,3,4,5].map(i => `<span class="rating-star" data-value="${i}">★</span>`).join('')}
+                             </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="notes" class="block text-sm font-medium text-slate-700">Notlar</label>
+                            <textarea id="notes" rows="3" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500"></textarea>
+                        </div>
+                        <div class="md:col-span-2 text-right">
+                            <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-6 rounded-lg">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            `;
+            
+            const listHtml = `
+                <div id="media-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    ${items.map(item => `
+                        <div class="bg-white rounded-lg shadow-sm p-5 flex flex-col relative">
+                            <button data-id="${item.id}" class="delete-item absolute top-2 right-2 text-slate-400 hover:text-red-500 text-2xl leading-none">&times;</button>
+                            <h3 class="text-xl font-bold text-slate-800">${item.title}</h3>
+                            <p class="text-slate-500 text-sm mb-2">${item.creator}</p>
+                            <div class="flex items-center text-yellow-400 mb-2">
+                                ${'★'.repeat(item.rating)}${'☆'.repeat(5 - item.rating)}
+                            </div>
+                            <p class="text-slate-600 flex-grow"><em>“${item.notes || '...'}”</em></p>
+                            <span class="text-xs bg-teal-100 text-teal-800 self-start mt-3 py-1 px-2 rounded-full">${item.genre}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            contentEl.innerHTML = formHtml + listHtml;
+            addFormAndRatingListeners();
+        }
+
+        function addFormAndRatingListeners() {
+            document.getElementById('media-form').addEventListener('submit', handleFormSubmit);
+            const stars = document.getElementById('rating-stars');
+            stars.addEventListener('click', handleRatingClick);
+            stars.addEventListener('mouseover', handleRatingMouseover);
+            stars.addEventListener('mouseout', handleRatingMouseout);
+        }
+        
+        function handleRatingClick(e) {
+            if (e.target.classList.contains('rating-star')) {
+                currentRating = parseInt(e.target.dataset.value);
+                updateStarsUI(currentRating);
+            }
+        }
+        function handleRatingMouseover(e) {
+            if (e.target.classList.contains('rating-star')) {
+                const hoverValue = parseInt(e.target.dataset.value);
+                updateStarsUI(hoverValue);
+            }
+        }
+        function handleRatingMouseout() {
+             updateStarsUI(currentRating);
+        }
+        function updateStarsUI(rating) {
+             const stars = document.querySelectorAll('#rating-stars .rating-star');
+             stars.forEach(star => {
+                 star.classList.toggle('text-yellow-400', star.dataset.value <= rating);
+                 star.classList.toggle('text-slate-300', star.dataset.value > rating);
+             });
+        }
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const newItem = {
+                id: Date.now(),
+                title: document.getElementById('title').value,
+                creator: document.getElementById('creator').value,
+                genre: document.getElementById('genre').value,
+                rating: currentRating,
+                notes: document.getElementById('notes').value
+            };
+            mediaData[activeTab].unshift(newItem);
+            currentRating = 0;
+            saveDataToLocalStorage();
+            renderContent(activeTab);
+        }
+        
+        function handleDeleteItem(e) {
+            if(e.target.classList.contains('delete-item')) {
+                const itemId = parseInt(e.target.dataset.id, 10);
+                mediaData[activeTab] = mediaData[activeTab].filter(item => item.id !== itemId);
+                saveDataToLocalStorage();
+                renderContent(activeTab);
+            }
+        }
+
+        function handleTabClick(e) {
+            const clickedTab = e.target.dataset.tab;
+            if (clickedTab && clickedTab !== activeTab) {
+                document.querySelector('.tab-button.active').classList.remove('active');
+                e.target.classList.add('active');
+                activeTab = clickedTab;
+                renderContent(activeTab);
+            }
+        }
+        
+        function exportToJSON() {
+            const jsonString = JSON.stringify(mediaData, null, 2); // 2 spaces for pretty printing
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'medya_verileri.json';
+            document.body.appendChild(a);
+a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+        
+        function importFromJSON(jsonString) {
+            try {
+                const importedData = JSON.parse(jsonString);
+                // Basic validation to check if the structure is as expected
+                if (importedData && typeof importedData === 'object' && ('books' in importedData || 'movies' in importedData || 'series' in importedData)) {
+                    mediaData = {
+                        books: importedData.books || [],
+                        movies: importedData.movies || [],
+                        series: importedData.series || []
+                    };
+                    saveDataToLocalStorage();
+                    renderContent(activeTab);
+                    alert('Veriler başarıyla içe aktarıldı!');
+                } else {
+                    throw new Error('Geçersiz JSON formatı.');
+                }
+            } catch (error) {
+                console.error("JSON okuma hatası:", error);
+                alert("JSON dosyası okunamadı veya formatı bozuk.");
+            }
+        }
+
+        function handleFileImport(event) {
+            const file = event.target.files[0];
+            if (!file || !file.type.match('application/json')) {
+                alert('Lütfen geçerli bir JSON dosyası seçin.');
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const content = e.target.result;
+                importFromJSON(content);
+};
+            reader.onerror = function() {
+                alert('Dosya okunurken bir hata oluştu.');
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDataFromLocalStorage();
+            renderContent(activeTab);
+            document.querySelector('.tab-button[data-tab="books"]').classList.add('active');
+            document.querySelector('nav').addEventListener('click', handleTabClick);
+            document.getElementById('export-json-btn').addEventListener('click', exportToJSON);
+            
+            // Setup Import Button
+            const importButton = document.getElementById('import-json-btn');
+            const importFileInput = document.createElement('input');
+            importFileInput.type = 'file';
+            importFileInput.accept = '.json,application/json';
+            importFileInput.style.display = 'none';
+            importFileInput.addEventListener('change', handleFileImport);
+            document.body.appendChild(importFileInput);
+
+            importButton.addEventListener('click', () => importFileInput.click());
+            
+            // Add central event listener for delete buttons
+            document.getElementById('tab-content').addEventListener('click', handleDeleteItem);
+        });
+
+    </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medya & Kültür Planlayıcısı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-button { transition: all 0.2s ease; border-bottom: 4px solid transparent; }
+        .tab-button.active { border-color: #0d9488; color: #0d9488; }
+        .tab-button:not(.active):hover { border-color: #ccfbf1; }
+        .rating-star { cursor: pointer; transition: color 0.2s ease; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+        
+
+        <main>
+            <!-- Tabs -->
+            
+            <!-- Tab Content -->
+            <div id="tab-content">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </main>
+        
+
+    </div>
+
+    <script>
+        // Default data structure if no saved data is found
+        let mediaData = {
+            books: [
+                { id: Date.now() + 1, title: 'Dune', creator: 'Frank Herbert', genre: 'Bilim Kurgu', rating: 5, notes: 'Muhteşem bir evren.' }
+            ],
+            movies: [
+                { id: Date.now() + 2, title: 'The Lord of the Rings', creator: 'Peter Jackson', genre: 'Fantastik', rating: 5, notes: 'Defalarca izlenir.' }
+            ],
+            series: [
+                { id: Date.now() + 3, title: 'Breaking Bad', creator: 'Vince Gilligan', genre: 'Suç Draması', rating: 5, notes: 'Karakter gelişimi inanılmaz.' }
+            ]
+        };
+
+        const creatorLabels = {
+            books: 'Yazar',
+            movies: 'Yönetmen',
+            series: 'Yaratıcı / Yönetmen'
+        };
+
+        let activeTab = 'books';
+        let currentRating = 0;
+
+        // --- Data Persistence Functions ---
+        function saveDataToLocalStorage() {
+            localStorage.setItem('mediaPlannerData', JSON.stringify(mediaData));
+        }
+
+        function loadDataFromLocalStorage() {
+            const savedData = localStorage.getItem('mediaPlannerData');
+            if (savedData) {
+                mediaData = JSON.parse(savedData);
+            }
+        }
+
+        function renderContent(tab) {
+            const contentEl = document.getElementById('tab-content');
+            const creatorLabel = creatorLabels[tab];
+            const items = mediaData[tab] || [];
+
+            const formHtml = `
+                <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+                    <h2 class="text-2xl font-bold mb-4 text-teal-600">Yeni Ekle</h2>
+                    <form id="media-form" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="md:col-span-2">
+                            <label for="title" class="block text-sm font-medium text-slate-700">Başlık</label>
+                            <input type="text" id="title" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500" required>
+                        </div>
+                        <div>
+                            <label for="creator" class="block text-sm font-medium text-slate-700">${creatorLabel}</label>
+                            <input type="text" id="creator" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        </div>
+                        <div>
+                            <label for="genre" class="block text-sm font-medium text-slate-700">Tür</label>
+                            <input type="text" id="genre" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500">
+                        </div>
+                        <div class="md:col-span-2">
+                             <label class="block text-sm font-medium text-slate-700">Puan</label>
+                             <div id="rating-stars" class="flex items-center text-3xl text-slate-300 mt-1">
+                                ${[1,2,3,4,5].map(i => `<span class="rating-star" data-value="${i}">★</span>`).join('')}
+                             </div>
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="notes" class="block text-sm font-medium text-slate-700">Notlar</label>
+                            <textarea id="notes" rows="3" class="mt-1 block w-full rounded-md border-slate-300 shadow-sm focus:border-teal-500 focus:ring-teal-500"></textarea>
+                        </div>
+                        <div class="md:col-span-2 text-right">
+                            <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-6 rounded-lg">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+            `;
+            
+            const listHtml = `
+                <div id="media-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    ${items.map(item => `
+                        <div class="bg-white rounded-lg shadow-sm p-5 flex flex-col relative">
+                            <button data-id="${item.id}" class="delete-item absolute top-2 right-2 text-slate-400 hover:text-red-500 text-2xl leading-none">&times;</button>
+                            <h3 class="text-xl font-bold text-slate-800">${item.title}</h3>
+                            <p class="text-slate-500 text-sm mb-2">${item.creator}</p>
+                            <div class="flex items-center text-yellow-400 mb-2">
+                                ${'★'.repeat(item.rating)}${'☆'.repeat(5 - item.rating)}
+                            </div>
+                            <p class="text-slate-600 flex-grow"><em>“${item.notes || '...'}”</em></p>
+                            <span class="text-xs bg-teal-100 text-teal-800 self-start mt-3 py-1 px-2 rounded-full">${item.genre}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            contentEl.innerHTML = formHtml + listHtml;
+            addFormAndRatingListeners();
+        }
+
+        function addFormAndRatingListeners() {
+            document.getElementById('media-form').addEventListener('submit', handleFormSubmit);
+            const stars = document.getElementById('rating-stars');
+            stars.addEventListener('click', handleRatingClick);
+            stars.addEventListener('mouseover', handleRatingMouseover);
+            stars.addEventListener('mouseout', handleRatingMouseout);
+        }
+        
+        function handleRatingClick(e) {
+            if (e.target.classList.contains('rating-star')) {
+                currentRating = parseInt(e.target.dataset.value);
+                updateStarsUI(currentRating);
+            }
+        }
+        function handleRatingMouseover(e) {
+            if (e.target.classList.contains('rating-star')) {
+                const hoverValue = parseInt(e.target.dataset.value);
+                updateStarsUI(hoverValue);
+            }
+        }
+        function handleRatingMouseout() {
+             updateStarsUI(currentRating);
+        }
+        function updateStarsUI(rating) {
+             const stars = document.querySelectorAll('#rating-stars .rating-star');
+             stars.forEach(star => {
+                 star.classList.toggle('text-yellow-400', star.dataset.value <= rating);
+                 star.classList.toggle('text-slate-300', star.dataset.value > rating);
+             });
+        }
+
+
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const newItem = {
+                id: Date.now(),
+                title: document.getElementById('title').value,
+                creator: document.getElementById('creator').value,
+                genre: document.getElementById('genre').value,
+                rating: currentRating,
+                notes: document.getElementById('notes').value
+            };
+            mediaData[activeTab].unshift(newItem);
+            currentRating = 0;
+            saveDataToLocalStorage();
+            renderContent(activeTab);
+        }
+        
+        function handleDeleteItem(e) {
+            if(e.target.classList.contains('delete-item')) {
+                const itemId = parseInt(e.target.dataset.id, 10);
+                mediaData[activeTab] = mediaData[activeTab].filter(item => item.id !== itemId);
+                saveDataToLocalStorage();
+                renderContent(activeTab);
+            }
+        }
+
+        function handleTabClick(e) {
+            const clickedTab = e.target.dataset.tab;
+            if (clickedTab && clickedTab !== activeTab) {
+                document.querySelector('.tab-button.active').classList.remove('active');
+                e.target.classList.add('active');
+                activeTab = clickedTab;
+                renderContent(activeTab);
+            }
+        });
+
+    </script>
+</body>
+</html>

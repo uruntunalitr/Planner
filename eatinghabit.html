@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İnteraktif Beslenme Planlayıcısı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: "Calm Teal" - Egzersiz planıyla tutarlı, sakin ve motive edici bir görsel deneyim sunmak için aynı renk paleti kullanıldı. -->
+    <!-- Application Structure Plan: Uygulama, egzersiz planlayıcısındaki başarılı gün odaklı 'dashboard' yapısını korur. Kullanıcılar gün sekmeleriyle hafta boyunca kolayca gezinebilir. Bir güne tıklandığında, ana içerik alanı o gün için önerilen öğünlerle (kahvaltı, öğle yemeği, akşam yemeği, ara öğün) güncellenir. Bu yapı, beslenme planını yönetilebilir ve takip edilebilir hale getirir. Sağ taraftaki grafik, günlük alınması hedeflenen makro besin dağılımını göstererek dengeli beslenme konusunda görsel bir rehber sunar. -->
+    <!-- Visualization & Content Choices: Rapor Bilgisi: Beslenme ilkeleri -> Hedef: Bilgilendirmek -> Yöntem: Başlık altında temel prensipler listesi -> Etkileşim: Statik bilgi -> Gerekçe: Kullanıcıya temel beslenme bilgilerini en başta ve net bir şekilde sunar (HTML). Rapor Bilgisi: Günlük öğün planı -> Hedef: Rehberlik Etmek -> Yöntem: Her öğün için ikonlu ve açıklamalı 'kartlar' -> Etkileşim: Statik bilgi -> Gerekçe: Günlük planı sindirilebilir, görsel ve iştah açıcı parçalara ayırır (HTML/JS). Rapor Bilgisi: Makro dağılımı -> Hedef: Özetlemek -> Yöntem: Chart.js ile 'Pie' grafik -> Etkileşim: Segmentler üzerine gelince yüzde görme -> Gerekçe: İdeal makro dengesinin hızlı bir görsel özetini sunar (Chart.js). -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { position: relative; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; height: 320px; }
+        .nav-button { transition: all 0.3s ease; }
+        .nav-button.active { background-color: #0d9488; color: white; }
+        .nav-button:not(.active):hover { background-color: #f0fdfa; }
+        .meal-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .meal-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-teal-700">İnteraktif Beslenme Planlayıcısı</h1>
+            <p class="mt-2 text-slate-600">Sağlıklı ve dengeli beslenerek hedeflerinize enerjik bir şekilde ulaşın.</p>
+        </header>
+
+        <main>
+            <section id="principles" class="mb-8 p-6 bg-white rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold mb-3 text-teal-600">Sağlıklı Beslenme Prensipleri</h2>
+                <ul class="list-disc list-inside space-y-2 text-slate-700">
+                    <li><strong class="font-semibold">Dengeli Makrolar:</strong> Her öğünde yeterli protein, sağlıklı karbonhidrat ve yağ almaya özen gösterin. Bu, tokluk hissini artırır ve kasları besler.</li>
+                    <li><strong class="font-semibold">Öğün Saatlerini Dinleyin:</strong> Vücudunuzun açlık sinyallerini dinleyin. Bu plan, öğün saatlerini esnek tutmanıza olanak tanır ve aralıklı oruç gibi yaklaşımlarla uyumludur.</li>
+                    <li><strong class="font-semibold">Hidrasyon Çok Önemli:</strong> Gün boyunca yeterince su için (ortalama 2-3 litre). Su, metabolizmayı hızlandırır ve genel sağlığı destekler.</li>
+                    <li><strong class="font-semibold">İşlenmiş Gıdalardan Kaçının:</strong> Paketli ürünler, şekerli içecekler ve trans yağ içeren gıdalar yerine taze ve doğal besinleri tercih edin.</li>
+                    <li><strong class="font-semibold">Porsiyon Kontrolü:</strong> Vücudunuzun ihtiyacı kadar yiyin. Tabağınızı çok doldurmamak ve yavaş yemek, porsiyon kontrolüne yardımcı olur.</li>
+                     <li><strong class="font-semibold">Lifli Gıdalar Tüketin:</strong> Sebzeler, meyveler ve tam tahıllar gibi lifli gıdalar sindirim sistemini düzenler ve uzun süre tok kalmanızı sağlar.</li>
+                </ul>
+            </section>
+
+            <section id="weekly-dashboard" class="mb-8">
+                <h2 class="text-2xl font-bold text-center mb-4 text-teal-600">Haftalık Beslenme Planı</h2>
+                <div class="flex flex-wrap justify-center gap-2 mb-8">
+                    <button data-day="1" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">1. Gün</button>
+                    <button data-day="2" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">2. Gün</button>
+                    <button data-day="3" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">3. Gün</button>
+                    <button data-day="4" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">4. Gün</button>
+                    <button data-day="5" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">5. Gün</button>
+                    <button data-day="6" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">6. Gün</button>
+                    <button data-day="7" class="nav-button font-semibold py-2 px-4 rounded-full border border-slate-300 bg-white">7. Gün</button>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    <div id="daily-plan" class="md:col-span-2 p-6 bg-white rounded-lg shadow-sm min-h-[300px]">
+                    </div>
+                    <div class="flex flex-col items-center sticky top-8">
+                         <h3 class="text-lg font-bold mb-2 text-teal-600">Hedef Makro Dağılımı</h3>
+                        <div class="chart-container">
+                            <canvas id="macro-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-12 text-slate-500">
+            <p>Bu plan bir rehberdir. Kendi damak zevkinize ve ihtiyaçlarınıza göre ayarlamalar yapabilirsiniz. Afiyet olsun!</p>
+        </footer>
+    </div>
+
+    <script>
+        const planData = {
+            1: {
+                title: 'Dengeli Başlangıç Günü',
+                meals: [
+                    { type: '🥗 Öğle Yemeği', description: 'Izgara tavuk göğsü salatası (marul, roka, havuç, kırmızı lahana, zeytinyağı ve limon sosu ile).' },
+                    { type: '🍲 Akşam Yemeği', description: 'Fırında somon, yanında buharda pişmiş brokoli ve kinoa.' },
+                    { type: '🍎 Ara Öğün', description: '1 adet yeşil elma ve bir avuç badem.' }
+                ]
+            },
+            2: {
+                title: 'Lif ve Protein Ağırlıklı Gün',
+                meals: [
+                    { type: '🥘 Öğle Yemeği', description: 'Zeytinyağlı mercimek yemeği, yanında bir kase yoğurt.' },
+                    { type: '🥩 Akşam Yemeği', description: 'Izgara köfte, yanında bol yeşillikli çoban salata ve 1 kepçe bulgur pilavı.' },
+                    { type: '🥛 Ara Öğün', description: '1 kase yoğurt ve 1 tatlı kaşığı keten tohumu.' }
+                ]
+            },
+            3: {
+                title: 'Sebze Odaklı Gün',
+                 meals: [
+                    { type: '🍲 Öğle Yemeği', description: 'Zeytinyağlı enginar veya taze fasulye, yanında 1 dilim tam buğday ekmeği.' },
+                    { type: '🥦 Akşam Yemeği', description: 'Fırında karnabahar (baharatlı), yanında sarımsaklı yoğurt.' },
+                    { type: '🥕 Ara Öğün', description: 'Havuç ve salatalık dilimleri, yanında humus.' }
+                ]
+            },
+            4: {
+                title: 'Enerji Yükleme Günü',
+                 meals: [
+                    { type: '🌯 Öğle Yemeği', description: 'Tavuklu veya hindili tam buğday lavaş dürüm (içinde bol marul ve sebze ile).' },
+                    { type: '🍝 Akşam Yemeği', description: 'Kıymalı ve bol domates soslu tam buğday makarna.' },
+                    { type: '🍌 Ara Öğün', description: '1 adet muz.' }
+                ]
+            },
+            5: {
+                title: 'Hafif ve Sağlıklı Gün',
+                meals: [
+                    { type: '🥣 Öğle Yemeği', description: 'Nohutlu ve bol yeşillikli bir salata.' },
+                    { type: '🐟 Akşam Yemeği', description: 'Fırında baharatlı levrek, yanında roka salatası.' },
+                    { type: '🍊 Ara Öğün', description: 'Bir avuç fındık ve 1 adet portakal.' }
+                ]
+            },
+            6: {
+                title: 'Haftasonu Brunch Günü',
+                meals: [
+                    { type: '🍳 Brunch', description: 'Zengin bir haftasonu kahvaltısı: Menemen, beyaz peynir, zeytin, bol yeşillik ve 1-2 dilim tam buğday ekmeği.' },
+                    { type: '🥣 Akşam Yemeği', description: 'Hafif bir sebze çorbası ve salata.' },
+                    { type: '🍫 Ara Öğün', description: 'Birkaç kare bitter çikolata (%70 ve üzeri).' }
+                ]
+            },
+            7: {
+                title: 'Huzurlu Pazar & Hazırlık',
+                meals: [
+                    { type: '🥞 Brunch / Geç Kahvaltı', description: 'Yulaf unundan yapılmış şekersiz pankek, üzerine bol taze meyve ve bir kaşık bal.' },
+                    { type: '🍗 Akşam Yemeği', description: 'Fırında tavuk but, yanında fırınlanmış tatlı patates ve yeşil salata.' },
+                    { type: '🥛 Ara Öğün', description: '1 bardak kefir veya ayran.' }
+                ]
+            },
+        };
+
+        function createMealCard(meal) {
+            return `
+                <div class="meal-card bg-slate-100 border border-slate-200 rounded-lg p-4 mb-4">
+                    <h5 class="font-bold text-md text-teal-700">${meal.type}</h5>
+                    <p class="text-slate-700">${meal.description}</p>
+                </div>
+            `;
+        }
+        
+        function generateDayHtml(dayData) {
+            return dayData.meals.map(createMealCard).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const dailyPlanContainer = document.getElementById('daily-plan');
+            const navButtons = document.querySelectorAll('.nav-button');
+            let currentDay = new Date().getDay();
+            if (currentDay === 0) { currentDay = 7; }
+
+            function renderDay(day) {
+                const dayData = planData[day];
+                if (dayData) {
+                    let contentHtml = `<h3 class="text-2xl font-bold text-center mb-4 text-teal-600">${dayData.title}</h3>`;
+                    contentHtml += generateDayHtml(dayData);
+                    dailyPlanContainer.innerHTML = contentHtml;
+                    
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.dataset.day === day) {
+                            btn.classList.add('active');
+                        }
+                    });
+                }
+            }
+            
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const day = button.dataset.day;
+                    renderDay(day);
+                });
+            });
+            
+            renderDay(currentDay.toString());
+
+            const ctx = document.getElementById('macro-chart').getContext('2d');
+            const macroChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ['Protein', 'Karbonhidrat', 'Sağlıklı Yağ'],
+                    datasets: [{
+                        label: 'Makro Dağılımı',
+                        data: [40, 40, 20],
+                        backgroundColor: [
+                            '#0d9488', // teal-600
+                            '#5eead4', // teal-300
+                            '#f59e0b'  // amber-500
+                        ],
+                        borderColor: '#f8fafc',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                padding: 20,
+                                color: '#475569',
+                                font: { family: "'Inter', sans-serif", size: 12 }
+                            }
+                        },
+                        tooltip: {
+                             callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) { label += ': '; }
+                                    if (context.parsed !== null) { label += context.parsed + '%'; }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
