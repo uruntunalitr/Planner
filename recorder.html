@@ -227,7 +227,7 @@
             a.href = url;
             a.download = 'medya_verileri.json';
             document.body.appendChild(a);
-a.click();
+            a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         }
@@ -265,7 +265,7 @@ a.click();
             reader.onload = function(e) {
                 const content = e.target.result;
                 importFromJSON(content);
-};
+            };
             reader.onerror = function() {
                 alert('Dosya okunurken bir hata oluştu.');
             };
