@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İtalyanca Öğrenme Planlayıcısı</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-button { transition: all 0.2s ease; border-bottom: 4px solid transparent; }
+        .tab-button.active { border-color: #0d9488; color: #0d9488; }
+        .tab-button:not(.active):hover { border-color: #ccfbf1; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+        <div class="mb-6">
+            <a href="./main.html" class="inline-block bg-white py-2 px-4 border border-slate-300 rounded-lg shadow-sm text-teal-700 hover:bg-teal-50 font-semibold transition-colors">
+                &larr; Ana Menüye Dön
+            </a>
+        </div>
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-teal-700">İtalyanca Öğrenme Planlayıcısı</h1>
+            <p class="mt-2 text-slate-600">Temel dil yapılarını örneklerle ve çekimlerle öğrenin.</p>
+        </header>
+
+        <main>
+            <!-- Tabs -->
+            <div class="mb-8 border-b border-slate-200">
+                <nav class="flex flex-wrap justify-center -mb-px sm:space-x-6">
+                    <button data-tab="verbs" class="tab-button active py-4 px-2 text-lg font-semibold">Fiiller (Verbi)</button>
+                    <button data-tab="nouns" class="tab-button py-4 px-2 text-lg font-semibold">İsimler (Nomi)</button>
+                    <button data-tab="adjectives" class="tab-button py-4 px-2 text-lg font-semibold">Sıfatlar (Aggettivi)</button>
+                    <button data-tab="conjunctions" class="tab-button py-4 px-2 text-lg font-semibold">Bağlaçlar (Congiunzioni)</button>
+                </nav>
+            </div>
+            
+            <!-- Tab Content -->
+            <div id="tab-content">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </main>
+        
+        <footer class="text-center mt-12 text-slate-500">
+           <p>Praticare rende perfetti! (Pratik yapmak mükemmelleştirir!)</p>
+        </footer>
+    </div>
+
+    <script>
+        const italianData = {
+            verbs: [
+                {
+                    word: 'Essere', translation: 'Olmak',
+                    conjugations: {
+                        presente: { io: 'sono', tu: 'sei', 'lui/lei': 'è', noi: 'siamo', voi: 'siete', loro: 'sono' }
+                    },
+                    examples: [
+                        { it: 'Io sono uno studente.', tr: 'Ben bir öğrenciyim.' },
+                        { it: 'Loro sono in Italia.', tr: 'Onlar İtalya\'dalar.' }
+                    ]
+                },
+                {
+                    word: 'Avere', translation: 'Sahip olmak',
+                    conjugations: {
+                        presente: { io: 'ho', tu: 'hai', 'lui/lei': 'ha', noi: 'abbiamo', voi: 'avete', loro: 'hanno' }
+                    },
+                    examples: [
+                        { it: 'Lui ha una macchina rossa.', tr: 'Onun kırmızı bir arabası var.' },
+                        { it: 'Noi abbiamo fame.', tr: 'Biz açız. (Bizim açlığımız var.)' }
+                    ]
+                },
+                {
+                    word: 'Fare', translation: 'Yapmak',
+                    conjugations: {
+                        presente: { io: 'faccio', tu: 'fai', 'lui/lei': 'fa', noi: 'facciamo', voi: 'fate', loro: 'fanno' }
+                    },
+                    examples: [
+                        { it: 'Cosa fai stasera?', tr: 'Bu akşam ne yapıyorsun?' },
+                        { it: 'Io faccio i compiti.', tr: 'Ben ödevlerimi yapıyorum.' }
+                    ]
+                }
+            ],
+            nouns: [
+                {
+                    word: 'Casa', translation: 'Ev',
+                    examples: [
+                        { it: 'La mia casa è grande.', tr: 'Benim evim büyük.' },
+                        { it: 'Torno a casa alle sei.', tr: 'Saat altıda eve dönüyorum.' }
+                    ]
+                },
+                {
+                    word: 'Libro', translation: 'Kitap',
+                    examples: [
+                        { it: 'Questo è un libro interessante.', tr: 'Bu ilginç bir kitap.' },
+                        { it: 'Voglio leggere un libro.', tr: 'Bir kitap okumak istiyorum.' }
+                    ]
+                },
+                {
+                    word: 'Amico / Amica', translation: 'Arkadaş',
+                    examples: [
+                        { it: 'Marco è il mio migliore amico.', tr: 'Marco benim en iyi arkadaşım (erkek).' },
+                        { it: 'Parlo con la mia amica.', tr: 'Arkadaşımla (kız) konuşuyorum.' }
+                    ]
+                }
+            ],
+            adjectives: [
+                 {
+                    word: 'Buono / Buona', translation: 'İyi',
+                    examples: [
+                        { it: 'Questo caffè è molto buono.', tr: 'Bu kahve çok iyi.' },
+                        { it: 'La pizza è buona.', tr: 'Pizza iyidir.' }
+                    ]
+                },
+                {
+                    word: 'Grande', translation: 'Büyük',
+                    examples: [
+                        { it: 'Roma è una città grande.', tr: 'Roma büyük bir şehirdir.' },
+                        { it: 'Ho un grande problema.', tr: 'Büyük bir problemim var.' }
+                    ]
+                },
+                {
+                    word: 'Bello / Bella', translation: 'Güzel',
+                    examples: [
+                        { it: 'Hai un cane molto bello.', tr: 'Çok güzel bir köpeğin var.' },
+                        { it: 'Questa è una bella giornata.', tr: 'Bu güzel bir gün.' }
+                    ]
+                }
+            ],
+            conjunctions: [
+                 {
+                    word: 'E', translation: 'Ve',
+                    examples: [
+                        { it: 'Io bevo caffè e leggo un libro.', tr: 'Ben kahve içiyor ve kitap okuyorum.' },
+                        { it: 'Pane e burro.', tr: 'Ekmek ve tereyağı.' }
+                    ]
+                },
+                 {
+                    word: 'Ma', translation: 'Ama, fakat',
+                    examples: [
+                        { it: 'Vorrei uscire, ma piove.', tr: 'Dışarı çıkmak isterim ama yağmur yağıyor.' },
+                        { it: 'È difficile, ma interessante.', tr: 'Zor ama ilginç.' }
+                    ]
+                },
+                 {
+                    word: 'Perché', translation: 'Çünkü / Neden',
+                    examples: [
+                        { it: 'Studio italiano perché amo l\'Italia.', tr: 'İtalyanca öğreniyorum çünkü İtalya\'yı seviyorum.' },
+                        { it: 'Perché sei triste?', tr: 'Neden üzgünsün?' }
+                    ]
+                }
+            ]
+        };
+
+        let activeTab = 'verbs';
+
+        function renderContent(tab) {
+            const contentEl = document.getElementById('tab-content');
+            const items = italianData[tab] || [];
+            let html = '<div class="space-y-8">';
+
+            items.forEach(item => {
+                html += `
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-slate-800">${item.word} <span class="text-lg font-normal text-slate-500">- ${item.translation}</span></h3>
+                `;
+
+                // Render conjugations if they exist (for verbs)
+                if (item.conjugations && item.conjugations.presente) {
+                    html += `
+                        <div class="mt-4">
+                            <h4 class="text-md font-semibold text-teal-700 mb-2">Geniş Zaman (Presente) Çekimleri:</h4>
+                            <div class="overflow-x-auto">
+                                <table class="w-full text-left border-collapse">
+                                    <thead class="bg-slate-100">
+                                        <tr>
+                                            <th class="p-2 border border-slate-200">Kişi</th>
+                                            <th class="p-2 border border-slate-200">Çekim</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        ${Object.entries(item.conjugations.presente).map(([person, verb]) => `
+                                            <tr>
+                                                <td class="p-2 border border-slate-200 font-mono">${person}</td>
+                                                <td class="p-2 border border-slate-200 font-semibold">${verb}</td>
+                                            </tr>
+                                        `).join('')}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Render examples
+                html += '<div class="mt-4">';
+                html += '<h4 class="text-md font-semibold text-teal-700 mb-2">Örnek Cümleler:</h4>';
+                item.examples.forEach(ex => {
+                    html += `
+                        <blockquote class="border-l-4 border-teal-500 bg-teal-50 p-3 my-2">
+                            <p class="text-lg text-slate-700"><em>${ex.it}</em></p>
+                            <p class="text-sm text-slate-500 mt-1">${ex.tr}</p>
+                        </blockquote>
+                    `;
+                });
+                html += '</div></div>';
+            });
+
+            html += '</div>';
+            contentEl.innerHTML = html;
+        }
+
+        function handleTabClick(e) {
+            const clickedTab = e.target.dataset.tab;
+            if (clickedTab && clickedTab !== activeTab) {
+                document.querySelector('.tab-button.active').classList.remove('active');
+                e.target.classList.add('active');
+                activeTab = clickedTab;
+                renderContent(activeTab);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            renderContent(activeTab);
+            document.querySelector('nav').addEventListener('click', handleTabClick);
+        });
+
+    </script>
+</body>
+</html>
