@@ -34,7 +34,6 @@
             <div class="mb-8 border-b border-slate-200">
                 <nav class="flex flex-wrap justify-center -mb-px space-x-6">
                     <button data-tab="bus" class="tab-button active py-4 px-2 text-lg font-semibold">Otobüs</button>
-                    <button data-tab="train" class="tab-button py-4 px-2 text-lg font-semibold">Tren</button>
                     <button data-tab="locations" class="tab-button py-4 px-2 text-lg font-semibold">Önemli Yerler</button>
                 </nav>
             </div>
@@ -78,31 +77,6 @@
                 </div>
             </div>
         `;
-
-        const trainContent = `
-            <div class="bg-white p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold mb-4 text-slate-800">🚆 Tren (Trenitalia)</h3>
-                <p class="text-sm text-slate-500 mb-4">Pescara Centrale - Chieti arası tahmini seferler.</p>
-                 <div class="overflow-x-auto">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-100">
-                            <tr>
-                                <th class="p-3">Kalkış (Pescara)</th>
-                                <th class="p-3">Varış (Chieti)</th>
-                                <th class="p-3">Notlar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b"><td class="p-3 font-semibold">07:50</td><td class="p-3">08:05</td><td class="p-3">Regionale</td></tr>
-                            <tr class="border-b"><td class="p-3 font-semibold">09:02</td><td class="p-3">09:17</td><td class="p-3">Regionale</td></tr>
-                            <tr class="border-b"><td class="p-3 font-semibold">12:25</td><td class="p-3">12:40</td><td class="p-3">Regionale</td></tr>
-                            <tr class="border-b"><td class="p-3 font-semibold">16:10</td><td class="p-3">16:25</td><td class="p-3">Regionale</td></tr>
-                            <tr><td class="p-3 font-semibold">18:55</td><td class="p-3">19:10</td><td class="p-3">Regionale</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        `;
         
         const locationsContent = `
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -131,8 +105,6 @@
             const contentEl = document.getElementById('tab-content');
             if (tab === 'bus') {
                 contentEl.innerHTML = busContent;
-            } else if (tab === 'train') {
-                contentEl.innerHTML = trainContent;
             } else if (tab === 'locations') {
                 contentEl.innerHTML = locationsContent;
                 addLocationListeners();
