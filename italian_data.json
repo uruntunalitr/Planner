@@ -483,6 +483,86 @@
         { "it": "Perché sei triste oggi?", "en": "Why are you sad today?" },
         { "it": "È una storia molto triste.", "en": "It is a very sad story." }
       ]
+    },
+    {
+        "word": "Cattivo / Cattiva",
+        "translation": "Bad",
+        "examples": [
+            { "it": "Questo non è un cattivo film.", "en": "This is not a bad movie." },
+            { "it": "Ha un cattivo carattere.", "en": "He has a bad temper." }
+        ]
+    },
+    {
+        "word": "Facile",
+        "translation": "Easy",
+        "examples": [
+            { "it": "L'esame era molto facile.", "en": "The exam was very easy." },
+            { "it": "È facile da usare.", "en": "It is easy to use." }
+        ]
+    },
+    {
+        "word": "Difficile",
+        "translation": "Difficult",
+        "examples": [
+            { "it": "Questa è una domanda difficile.", "en": "This is a difficult question." },
+            { "it": "È difficile imparare una nuova lingua.", "en": "It is difficult to learn a new language." }
+        ]
+    },
+    {
+        "word": "Giovane",
+        "translation": "Young",
+        "examples": [
+            { "it": "Mio fratello è più giovane di me.", "en": "My brother is younger than me." },
+            { "it": "Ci sono molti giovani in piazza.", "en": "There are many young people in the square." }
+        ]
+    },
+    {
+        "word": "Stesso / Stessa",
+        "translation": "Same",
+        "examples": [
+            { "it": "Abitiamo nella stessa strada.", "en": "We live on the same street." },
+            { "it": "È sempre lo stesso problema.", "en": "It is always the same problem." }
+        ]
+    },
+    {
+        "word": "Vero / Vera",
+        "translation": "True / Real",
+        "examples": [
+            { "it": "Questa è una storia vera.", "en": "This is a true story." },
+            { "it": "Sei un vero amico.", "en": "You are a real friend." }
+        ]
+    },
+    {
+        "word": "Lungo / Lunga",
+        "translation": "Long",
+        "examples": [
+            { "it": "Il viaggio è stato lungo.", "en": "The journey was long." },
+            { "it": "Ha i capelli lunghi.", "en": "She has long hair." }
+        ]
+    },
+    {
+        "word": "Pieno / Piena",
+        "translation": "Full",
+        "examples": [
+            { "it": "Il bicchiere è pieno d'acqua.", "en": "The glass is full of water." },
+            { "it": "La piazza era piena di gente.", "en": "The square was full of people." }
+        ]
+    },
+    {
+        "word": "Importante",
+        "translation": "Important",
+        "examples": [
+            { "it": "Ho una riunione importante.", "en": "I have an important meeting." },
+            { "it": "È importante studiare.", "en": "It is important to study." }
+        ]
+    },
+    {
+        "word": "Diverso / Diversa",
+        "translation": "Different",
+        "examples": [
+            { "it": "Ho un'opinione diversa.", "en": "I have a different opinion." },
+            { "it": "Siamo molto diversi.", "en": "We are very different." }
+        ]
     }
   ],
   "conjunctions": [
