@@ -1,0 +1,617 @@
+{
+  "verbs": [
+    {
+      "word": "Essere", "translation": "To be",
+      "conjugations": {
+        "Present (Presente)": { "io": "sono", "tu": "sei", "lui/lei": "è", "noi": "siamo", "voi": "siete", "loro": "sono" },
+        "Past (Passato Prossimo)": { "io": "sono stato/a", "tu": "sei stato/a", "lui/lei": "è stato/a", "noi": "siamo stati/e", "voi": "siete stati/e", "loro": "sono stati/e" },
+        "Future (Futuro)": { "io": "sarò", "tu": "sarai", "lui/lei": "sarà", "noi": "saremo", "voi": "sarete", "loro": "saranno" }
+      },
+      "examples": [
+        { "it": "Oggi sono a casa.", "en": "Today I am at home. (Present)" },
+        { "it": "Ieri sono stato al cinema.", "en": "Yesterday I was at the cinema. (Past)" },
+        { "it": "Domani sarò in ufficio.", "en": "Tomorrow I will be in the office. (Future)" }
+      ]
+    },
+    {
+      "word": "Avere", "translation": "To have",
+      "conjugations": {
+        "Present (Presente)": { "io": "ho", "tu": "hai", "lui/lei": "ha", "noi": "abbiamo", "voi": "avete", "loro": "hanno" },
+        "Past (Passato Prossimo)": { "io": "ho avuto", "tu": "hai avuto", "lui/lei": "ha avuto", "noi": "abbiamo avuto", "voi": "avete avuto", "loro": "hanno avuto" },
+        "Future (Futuro)": { "io": "avrò", "tu": "avrai", "lui/lei": "avrà", "noi": "avremo", "voi": "avrete", "loro": "avranno" }
+      },
+      "examples": [
+        { "it": "Ho una domanda.", "en": "I have a question. (Present)" },
+        { "it": "Ho avuto una buona idea.", "en": "I had a good idea. (Past)" },
+        { "it": "Avrò bisogno del tuo aiuto.", "en": "I will need your help. (Future)" }
+      ]
+    },
+    {
+      "word": "Fare", "translation": "To do / to make",
+      "conjugations": {
+        "Present (Presente)": { "io": "faccio", "tu": "fai", "lui/lei": "fa", "noi": "facciamo", "voi": "fate", "loro": "fanno" },
+        "Past (Passato Prossimo)": { "io": "ho fatto", "tu": "hai fatto", "lui/lei": "ha fatto", "noi": "abbiamo fatto", "voi": "avete fatto", "loro": "hanno fatto" },
+        "Future (Futuro)": { "io": "farò", "tu": "farai", "lui/lei": "farà", "noi": "faremo", "voi": "farete", "loro": "faranno" }
+      },
+      "examples": [
+        { "it": "Faccio una passeggiata.", "en": "I'm taking a walk. (Present)" },
+        { "it": "Hai fatto i compiti?", "en": "Did you do the homework? (Past)" },
+        { "it": "Cosa faremo stasera?", "en": "What will we do tonight? (Future)" }
+      ]
+    },
+    {
+      "word": "Andare", "translation": "To go",
+      "conjugations": {
+        "Present (Presente)": { "io": "vado", "tu": "vai", "lui/lei": "va", "noi": "andiamo", "voi": "andate", "loro": "vanno" },
+        "Past (Passato Prossimo)": { "io": "sono andato/a", "tu": "sei andato/a", "lui/lei": "è andato/a", "noi": "siamo andati/e", "voi": "siete andati/e", "loro": "sono andati/e" },
+        "Future (Futuro)": { "io": "andrò", "tu": "andrai", "lui/lei": "andrà", "noi": "andremo", "voi": "andrete", "loro": "andranno" }
+      },
+      "examples": [
+        { "it": "Dove vai?", "en": "Where are you going? (Present)" },
+        { "it": "Siamo andati a teatro.", "en": "We went to the theater. (Past)" },
+        { "it": "Andremo in Italia l'anno prossimo.", "en": "We will go to Italy next year. (Future)" }
+      ]
+    },
+    {
+      "word": "Mangiare", "translation": "To eat",
+      "conjugations": {
+        "Present (Presente)": { "io": "mangio", "tu": "mangi", "lui/lei": "mangia", "noi": "mangiamo", "voi": "mangiate", "loro": "mangiano" },
+        "Past (Passato Prossimo)": { "io": "ho mangiato", "tu": "hai mangiato", "lui/lei": "ha mangiato", "noi": "abbiamo mangiato", "voi": "avete mangiato", "loro": "hanno mangiato" },
+        "Future (Futuro)": { "io": "mangerò", "tu": "mangerai", "lui/lei": "mangerà", "noi": "mangeremo", "voi": "mangerete", "loro": "mangeranno" }
+      },
+      "examples": [
+        { "it": "Lui non mangia la carne.", "en": "He doesn't eat meat. (Present)" },
+        { "it": "Cosa hai mangiato a pranzo?", "en": "What did you eat for lunch? (Past)" },
+        { "it": "Stasera mangeremo la pizza.", "en": "Tonight we will eat pizza. (Future)" }
+      ]
+    },
+    {
+      "word": "Potere", "translation": "To be able (can)",
+      "conjugations": {
+        "Present (Presente)": { "io": "posso", "tu": "puoi", "lui/lei": "può", "noi": "possiamo", "voi": "potete", "loro": "possono" },
+        "Past (Passato Prossimo)": { "io": "ho potuto", "tu": "hai potuto", "lui/lei": "ha potuto", "noi": "abbiamo potuto", "voi": "avete potuto", "loro": "hanno potuto" },
+        "Future (Futuro)": { "io": "potrò", "tu": "potrai", "lui/lei": "potrà", "noi": "potremo", "voi": "potrete", "loro": "potranno" }
+      },
+      "examples": [
+        { "it": "Posso aiutarti?", "en": "Can I help you? (Present)" },
+        { "it": "Non ho potuto dormire ieri notte.", "en": "I could not sleep last night. (Past)" },
+        { "it": "Potremo partire domani.", "en": "We will be able to leave tomorrow. (Future)" }
+      ]
+    },
+    {
+      "word": "Volere", "translation": "To want",
+      "conjugations": {
+        "Present (Presente)": { "io": "voglio", "tu": "vuoi", "lui/lei": "vuole", "noi": "vogliamo", "voi": "volete", "loro": "vogliono" },
+        "Past (Passato Prossimo)": { "io": "ho voluto", "tu": "hai voluto", "lui/lei": "ha voluto", "noi": "abbiamo voluto", "voi": "avete voluto", "loro": "hanno voluto" },
+        "Future (Futuro)": { "io": "vorrò", "tu": "vorrai", "lui/lei": "vorrà", "noi": "vorremo", "voi": "vorrete", "loro": "vorranno" }
+      },
+      "examples": [
+        { "it": "Voglio un gelato.", "en": "I want an ice cream. (Present)" },
+        { "it": "Non ha voluto ascoltare.", "en": "He/She did not want to listen. (Past)" },
+        { "it": "Vorremo visitare Roma.", "en": "We will want to visit Rome. (Future)" }
+      ]
+    },
+    {
+      "word": "Dovere", "translation": "To have to (must)",
+      "conjugations": {
+        "Present (Presente)": { "io": "devo", "tu": "devi", "lui/lei": "deve", "noi": "dobbiamo", "voi": "dovete", "loro": "devono" },
+        "Past (Passato Prossimo)": { "io": "ho dovuto", "tu": "hai dovuto", "lui/lei": "ha dovuto", "noi": "abbiamo dovuto", "voi": "avete dovuto", "loro": "hanno dovuto" },
+        "Future (Futuro)": { "io": "dovrò", "tu": "dovrai", "lui/lei": "dovrà", "noi": "dovremo", "voi": "dovrete", "loro": "dovranno" }
+      },
+      "examples": [
+        { "it": "Devo studiare di più.", "en": "I have to study more. (Present)" },
+        { "it": "Ieri ho dovuto lavorare fino a tardi.", "en": "Yesterday I had to work late. (Past)" },
+        { "it": "Dovrai essere paziente.", "en": "You will have to be patient. (Future)" }
+      ]
+    },
+    {
+      "word": "Parlare", "translation": "To speak",
+      "conjugations": {
+        "Present (Presente)": { "io": "parlo", "tu": "parli", "lui/lei": "parla", "noi": "parliamo", "voi": "parlate", "loro": "parlano" },
+        "Past (Passato Prossimo)": { "io": "ho parlato", "tu": "hai parlato", "lui/lei": "ha parlato", "noi": "abbiamo parlato", "voi": "avete parlato", "loro": "hanno parlato" },
+        "Future (Futuro)": { "io": "parlerò", "tu": "parlerai", "lui/lei": "parlerà", "noi": "parleremo", "voi": "parlerete", "loro": "parleranno" }
+      },
+      "examples": [
+        { "it": "Parlo italiano e inglese.", "en": "I speak Italian and English. (Present)" },
+        { "it": "Ieri ho parlato con Maria.", "en": "Yesterday I spoke with Maria. (Past)" },
+        { "it": "Domani parlerò con il direttore.", "en": "Tomorrow I will speak with the director. (Future)" }
+      ]
+    },
+    {
+      "word": "Vedere", "translation": "To see",
+      "conjugations": {
+        "Present (Presente)": { "io": "vedo", "tu": "vedi", "lui/lei": "vede", "noi": "vediamo", "voi": "vedete", "loro": "vedono" },
+        "Past (Passato Prossimo)": { "io": "ho visto", "tu": "hai visto", "lui/lei": "ha visto", "noi": "abbiamo visto", "voi": "avete visto", "loro": "hanno visto" },
+        "Future (Futuro)": { "io": "vedrò", "tu": "vedrai", "lui/lei": "vedrà", "noi": "vedremo", "voi": "vedrete", "loro": "vedranno" }
+      },
+      "examples": [
+        { "it": "Vedo un uccello nel cielo.", "en": "I see a bird in the sky. (Present)" },
+        { "it": "Hai visto il nuovo film?", "en": "Have you seen the new movie? (Past)" },
+        { "it": "Vedrai che tutto andrà bene.", "en": "You will see that everything will be fine. (Future)" }
+      ]
+    },
+    {
+      "word": "Sapere", "translation": "To know (a fact)",
+      "conjugations": {
+        "Present (Presente)": { "io": "so", "tu": "sai", "lui/lei": "sa", "noi": "sappiamo", "voi": "sapete", "loro": "sanno" },
+        "Past (Passato Prossimo)": { "io": "ho saputo", "tu": "hai saputo", "lui/lei": "ha saputo", "noi": "abbiamo saputo", "voi": "avete saputo", "loro": "hanno saputo" },
+        "Future (Futuro)": { "io": "saprò", "tu": "saprai", "lui/lei": "saprà", "noi": "sapremo", "voi": "saprete", "loro": "sapranno" }
+      },
+      "examples": [
+        { "it": "Non so la risposta.", "en": "I do not know the answer. (Present)" },
+        { "it": "L'ho saputo solo ieri.", "en": "I only found out yesterday. (Past)" },
+        { "it": "Lo saprai presto.", "en": "You will know it soon. (Future)" }
+      ]
+    },
+    {
+      "word": "Venire", "translation": "To come",
+      "conjugations": {
+        "Present (Presente)": { "io": "vengo", "tu": "vieni", "lui/lei": "viene", "noi": "veniamo", "voi": "venite", "loro": "vengono" },
+        "Past (Passato Prossimo)": { "io": "sono venuto/a", "tu": "sei venuto/a", "lui/lei": "è venuto/a", "noi": "siamo venuti/e", "voi": "siete venuti/e", "loro": "sono venuti/e" },
+        "Future (Futuro)": { "io": "verrò", "tu": "verrai", "lui/lei": "verrà", "noi": "verremo", "voi": "verrete", "loro": "verranno" }
+      },
+      "examples": [
+        { "it": "Vieni alla festa con me?", "en": "Are you coming to the party with me? (Present)" },
+        { "it": "Perché non sei venuto?", "en": "Why did you not come? (Past)" },
+        { "it": "Verrò a trovarti la prossima settimana.", "en": "I will come to visit you next week. (Future)" }
+      ]
+    },
+    {
+      "word": "Dire", "translation": "To say / To tell",
+      "conjugations": {
+        "Present (Presente)": { "io": "dico", "tu": "dici", "lui/lei": "dice", "noi": "diciamo", "voi": "dite", "loro": "dicono" },
+        "Past (Passato Prossimo)": { "io": "ho detto", "tu": "hai detto", "lui/lei": "ha detto", "noi": "abbiamo detto", "voi": "avete detto", "loro": "hanno detto" },
+        "Future (Futuro)": { "io": "dirò", "tu": "dirai", "lui/lei": "dirà", "noi": "diremo", "voi": "direte", "loro": "diranno" }
+      },
+      "examples": [
+        { "it": "Cosa dici?", "en": "What are you saying? (Present)" },
+        { "it": "Mi ha detto la verità.", "en": "He/She told me the truth. (Past)" },
+        { "it": "Non dirò niente.", "en": "I will not say anything. (Future)" }
+      ]
+    },
+    {
+      "word": "Prendere", "translation": "To take",
+      "conjugations": {
+        "Present (Presente)": { "io": "prendo", "tu": "prendi", "lui/lei": "prende", "noi": "prendiamo", "voi": "prendete", "loro": "prendono" },
+        "Past (Passato Prossimo)": { "io": "ho preso", "tu": "hai preso", "lui/lei": "ha preso", "noi": "abbiamo preso", "voi": "avete preso", "loro": "hanno preso" },
+        "Future (Futuro)": { "io": "prenderò", "tu": "prenderai", "lui/lei": "prenderà", "noi": "prenderemo", "voi": "prenderete", "loro": "prenderanno" }
+      },
+      "examples": [
+        { "it": "Prendo un caffè.", "en": "I'll have a coffee. (Present)" },
+        { "it": "Hai preso le chiavi?", "en": "Did you take the keys? (Past)" },
+        { "it": "Prenderemo il treno delle otto.", "en": "We will take the eight o'clock train. (Future)" }
+      ]
+    },
+    {
+      "word": "Uscire", "translation": "To go out / To exit",
+      "conjugations": {
+        "Present (Presente)": { "io": "esco", "tu": "esci", "lui/lei": "esce", "noi": "usciamo", "voi": "uscite", "loro": "escono" },
+        "Past (Passato Prossimo)": { "io": "sono uscito/a", "tu": "sei uscito/a", "lui/lei": "è uscito/a", "noi": "siamo usciti/e", "voi": "siete usciti/e", "loro": "sono usciti/e" },
+        "Future (Futuro)": { "io": "uscirò", "tu": "uscirai", "lui/lei": "uscirà", "noi": "usciremo", "voi": "uscirete", "loro": "usciranno" }
+      },
+      "examples": [
+        { "it": "Esco con i miei amici stasera.", "en": "I'm going out with my friends tonight. (Present)" },
+        { "it": "È uscito un momento fa.", "en": "He went out a moment ago. (Past)" },
+        { "it": "Usciremo più tardi.", "en": "We will go out later. (Future)" }
+      ]
+    },
+    {
+      "word": "Capire", "translation": "To understand",
+      "conjugations": {
+        "Present (Presente)": { "io": "capisco", "tu": "capisci", "lui/lei": "capisce", "noi": "capiamo", "voi": "capite", "loro": "capiscono" },
+        "Past (Passato Prossimo)": { "io": "ho capito", "tu": "hai capito", "lui/lei": "ha capito", "noi": "abbiamo capito", "voi": "avete capito", "loro": "hanno capito" },
+        "Future (Futuro)": { "io": "capirò", "tu": "capirai", "lui/lei": "capirà", "noi": "capiremo", "voi": "capirete", "loro": "capiranno" }
+      },
+      "examples": [
+        { "it": "Non capisco la domanda.", "en": "I don't understand the question. (Present)" },
+        { "it": "Finalmente ho capito il problema.", "en": "I finally understood the problem. (Past)" },
+        { "it": "Un giorno capirai.", "en": "One day you will understand. (Future)" }
+      ]
+    },
+    {
+      "word": "Lavorare", "translation": "To work",
+      "conjugations": {
+        "Present (Presente)": { "io": "lavoro", "tu": "lavori", "lui/lei": "lavora", "noi": "lavoriamo", "voi": "lavorate", "loro": "lavorano" },
+        "Past (Passato Prossimo)": { "io": "ho lavorato", "tu": "hai lavorato", "lui/lei": "ha lavorato", "noi": "abbiamo lavorato", "voi": "avete lavorato", "loro": "hanno lavorato" },
+        "Future (Futuro)": { "io": "lavorerò", "tu": "lavorerai", "lui/lei": "lavorerà", "noi": "lavoreremo", "voi": "lavorerete", "loro": "lavoreranno" }
+      },
+      "examples": [
+        { "it": "Lavoro in un ufficio.", "en": "I work in an office. (Present)" },
+        { "it": "Ho lavorato molto questa settimana.", "en": "I worked a lot this week. (Past)" },
+        { "it": "Da grande lavorerò come medico.", "en": "When I grow up, I will work as a doctor. (Future)" }
+      ]
+    },
+    {
+      "word": "Mettere", "translation": "To put",
+      "conjugations": {
+        "Present (Presente)": { "io": "metto", "tu": "metti", "lui/lei": "mette", "noi": "mettiamo", "voi": "mettete", "loro": "mettono" },
+        "Past (Passato Prossimo)": { "io": "ho messo", "tu": "hai messo", "lui/lei": "ha messo", "noi": "abbiamo messo", "voi": "avete messo", "loro": "hanno messo" },
+        "Future (Futuro)": { "io": "metterò", "tu": "metterai", "lui/lei": "metterà", "noi": "metteremo", "voi": "metterete", "loro": "metteranno" }
+      },
+      "examples": [
+        { "it": "Dove metto i libri?", "en": "Where do I put the books? (Present)" },
+        { "it": "Ho messo le chiavi sul tavolo.", "en": "I put the keys on the table. (Past)" },
+        { "it": "Metterò la giacca.", "en": "I will put on the jacket. (Future)" }
+      ]
+    },
+    {
+      "word": "Trovare", "translation": "To find",
+      "conjugations": {
+        "Present (Presente)": { "io": "trovo", "tu": "trovi", "lui/lei": "trova", "noi": "troviamo", "voi": "trovate", "loro": "trovano" },
+        "Past (Passato Prossimo)": { "io": "ho trovato", "tu": "hai trovato", "lui/lei": "ha trovato", "noi": "abbiamo trovato", "voi": "avete trovato", "loro": "hanno trovato" },
+        "Future (Futuro)": { "io": "troverò", "tu": "troverai", "lui/lei": "troverà", "noi": "troveremo", "voi": "troverete", "loro": "troveranno" }
+      },
+      "examples": [
+        { "it": "Non trovo il mio telefono.", "en": "I can't find my phone. (Present)" },
+        { "it": "Finalmente ho trovato una soluzione.", "en": "I finally found a solution. (Past)" },
+        { "it": "Troveremo un modo.", "en": "We will find a way. (Future)" }
+      ]
+    },
+    {
+      "word": "Sentire", "translation": "To hear / to feel",
+      "conjugations": {
+        "Present (Presente)": { "io": "sento", "tu": "senti", "lui/lei": "sente", "noi": "sentiamo", "voi": "sentite", "loro": "sentono" },
+        "Past (Passato Prossimo)": { "io": "ho sentito", "tu": "hai sentito", "lui/lei": "ha sentito", "noi": "abbiamo sentito", "voi": "avete sentito", "loro": "hanno sentito" },
+        "Future (Futuro)": { "io": "sentirò", "tu": "sentirai", "lui/lei": "sentirà", "noi": "sentiremo", "voi": "sentirete", "loro": "sentiranno" }
+      },
+      "examples": [
+        { "it": "Sento la musica.", "en": "I hear the music. (Present)" },
+        { "it": "Ho sentito un rumore strano.", "en": "I heard a strange noise. (Past)" },
+        { "it": "Sentirai la differenza.", "en": "You will feel the difference. (Future)" }
+      ]
+    },
+    {
+      "word": "Lasciare", "translation": "To leave",
+      "conjugations": {
+        "Present (Presente)": { "io": "lascio", "tu": "lasci", "lui/lei": "lascia", "noi": "lasciamo", "voi": "lasciate", "loro": "lasciano" },
+        "Past (Passato Prossimo)": { "io": "ho lasciato", "tu": "hai lasciato", "lui/lei": "ha lasciato", "noi": "abbiamo lasciato", "voi": "avete lasciato", "loro": "hanno lasciato" },
+        "Future (Futuro)": { "io": "lascerò", "tu": "lascerai", "lui/lei": "lascerà", "noi": "lasceremo", "voi": "lascerete", "loro": "lasceranno" }
+      },
+      "examples": [
+        { "it": "Lascio le chiavi sul tavolo.", "en": "I leave the keys on the table. (Present)" },
+        { "it": "Mi ha lasciato un messaggio.", "en": "He/She left me a message. (Past)" },
+        { "it": "Non ti lascerò mai solo.", "en": "I will never leave you alone. (Future)" }
+      ]
+    },
+    {
+      "word": "Guardare", "translation": "To watch / to look at",
+      "conjugations": {
+        "Present (Presente)": { "io": "guardo", "tu": "guardi", "lui/lei": "guarda", "noi": "guardiamo", "voi": "guardate", "loro": "guardano" },
+        "Past (Passato Prossimo)": { "io": "ho guardato", "tu": "hai guardato", "lui/lei": "ha guardato", "noi": "abbiamo guardato", "voi": "avete guardato", "loro": "hanno guardato" },
+        "Future (Futuro)": { "io": "guarderò", "tu": "guarderai", "lui/lei": "guarderà", "noi": "guarderemo", "voi": "guarderete", "loro": "guarderanno" }
+      },
+      "examples": [
+        { "it": "Guardo un film interessante.", "en": "I am watching an interesting film. (Present)" },
+        { "it": "Hai guardato le notizie oggi?", "en": "Have you watched the news today? (Past)" },
+        { "it": "Stasera guarderemo le stelle.", "en": "Tonight we will watch the stars. (Future)" }
+      ]
+    },
+    {
+      "word": "Pensare", "translation": "To think",
+      "conjugations": {
+        "Present (Presente)": { "io": "penso", "tu": "pensi", "lui/lei": "pensa", "noi": "pensiamo", "voi": "pensate", "loro": "pensano" },
+        "Past (Passato Prossimo)": { "io": "ho pensato", "tu": "hai pensato", "lui/lei": "ha pensato", "noi": "abbiamo pensato", "voi": "avete pensato", "loro": "hanno pensato" },
+        "Future (Futuro)": { "io": "penserò", "tu": "penserai", "lui/lei": "penserà", "noi": "penseremo", "voi": "penserete", "loro": "penseranno" }
+      },
+      "examples": [
+        { "it": "Penso di sì.", "en": "I think so. (Present)" },
+        { "it": "Ho pensato molto a te.", "en": "I thought about you a lot. (Past)" },
+        { "it": "Ci penserò domani.", "en": "I will think about it tomorrow. (Future)" }
+      ]
+    },
+    {
+      "word": "Passare", "translation": "To pass / to spend (time)",
+      "conjugations": {
+        "Present (Presente)": { "io": "passo", "tu": "passi", "lui/lei": "passa", "noi": "passiamo", "voi": "passate", "loro": "passano" },
+        "Past (Passato Prossimo)": { "io": "ho passato", "tu": "hai passato", "lui/lei": "ha passato", "noi": "abbiamo passato", "voi": "avete passato", "loro": "hanno passato" },
+        "Future (Futuro)": { "io": "passerò", "tu": "passerai", "lui/lei": "passerà", "noi": "passeremo", "voi": "passerete", "loro": "passeranno" }
+      },
+      "examples": [
+        { "it": "Passo a prenderti alle otto.", "en": "I'll pass by to pick you up at eight. (Present)" },
+        { "it": "Ho passato un bel weekend.", "en": "I had a nice weekend. (Past)" },
+        { "it": "Passeremo le vacanze al mare.", "en": "We will spend the holidays at the sea. (Future)" }
+      ]
+    },
+    {
+      "word": "Credere", "translation": "To believe",
+      "conjugations": {
+        "Present (Presente)": { "io": "credo", "tu": "credi", "lui/lei": "crede", "noi": "crediamo", "voi": "credete", "loro": "credono" },
+        "Past (Passato Prossimo)": { "io": "ho creduto", "tu": "hai creduto", "lui/lei": "ha creduto", "noi": "abbiamo creduto", "voi": "avete creduto", "loro": "hanno creduto" },
+        "Future (Futuro)": { "io": "crederò", "tu": "crederai", "lui/lei": "crederà", "noi": "crederemo", "voi": "crederete", "loro": "crederanno" }
+      },
+      "examples": [
+        { "it": "Non ti credo.", "en": "I don't believe you. (Present)" },
+        { "it": "Ho creduto a ogni sua parola.", "en": "I believed his every word. (Past)" },
+        { "it": "Nessuno ti crederà.", "en": "Nobody will believe you. (Future)" }
+      ]
+    },
+    {
+      "word": "Portare", "translation": "To bring / to wear",
+      "conjugations": {
+        "Present (Presente)": { "io": "porto", "tu": "porti", "lui/lei": "porta", "noi": "portiamo", "voi": "portate", "loro": "portano" },
+        "Past (Passato Prossimo)": { "io": "ho portato", "tu": "hai portato", "lui/lei": "ha portato", "noi": "abbiamo portato", "voi": "avete portato", "loro": "hanno portato" },
+        "Future (Futuro)": { "io": "porterò", "tu": "porterai", "lui/lei": "porterà", "noi": "porteremo", "voi": "porterete", "loro": "porteranno" }
+      },
+      "examples": [
+        { "it": "Porto sempre una giacca.", "en": "I always wear a jacket. (Present)" },
+        { "it": "Ti ho portato un regalo.", "en": "I brought you a gift. (Past)" },
+        { "it": "Porterò il vino alla cena.", "en": "I will bring the wine to the dinner. (Future)" }
+      ]
+    },
+    {
+      "word": "Chiamare", "translation": "To call",
+      "conjugations": {
+        "Present (Presente)": { "io": "chiamo", "tu": "chiami", "lui/lei": "chiama", "noi": "chiamiamo", "voi": "chiamate", "loro": "chiamano" },
+        "Past (Passato Prossimo)": { "io": "ho chiamato", "tu": "hai chiamato", "lui/lei": "ha chiamato", "noi": "abbiamo chiamato", "voi": "avete chiamato", "loro": "hanno chiamato" },
+        "Future (Futuro)": { "io": "chiamerò", "tu": "chiamerai", "lui/lei": "chiamerà", "noi": "chiameremo", "voi": "chiamerete", "loro": "chiameranno" }
+      },
+      "examples": [
+        { "it": "Come ti chiami?", "en": "What is your name? (Present)" },
+        { "it": "Mi ha chiamato ieri.", "en": "He/She called me yesterday. (Past)" },
+        { "it": "Ti chiamerò più tardi.", "en": "I will call you later. (Future)" }
+      ]
+    },
+    {
+      "word": "Stare", "translation": "To stay / to be",
+      "conjugations": {
+        "Present (Presente)": { "io": "sto", "tu": "stai", "lui/lei": "sta", "noi": "stiamo", "voi": "state", "loro": "stanno" },
+        "Past (Passato Prossimo)": { "io": "sono stato/a", "tu": "sei stato/a", "lui/lei": "è stato/a", "noi": "siamo stati/e", "voi": "siete stati/e", "loro": "sono stati/e" },
+        "Future (Futuro)": { "io": "starò", "tu": "starai", "lui/lei": "starà", "noi": "staremo", "voi": "starete", "loro": "staranno" }
+      },
+      "examples": [
+        { "it": "Come stai?", "en": "How are you? (Present)" },
+        { "it": "Sono stato a casa tutto il giorno.", "en": "I stayed at home all day. (Past)" },
+        { "it": "Starò qui ad aspettarti.", "en": "I will stay here and wait for you. (Future)" }
+      ]
+    },
+    {
+      "word": "Vivere", "translation": "To live",
+      "conjugations": {
+        "Present (Presente)": { "io": "vivo", "tu": "vivi", "lui/lei": "vive", "noi": "viviamo", "voi": "vivete", "loro": "vivono" },
+        "Past (Passato Prossimo)": { "io": "ho vissuto", "tu": "hai vissuto", "lui/lei": "ha vissuto", "noi": "abbiamo vissuto", "voi": "avete vissuto", "loro": "hanno vissuto" },
+        "Future (Futuro)": { "io": "vivrò", "tu": "vivrai", "lui/lei": "vivrà", "noi": "vivremo", "voi": "vivrete", "loro": "vivranno" }
+      },
+      "examples": [
+        { "it": "Vivo a Roma.", "en": "I live in Rome. (Present)" },
+        { "it": "Ho vissuto un'esperienza indimenticabile.", "en": "I lived an unforgettable experience. (Past)" },
+        { "it": "Vivremo felici e contenti.", "en": "We will live happily ever after. (Future)" }
+      ]
+    },
+    {
+      "word": "Scrivere", "translation": "To write",
+      "conjugations": {
+        "Present (Presente)": { "io": "scrivo", "tu": "scrivi", "lui/lei": "scrive", "noi": "scriviamo", "voi": "scrivete", "loro": "scrivono" },
+        "Past (Passato Prossimo)": { "io": "ho scritto", "tu": "hai scritto", "lui/lei": "ha scritto", "noi": "abbiamo scritto", "voi": "avete scritto", "loro": "hanno scritto" },
+        "Future (Futuro)": { "io": "scriverò", "tu": "scriverai", "lui/lei": "scriverà", "noi": "scriveremo", "voi": "scriverete", "loro": "scriveranno" }
+      },
+      "examples": [
+        { "it": "Scrivo una lettera.", "en": "I am writing a letter. (Present)" },
+        { "it": "Ho scritto un'email.", "en": "I wrote an email. (Past)" },
+        { "it": "Ti scriverò una cartolina.", "en": "I will write you a postcard. (Future)" }
+      ]
+    },
+    {
+      "word": "Leggere", "translation": "To read",
+      "conjugations": {
+        "Present (Presente)": { "io": "leggo", "tu": "leggi", "lui/lei": "legge", "noi": "leggiamo", "voi": "leggete", "loro": "leggono" },
+        "Past (Passato Prossimo)": { "io": "ho letto", "tu": "hai letto", "lui/lei": "ha letto", "noi": "abbiamo letto", "voi": "avete letto", "loro": "hanno letto" },
+        "Future (Futuro)": { "io": "leggerò", "tu": "leggerai", "lui/lei": "leggerà", "noi": "leggeremo", "voi": "leggerete", "loro": "leggeranno" }
+      },
+      "examples": [
+        { "it": "Leggo un libro.", "en": "I am reading a book. (Present)" },
+        { "it": "Hai letto il giornale oggi?", "en": "Have you read the newspaper today? (Past)" },
+        { "it": "Leggerò quel romanzo.", "en": "I will read that novel. (Future)" }
+      ]
+    }
+  ],
+  "nouns": [
+    {
+      "word": "Casa", "translation": "House / Home",
+      "examples": [
+        { "it": "La mia casa è grande.", "en": "My house is big." },
+        { "it": "Torno a casa alle sei.", "en": "I return home at six." }
+      ]
+    },
+    {
+      "word": "Libro", "translation": "Book",
+      "examples": [
+        { "it": "Questo è un libro interessante.", "en": "This is an interesting book." },
+        { "it": "Voglio leggere un libro.", "en": "I want to read a book." }
+      ]
+    },
+    {
+      "word": "Amico / Amica", "translation": "Friend",
+      "examples": [
+        { "it": "Marco è il mio migliore amico.", "en": "Marco is my best friend (male)." },
+        { "it": "Parlo con la mia amica.", "en": "I'm talking with my friend (female)." }
+      ]
+    }
+  ],
+  "adjectives": [
+    {
+      "word": "Buono / Buona", "translation": "Good",
+      "examples": [
+        { "it": "Questo caffè è molto buono.", "en": "This coffee is very good." },
+        { "it": "La pizza è buona.", "en": "The pizza is good." }
+      ]
+    },
+    {
+      "word": "Grande", "translation": "Big / Large",
+      "examples": [
+        { "it": "Roma è una città grande.", "en": "Rome is a big city." },
+        { "it": "Ho un grande problema.", "en": "I have a big problem." }
+      ]
+    },
+    {
+      "word": "Bello / Bella", "translation": "Beautiful / Nice",
+      "examples": [
+        { "it": "Hai un cane molto bello.", "en": "You have a very beautiful dog." },
+        { "it": "Questa è una bella giornata.", "en": "This is a beautiful day." }
+      ]
+    },
+    {
+      "word": "Piccolo / Piccola", "translation": "Small",
+      "examples": [
+        { "it": "Abitiamo in un piccolo appartamento.", "en": "We live in a small apartment." },
+        { "it": "Vorrei una porzione piccola.", "en": "I would like a small portion." }
+      ]
+    },
+    {
+      "word": "Nuovo / Nuova", "translation": "New",
+      "examples": [
+        { "it": "Ho comprato un nuovo telefono.", "en": "I bought a new phone." },
+        { "it": "La sua macchina è nuova.", "en": "His/Her car is new." }
+      ]
+    },
+    {
+      "word": "Vecchio / Vecchia", "translation": "Old",
+      "examples": [
+        { "it": "Questo è un libro molto vecchio.", "en": "This is a very old book." },
+        { "it": "Mio nonno è vecchio, ma molto attivo.", "en": "My grandfather is old, but very active." }
+      ]
+    },
+    {
+      "word": "Felice", "translation": "Happy",
+      "examples": [
+        { "it": "Sono felice di vederti.", "en": "I am happy to see you." },
+        { "it": "Sembra una persona felice.", "en": "He/She seems like a happy person." }
+      ]
+    },
+    {
+      "word": "Triste", "translation": "Sad",
+      "examples": [
+        { "it": "Perché sei triste oggi?", "en": "Why are you sad today?" },
+        { "it": "È una storia molto triste.", "en": "It is a very sad story." }
+      ]
+    }
+  ],
+  "conjunctions": [
+    {
+      "word": "E", "translation": "And",
+      "examples": [
+        { "it": "Io bevo caffè e leggo un libro.", "en": "I drink coffee and read a book." },
+        { "it": "Pane e burro.", "en": "Bread and butter." }
+      ]
+    },
+    {
+      "word": "Ma", "translation": "But",
+      "examples": [
+        { "it": "Vorrei uscire, ma piove.", "en": "I would like to go out, but it's raining." },
+        { "it": "È difficile, ma interessante.", "en": "It's difficult, but interesting." }
+      ]
+    },
+    {
+      "word": "Perché", "translation": "Because / Why",
+      "examples": [
+        { "it": "Studio italiano perché amo l'Italia.", "en": "I study Italian because I love Italy." },
+        { "it": "Perché sei triste?", "en": "Why are you sad?" }
+      ]
+    },
+    {
+      "word": "O / Oppure", "translation": "Or",
+      "examples": [
+        { "it": "Vuoi il tè o il caffè?", "en": "Do you want tea or coffee?" },
+        { "it": "Possiamo andare al cinema oppure restare a casa.", "en": "We can go to the cinema or stay at home." }
+      ]
+    },
+    {
+      "word": "Quando", "translation": "When",
+      "examples": [
+        { "it": "Ti chiamo quando finisco di lavorare.", "en": "I'll call you when I finish work." },
+        { "it": "Quando sei arrivato?", "en": "When did you arrive?" }
+      ]
+    },
+    {
+      "word": "Se", "translation": "If",
+      "examples": [
+        { "it": "Se hai tempo, possiamo vederci.", "en": "If you have time, we can meet." },
+        { "it": "Non so se lui verrà alla festa.", "en": "I don't know if he will come to the party." }
+      ]
+    },
+    {
+      "word": "Mentre", "translation": "While",
+      "examples": [
+        { "it": "Ascolto la musica mentre cucino.", "en": "I listen to music while I cook." },
+        { "it": "Lui è uscito mentre io dormivo.", "en": "He went out while I was sleeping." }
+      ]
+    },
+    {
+      "word": "Quindi", "translation": "Therefore / So",
+      "examples": [
+        { "it": "Piove, quindi prendo l'ombrello.", "en": "It's raining, so I'm taking the umbrella." },
+        { "it": "Ho studiato, quindi sono pronto per l'esame.", "en": "I studied, therefore I am ready for the exam." }
+      ]
+    }
+  ],
+  "daily_conversation": [
+    {
+      "category": "Greetings & Farewells",
+      "phrases": [
+        { "it": "Ciao!", "en": "Hello! / Hi! / Bye!" },
+        { "it": "Buongiorno.", "en": "Good morning." },
+        { "it": "Buonasera.", "en": "Good evening." },
+        { "it": "Buonanotte.", "en": "Good night." },
+        { "it": "Arrivederci.", "en": "Goodbye." },
+        { "it": "A dopo.", "en": "See you later." }
+      ]
+    },
+    {
+      "category": "Polite Expressions",
+      "phrases": [
+        { "it": "Per favore.", "en": "Please." },
+        { "it": "Grazie.", "en": "Thank you." },
+        { "it": "Prego.", "en": "You're welcome." },
+        { "it": "Mi scusi.", "en": "Excuse me (formal)." },
+        { "it": "Scusa.", "en": "Excuse me (informal)." },
+        { "it": "Piacere di conoscerla.", "en": "Nice to meet you (formal)." }
+      ]
+    },
+    {
+      "category": "Basic Questions",
+      "phrases": [
+        { "it": "Come sta?", "en": "How are you? (formal)" },
+        { "it": "Come stai?", "en": "How are you? (informal)" },
+        { "it": "Sto bene, grazie. E lei/tu?", "en": "I'm fine, thank you. And you?" },
+        { "it": "Come si chiama?", "en": "What is your name? (formal)" },
+        { "it": "Mi chiamo...", "en": "My name is..." },
+        { "it": "Di dove sei?", "en": "Where are you from?" }
+      ]
+    },
+    {
+      "category": "At a Restaurant",
+      "phrases": [
+        { "it": "Vorrei prenotare un tavolo per due persone.", "en": "I would like to reserve a table for two people." },
+        { "it": "Il conto, per favore.", "en": "The bill, please." },
+        { "it": "Posso avere il menù?", "en": "Can I have the menu?" },
+        { "it": "Cosa mi consiglia?", "en": "What do you recommend?" }
+      ]
+    },
+    {
+      "category": "Shopping",
+      "phrases": [
+        { "it": "Quanto costa?", "en": "How much does it cost?" },
+        { "it": "Posso pagare con la carta?", "en": "Can I pay by card?" },
+        { "it": "Sto solo guardando, grazie.", "en": "I'm just looking, thank you." },
+        { "it": "Lo prendo.", "en": "I'll take it." }
+      ]
+    },
+    {
+      "category": "Asking for Directions",
+      "phrases": [
+        { "it": "Mi scusi, dov'è la stazione?", "en": "Excuse me, where is the station?" },
+        { "it": "È lontano da qui?", "en": "Is it far from here?" },
+        { "it": "Sempre dritto.", "en": "Straight ahead." },
+        { "it": "Giri a destra / a sinistra.", "en": "Turn right / left." }
+      ]
+    },
+    {
+      "category": "Making Small Talk",
+      "phrases": [
+        { "it": "Che bella giornata!", "en": "What a beautiful day!" },
+        { "it": "Di cosa ti occupi?", "en": "What do you do for a living?" },
+        { "it": "Sei mai stato/a in Italia?", "en": "Have you ever been to Italy?" },
+        { "it": "Mi piace molto la cucina italiana.", "en": "I really like Italian food." }
+      ]
+    }
+  ]
+}
