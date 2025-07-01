@@ -19,7 +19,7 @@
 
     <div class="container mx-auto p-4 md:p-8 max-w-6xl">
         <div class="mb-6">
-            <a href="./main.html" class="inline-block bg-white py-2 px-4 border border-slate-300 rounded-lg shadow-sm text-teal-700 hover:bg-teal-50 font-semibold transition-colors">
+            <a href="./index.html" class="inline-block bg-white py-2 px-4 border border-slate-300 rounded-lg shadow-sm text-teal-700 hover:bg-teal-50 font-semibold transition-colors">
                 &larr; Back to Main Menu
             </a>
         </div>
@@ -36,6 +36,7 @@
                     <button data-tab="nouns" class="tab-button py-4 px-2 text-lg font-semibold">Nouns (Nomi)</button>
                     <button data-tab="adjectives" class="tab-button py-4 px-2 text-lg font-semibold">Adjectives (Aggettivi)</button>
                     <button data-tab="conjunctions" class="tab-button py-4 px-2 text-lg font-semibold">Conjunctions (Congiunzioni)</button>
+                    <button data-tab="daily_conversation" class="tab-button py-4 px-2 text-lg font-semibold">Daily Conversation (Conversazione Quotidiana)</button>
                 </nav>
             </div>
             
@@ -608,6 +609,77 @@
                         { it: "Ho studiato, quindi sono pronto per l'esame.", en: 'I studied, therefore I am ready for the exam.' }
                     ]
                 }
+            ],
+            daily_conversation: [
+                {
+                    category: 'Greetings & Farewells',
+                    phrases: [
+                        { it: 'Ciao!', en: 'Hello! / Hi! / Bye!' },
+                        { it: 'Buongiorno.', en: 'Good morning.' },
+                        { it: 'Buonasera.', en: 'Good evening.' },
+                        { it: 'Buonanotte.', en: 'Good night.' },
+                        { it: 'Arrivederci.', en: 'Goodbye.' },
+                        { it: 'A dopo.', en: 'See you later.' }
+                    ]
+                },
+                {
+                    category: 'Polite Expressions',
+                    phrases: [
+                        { it: 'Per favore.', en: 'Please.' },
+                        { it: 'Grazie.', en: 'Thank you.' },
+                        { it: 'Prego.', en: "You're welcome." },
+                        { it: 'Mi scusi.', en: 'Excuse me (formal).' },
+                        { it: 'Scusa.', en: 'Excuse me (informal).' },
+                        { it: 'Piacere di conoscerla.', en: 'Nice to meet you (formal).' }
+                    ]
+                },
+                {
+                    category: 'Basic Questions',
+                    phrases: [
+                        { it: 'Come sta?', en: 'How are you? (formal)' },
+                        { it: 'Come stai?', en: 'How are you? (informal)' },
+                        { it: 'Sto bene, grazie. E lei/tu?', en: "I'm fine, thank you. And you?" },
+                        { it: 'Come si chiama?', en: 'What is your name? (formal)' },
+                        { it: 'Mi chiamo...', en: 'My name is...' },
+                        { it: 'Di dove sei?', en: 'Where are you from?' }
+                    ]
+                },
+                {
+                    category: 'At a Restaurant',
+                    phrases: [
+                        { it: 'Vorrei prenotare un tavolo per due persone.', en: 'I would like to reserve a table for two people.' },
+                        { it: 'Il conto, per favore.', en: 'The bill, please.' },
+                        { it: 'Posso avere il menù?', en: 'Can I have the menu?' },
+                        { it: "Cosa mi consiglia?", en: 'What do you recommend?' }
+                    ]
+                },
+                {
+                    category: 'Shopping',
+                    phrases: [
+                        { it: 'Quanto costa?', en: 'How much does it cost?' },
+                        { it: 'Posso pagare con la carta?', en: 'Can I pay by card?' },
+                        { it: 'Sto solo guardando, grazie.', en: "I'm just looking, thank you." },
+                        { it: 'Lo prendo.', en: "I'll take it." }
+                    ]
+                },
+                {
+                    category: 'Asking for Directions',
+                    phrases: [
+                        { it: 'Mi scusi, dov\'è la stazione?', en: 'Excuse me, where is the station?' },
+                        { it: 'È lontano da qui?', en: 'Is it far from here?' },
+                        { it: 'Sempre dritto.', en: 'Straight ahead.' },
+                        { it: 'Giri a destra / a sinistra.', en: 'Turn right / left.' }
+                    ]
+                },
+                {
+                    category: 'Making Small Talk',
+                    phrases: [
+                        { it: 'Che bella giornata!', en: 'What a beautiful day!' },
+                        { it: 'Di cosa ti occupi?', en: 'What do you do for a living?' },
+                        { it: 'Sei mai stato/a in Italia?', en: 'Have you ever been to Italy?' },
+                        { it: 'Mi piace molto la cucina italiana.', en: 'I really like Italian food.' }
+                    ]
+                }
             ]
         };
 
@@ -618,56 +690,74 @@
             const items = italianData[tab] || [];
             let html = '<div class="space-y-8">';
 
-            items.forEach(item => {
-                html += `
-                    <div class="bg-white p-6 rounded-lg shadow-md">
-                        <h3 class="text-2xl font-bold text-slate-800">${item.word} <span class="text-lg font-normal text-slate-500">- ${item.translation}</span></h3>
-                `;
-
-                // Render conjugations if they exist
-                if (item.conjugations) {
-                    html += '<div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6">';
-                    for (const tense in item.conjugations) {
-                        html += `
-                            <div>
-                                <h4 class="text-md font-semibold text-teal-700 mb-2">${tense}:</h4>
-                                <div class="overflow-x-auto">
-                                    <table class="w-full text-left border-collapse">
-                                        <thead class="bg-slate-100">
-                                            <tr>
-                                                <th class="p-2 border border-slate-200 text-sm">Person</th>
-                                                <th class="p-2 border border-slate-200 text-sm">Conjugation</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            ${Object.entries(item.conjugations[tense]).map(([person, verb]) => `
-                                                <tr>
-                                                    <td class="p-2 border border-slate-200 font-mono text-sm">${person}</td>
-                                                    <td class="p-2 border border-slate-200 font-semibold text-sm">${verb}</td>
-                                                </tr>
-                                            `).join('')}
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        `;
-                    }
-                    html += '</div>';
-                }
-
-                // Render examples
-                html += '<div class="mt-6">';
-                html += '<h4 class="text-md font-semibold text-teal-700 mb-2">Example Sentences:</h4>';
-                item.examples.forEach(ex => {
+            if (tab === 'daily_conversation') {
+                items.forEach(categoryItem => {
                     html += `
-                        <blockquote class="border-l-4 border-teal-500 bg-teal-50 p-3 my-2">
-                            <p class="text-lg text-slate-700"><em>${ex.it}</em></p>
-                            <p class="text-sm text-slate-500 mt-1">${ex.en}</p>
-                        </blockquote>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-4">${categoryItem.category}</h3>
                     `;
+                    categoryItem.phrases.forEach(phrase => {
+                        html += `
+                            <blockquote class="border-l-4 border-teal-500 bg-teal-50 p-3 my-2">
+                                <p class="text-lg text-slate-700"><em>${phrase.it}</em></p>
+                                <p class="text-sm text-slate-500 mt-1">${phrase.en}</p>
+                            </blockquote>
+                        `;
+                    });
+                    html += `</div>`;
                 });
-                html += '</div></div>';
-            });
+            } else {
+                items.forEach(item => {
+                    html += `
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold text-slate-800">${item.word} <span class="text-lg font-normal text-slate-500">- ${item.translation}</span></h3>
+                    `;
+
+                    // Render conjugations if they exist
+                    if (item.conjugations) {
+                        html += '<div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6">';
+                        for (const tense in item.conjugations) {
+                            html += `
+                                <div>
+                                    <h4 class="text-md font-semibold text-teal-700 mb-2">${tense}:</h4>
+                                    <div class="overflow-x-auto">
+                                        <table class="w-full text-left border-collapse">
+                                            <thead class="bg-slate-100">
+                                                <tr>
+                                                    <th class="p-2 border border-slate-200 text-sm">Person</th>
+                                                    <th class="p-2 border border-slate-200 text-sm">Conjugation</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                ${Object.entries(item.conjugations[tense]).map(([person, verb]) => `
+                                                    <tr>
+                                                        <td class="p-2 border border-slate-200 font-mono text-sm">${person}</td>
+                                                        <td class="p-2 border border-slate-200 font-semibold text-sm">${verb}</td>
+                                                    </tr>
+                                                `).join('')}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                        html += '</div>';
+                    }
+
+                    // Render examples
+                    html += '<div class="mt-6">';
+                    html += '<h4 class="text-md font-semibold text-teal-700 mb-2">Example Sentences:</h4>';
+                    item.examples.forEach(ex => {
+                        html += `
+                            <blockquote class="border-l-4 border-teal-500 bg-teal-50 p-3 my-2">
+                                <p class="text-lg text-slate-700"><em>${ex.it}</em></p>
+                                <p class="text-sm text-slate-500 mt-1">${ex.en}</p>
+                            </blockquote>
+                        `;
+                    });
+                    html += '</div></div>';
+                });
+            }
 
             html += '</div>';
             contentEl.innerHTML = html;
