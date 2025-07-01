@@ -552,7 +552,8 @@
         { "it": "Buonasera.", "en": "Good evening." },
         { "it": "Buonanotte.", "en": "Good night." },
         { "it": "Arrivederci.", "en": "Goodbye." },
-        { "it": "A dopo.", "en": "See you later." }
+        { "it": "A dopo.", "en": "See you later." },
+        { "it": "A presto.", "en": "See you soon." }
       ]
     },
     {
