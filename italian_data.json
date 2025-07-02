@@ -942,6 +942,100 @@
                 "en": "They decide on Puglia. They start searching online for places to visit: Alberobello with its trulli, the beaches of Salento, and the city of Lecce. They are very excited and can't wait to leave."
             }
         ]
+    },
+    {
+        "title": "Il Segreto della Nonna",
+        "translation": "Grandmother's Secret",
+        "story": [
+            {
+                "it": "Luca amava passare le domeniche a casa di sua nonna. La casa profumava sempre di sugo di pomodoro e di dolci appena sfornati. Quel giorno, la nonna stava preparando qualcosa di speciale, ma non voleva dire cosa fosse.",
+                "en": "Luca loved spending Sundays at his grandmother's house. The house always smelled of tomato sauce and freshly baked sweets. That day, his grandmother was preparing something special, but she didn't want to say what it was."
+            },
+            {
+                "it": "\"È un segreto, un'antica ricetta di famiglia,\" diceva con un'occhiata misteriosa. Luca era molto curioso. Cercava di sbirciare in cucina, ma la nonna lo mandava sempre via con una risata.",
+                "en": "\"It's a secret, an old family recipe,\" she would say with a mysterious look. Luca was very curious. He tried to peek into the kitchen, but his grandmother always sent him away with a laugh."
+            },
+            {
+                "it": "A pranzo, la nonna portò in tavola un grande piatto di gnocchi fatti a mano, con un sugo ricco e saporito. Erano i migliori che Luca avesse mai mangiato. \"Allora, qual è il segreto?\" chiese Luca.",
+                "en": "At lunch, his grandmother brought a large plate of handmade gnocchi to the table, with a rich and flavorful sauce. They were the best Luca had ever eaten. \"So, what's the secret?\" Luca asked."
+            },
+            {
+                "it": "La nonna sorrise. \"Il segreto non è negli ingredienti, caro mio. Il segreto è cucinare con amore.\" Luca capì che quella era la lezione più importante di tutte.",
+                "en": "His grandmother smiled. \"The secret is not in the ingredients, my dear. The secret is to cook with love.\" Luca understood that this was the most important lesson of all."
+            }
+        ]
+    },
+    {
+        "title": "La Partita di Calcio",
+        "translation": "The Football Match",
+        "story": [
+            {
+                "it": "Era sabato pomeriggio e c'era una grande partita di calcio. Paolo e i suoi amici si sono incontrati al bar per guardarla insieme. L'atmosfera era elettrica; tutti indossavano le maglie della loro squadra del cuore.",
+                "en": "It was Saturday afternoon and there was a big football match. Paolo and his friends met at the bar to watch it together. The atmosphere was electric; everyone was wearing the jerseys of their favorite team."
+            },
+            {
+                "it": "La partita iniziò e la tensione era alta. La squadra di Paolo stava giocando bene, ma non riusciva a segnare. Ogni volta che la palla si avvicinava alla porta, tutti gridavano e si alzavano in piedi.",
+                "en": "The match began and the tension was high. Paolo's team was playing well, but couldn't manage to score. Every time the ball got close to the goal, everyone shouted and stood up."
+            },
+            {
+                "it": "Finalmente, all'ultimo minuto, l'attaccante segnò un gol incredibile. Il bar esplose in un boato di gioia. La gente si abbracciava, cantava e festeggiava. Paolo sentiva una forte emozione, una felicità condivisa con tutti.",
+                "en": "Finally, in the last minute, the striker scored an incredible goal. The bar erupted in a roar of joy. People hugged each other, sang, and celebrated. Paolo felt a strong emotion, a happiness shared with everyone."
+            }
+        ]
+    },
+    {
+        "title": "Un Artista di Strada",
+        "translation": "A Street Artist",
+        "story": [
+            {
+                "it": "Mentre camminava per le strade di Roma, Elena vide un artista di strada. Era un uomo anziano con una lunga barba bianca e occhi gentili. Stava dipingendo un ritratto di una giovane coppia.",
+                "en": "While walking through the streets of Rome, Elena saw a street artist. He was an old man with a long white beard and kind eyes. He was painting a portrait of a young couple."
+            },
+            {
+                "it": "Elena si fermò ad osservarlo. Le sue mani si muovevano velocemente e con sicurezza sulla tela, usando carboncino e pastelli. In pochi minuti, il disegno prese vita. Era incredibilmente realistico.",
+                "en": "Elena stopped to watch him. His hands moved quickly and confidently on the canvas, using charcoal and pastels. In just a few minutes, the drawing came to life. It was incredibly realistic."
+            },
+            {
+                "it": "Quando l'artista finì, la coppia era meravigliata. Hanno pagato l'artista e lo hanno ringraziato calorosamente. Elena pensò che l'arte non si trova solo nei musei, ma anche negli angoli inaspettati della città.",
+                "en": "When the artist finished, the couple was amazed. They paid the artist and thanked him warmly. Elena thought that art is found not only in museums, but also in the unexpected corners of the city."
+            }
+        ]
+    },
+    {
+        "title": "La Lettera Dimenticata",
+        "translation": "The Forgotten Letter",
+        "story": [
+            {
+                "it": "Pulendo la vecchia soffitta, Sofia trovò una piccola scatola di legno. Dentro, c'erano vecchie fotografie e una lettera ingiallita dal tempo. La calligrafia era elegante e antica.",
+                "en": "While cleaning the old attic, Sofia found a small wooden box. Inside, there were old photographs and a letter yellowed by time. The handwriting was elegant and old-fashioned."
+            },
+            {
+                "it": "La lettera era di suo bisnonno, scritta a sua bisnonna durante la guerra. Parlava di amore, di speranza e della voglia di tornare a casa. Le parole erano piene di emozione e sentimento.",
+                "en": "The letter was from her great-grandfather, written to her great-grandmother during the war. It spoke of love, of hope, and of the desire to return home. The words were full of emotion and feeling."
+            },
+            {
+                "it": "Sofia lesse la lettera più volte, sentendosi connessa a una parte della sua storia familiare che non conosceva. Decise di incorniciare la lettera e di metterla in salotto, come un prezioso ricordo del passato.",
+                "en": "Sofia read the letter several times, feeling connected to a part of her family history she didn't know. She decided to frame the letter and put it in the living room, as a precious memory of the past."
+            }
+        ]
+    },
+    {
+        "title": "Il Primo Giorno di Neve",
+        "translation": "The First Day of Snow",
+        "story": [
+            {
+                "it": "Una mattina, i bambini si svegliarono e videro qualcosa di magico fuori dalla finestra. Durante la notte, aveva nevicato. Tutto era coperto da una soffice coperta bianca.",
+                "en": "One morning, the children woke up and saw something magical outside the window. During the night, it had snowed. Everything was covered by a soft white blanket."
+            },
+            {
+                "it": "Subito dopo colazione, corsero fuori a giocare. Costruirono un grande pupazzo di neve, con una carota per il naso e dei sassi per gli occhi. Poi iniziarono una divertente battaglia a palle di neve.",
+                "en": "Right after breakfast, they ran outside to play. They built a big snowman, with a carrot for a nose and stones for eyes. Then they started a fun snowball fight."
+            },
+            {
+                "it": "Le loro risate riempivano l'aria fredda. Anche se le loro mani e i loro piedi erano gelati, non volevano rientrare. Il primo giorno di neve è sempre speciale, un giorno di pura gioia e divertimento.",
+                "en": "Their laughter filled the cold air. Even though their hands and feet were frozen, they didn't want to go back inside. The first day of snow is always special, a day of pure joy and fun."
+            }
+        ]
     }
   ]
 }
