@@ -37,6 +37,7 @@
                     <button data-tab="adjectives" class="tab-button py-4 px-2 text-lg font-semibold">Adjectives (Aggettivi)</button>
                     <button data-tab="conjunctions" class="tab-button py-4 px-2 text-lg font-semibold">Conjunctions (Congiunzioni)</button>
                     <button data-tab="daily_conversation" class="tab-button py-4 px-2 text-lg font-semibold">Daily Conversation</button>
+                    <button data-tab="short_stories" class="tab-button py-4 px-2 text-lg font-semibold">Short Stories</button>
                 </nav>
             </div>
             
@@ -81,6 +82,23 @@
                     });
                     html += `</div>`;
                 });
+            } else if (tab === 'short_stories') {
+                items.forEach(story => {
+                    html += `
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-1">${story.title}</h3>
+                            <p class="text-lg font-normal text-slate-500 mb-4">- ${story.translation}</p>
+                    `;
+                    story.story.forEach(paragraph => {
+                        html += `
+                            <div class="my-4">
+                                <p class="text-lg text-slate-700 italic leading-relaxed">${paragraph.it}</p>
+                                <p class="text-sm text-slate-500 mt-1">${paragraph.en}</p>
+                            </div>
+                        `;
+                    });
+                    html += `</div>`;
+                });
             } else {
                 items.forEach(item => {
                     html += `
@@ -88,7 +106,7 @@
                             <h3 class="text-2xl font-bold text-slate-800">${item.word} <span class="text-lg font-normal text-slate-500">- ${item.translation}</span></h3>
                     `;
 
-                    // Render conjugations if they exist
+                    // Render conjugations
                     if (item.conjugations) {
                         html += '<div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6">';
                         for (const tense in item.conjugations) {

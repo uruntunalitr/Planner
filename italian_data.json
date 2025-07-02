@@ -425,6 +425,126 @@
         { "it": "Marco è il mio migliore amico.", "en": "Marco is my best friend (male)." },
         { "it": "Parlo con la mia amica.", "en": "I'm talking with my friend (female)." }
       ]
+    },
+    {
+        "word": "Giorno",
+        "translation": "Day",
+        "examples": [
+            { "it": "Che bella giornata oggi!", "en": "What a beautiful day today!" },
+            { "it": "Ci vediamo un altro giorno.", "en": "We'll see each other another day." }
+        ]
+    },
+    {
+        "word": "Notte",
+        "translation": "Night",
+        "examples": [
+            { "it": "Di notte, la città è silenziosa.", "en": "At night, the city is silent." },
+            { "it": "Buona notte e sogni d'oro.", "en": "Good night and sweet dreams." }
+        ]
+    },
+    {
+        "word": "Uomo",
+        "translation": "Man",
+        "examples": [
+            { "it": "Quell'uomo è mio padre.", "en": "That man is my father." },
+            { "it": "Un uomo saggio una volta disse...", "en": "A wise man once said..." }
+        ]
+    },
+    {
+        "word": "Donna",
+        "translation": "Woman",
+        "examples": [
+            { "it": "La donna con il vestito rosso è mia sorella.", "en": "The woman in the red dress is my sister." },
+            { "it": "È una donna di grande talento.", "en": "She is a very talented woman." }
+        ]
+    },
+    {
+        "word": "Lavoro",
+        "translation": "Work / Job",
+        "examples": [
+            { "it": "Vado al lavoro alle otto.", "en": "I go to work at eight." },
+            { "it": "Ho trovato un nuovo lavoro.", "en": "I found a new job." }
+        ]
+    },
+    {
+        "word": "Acqua",
+        "translation": "Water",
+        "examples": [
+            { "it": "Posso avere un bicchiere d'acqua, per favore?", "en": "Can I have a glass of water, please?" },
+            { "it": "L'acqua del mare è fredda.", "en": "The sea water is cold." }
+        ]
+    },
+    {
+        "word": "Cibo",
+        "translation": "Food",
+        "examples": [
+            { "it": "Il cibo italiano è famoso in tutto il mondo.", "en": "Italian food is famous all over the world." },
+            { "it": "Qual è il tuo cibo preferito?", "en": "What is your favorite food?" }
+        ]
+    },
+    {
+        "word": "Vino",
+        "translation": "Wine",
+        "examples": [
+            { "it": "Vorrei un bicchiere di vino rosso.", "en": "I would like a glass of red wine." },
+            { "it": "Questo vino è della regione Toscana.", "en": "This wine is from the Tuscany region." }
+        ]
+    },
+    {
+        "word": "Strada",
+        "translation": "Street / Road",
+        "examples": [
+            { "it": "Attraversa la strada con attenzione.", "en": "Cross the street carefully." },
+            { "it": "Questa strada porta alla stazione.", "en": "This road leads to the station." }
+        ]
+    },
+    {
+        "word": "Città",
+        "translation": "City",
+        "examples": [
+            { "it": "Firenze è una bellissima città.", "en": "Florence is a beautiful city." },
+            { "it": "Preferisci vivere in città o in campagna?", "en": "Do you prefer to live in the city or in the countryside?" }
+        ]
+    },
+    {
+        "word": "Tempo",
+        "translation": "Time / Weather",
+        "examples": [
+            { "it": "Non ho molto tempo.", "en": "I don't have much time." },
+            { "it": "Che tempo fa oggi?", "en": "What's the weather like today?" }
+        ]
+    },
+    {
+        "word": "Mondo",
+        "translation": "World",
+        "examples": [
+            { "it": "Voglio viaggiare per il mondo.", "en": "I want to travel the world." },
+            { "it": "Il mondo è un posto grande.", "en": "The world is a big place." }
+        ]
+    },
+    {
+        "word": "Vita",
+        "translation": "Life",
+        "examples": [
+            { "it": "La vita è bella.", "en": "Life is beautiful." },
+            { "it": "Questa è la decisione più importante della mia vita.", "en": "This is the most important decision of my life." }
+        ]
+    },
+    {
+        "word": "Anno",
+        "translation": "Year",
+        "examples": [
+            { "it": "L'anno prossimo andrò in vacanza.", "en": "Next year I will go on vacation." },
+            { "it": "Ci sono dodici mesi in un anno.", "en": "There are twelve months in a year." }
+        ]
+    },
+    {
+        "word": "Mano",
+        "translation": "Hand",
+        "examples": [
+            { "it": "Dammi la mano.", "en": "Give me your hand." },
+            { "it": "Ha scritto una nota a mano.", "en": "He wrote a note by hand." }
+        ]
     }
   ],
   "adjectives": [
@@ -693,6 +813,44 @@
         { "it": "Di cosa ti occupi?", "en": "What do you do for a living?" },
         { "it": "Sei mai stato/a in Italia?", "en": "Have you ever been to Italy?" },
         { "it": "Mi piace molto la cucina italiana.", "en": "I really like Italian food." }
+      ]
+    }
+  ],
+  "short_stories": [
+    {
+      "title": "Una Mattina al Mercato",
+      "translation": "A Morning at the Market",
+      "story": [
+        {
+          "it": "Marco si sveglia presto. Oggi è sabato, il giorno del mercato. Ama andare al mercato con sua nonna.",
+          "en": "Marco wakes up early. Today is Saturday, market day. He loves going to the market with his grandmother."
+        },
+        {
+          "it": "Prendono la borsa grande e camminano verso la piazza. La piazza è piena di colori e suoni. Ci sono bancarelle con frutta, verdura, formaggio e pane fresco.",
+          "en": "They take the big bag and walk towards the square. The square is full of colors and sounds. There are stalls with fruit, vegetables, cheese, and fresh bread."
+        },
+        {
+          "it": "La nonna compra i pomodori rossi e il basilico profumato. \"Oggi facciamo la pasta con il pesto,\" dice con un sorriso.",
+          "en": "\"Today we are making pasta with pesto,\" she says with a smile."
+        }
+      ]
+    },
+    {
+      "title": "Un Viaggio in Treno",
+      "translation": "A Train Journey",
+      "story": [
+        {
+          "it": "Giulia guarda fuori dal finestrino del treno. Il paesaggio è bellissimo. Vede colline verdi e piccoli paesi.",
+          "en": "Giulia looks out of the train window. The landscape is beautiful. She sees green hills and small towns."
+        },
+        {
+          "it": "Il treno è veloce e silenzioso. Lei legge un libro e ascolta la musica. Il tempo passa velocemente.",
+          "en": "The train is fast and quiet. She reads a book and listens to music. Time passes quickly."
+        },
+        {
+          "it": "Finalmente, il treno arriva a destinazione. Giulia è felice di essere arrivata a Firenze.",
+          "en": "Finally, the train arrives at its destination. Giulia is happy to have arrived in Florence."
+        }
       ]
     }
   ]
