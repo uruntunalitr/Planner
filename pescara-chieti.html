@@ -34,6 +34,7 @@
             <div class="mb-8 border-b border-slate-200">
                 <nav class="flex flex-wrap justify-center -mb-px space-x-6">
                     <button data-tab="bus" class="tab-button active py-4 px-2 text-lg font-semibold">Otobüs</button>
+                    <button data-tab="train" class="tab-button py-4 px-2 text-lg font-semibold">Tren</button>
                     <button data-tab="locations" class="tab-button py-4 px-2 text-lg font-semibold">Önemli Yerler</button>
                 </nav>
             </div>
@@ -51,33 +52,80 @@
 
     <script>
         const locations = [
-            { name: 'Pescara Centrale Tren İstasyonu', type: 'Ulaşım', embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.962045651008!2d14.20590346962662!3d42.46804403264154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331a67048697dcf%3A0x88830e391add2407!2sPescara%20Centrale!5e0!3m2!1str!2sit!4v1751373785681!5m2!1str!2sit' },
-            { name: 'Pescara Terminal Bus', type: 'Ulaşım', embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.0285213363!2d14.2022533154469!3d42.46334497917997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331a67027865c23%3A0x83beee096af90792!2sTerminal%20Bus!5e0!3m2!1str!2sit' },
-            { name: 'Chieti Tren İstasyonu', type: 'Ulaşım', embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.327351470915!2d14.135724676602551!3d42.35686243530287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331adc91c06bc2b%3A0x5fa2e2b6a1a56b30!2sChieti!5e0!3m2!1str!2sit!4v1751374383422!5m2!1str!2sit' },
-            { name: 'Università "G. d\'Annunzio" - Pescara Kampüsü', type: 'Eğitim', embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2475.485928200533!2d14.224750716199678!3d42.45187821828915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331a74d5acdfbdf%3A0x4389fccd7763c874!2sUniversit%C3%A0%20degli%20studi%20%22G.d&#39;Annunzio%22%20sede%20Pescara!5e0!3m2!1str!2sit!4v1751374183376!5m2!1str!2sit' },
-            { name: 'Università "G. d\'Annunzio" - Chieti Kampüsü', type: 'Eğitim', embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.818381006485!2d14.145993791340658!3d42.36770971072167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331ac2c83d2a581%3A0x977b2ecbe971b3e1!2sDipartimento%20di%20Farmacia%2C%20Universit%C3%A0%20D&#39;Annunzio!5e0!3m2!1str!2sit!4v1751374276681!5m2!1str!2sit' },
+            { name: 'Pescara Centrale Tren İstasyonu', category: 'Ulaşım Durakları', embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3499.962045651008!2d14.20590346962662!3d42.46804403264154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331a67048697dcf%3A0x88830e391add2407!2sPescara%20Centrale!5e0!3m2!1str!2sit!4v1751373785681!5m2!1str!2sit' },
+            { name: 'Pescara Otobüs İstasyonu', category: 'Ulaşım Durakları', embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2943.0285213363!2d14.2022533154469!3d42.46334497917997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331a67027865c23%3A0x83beee096af90792!2sTerminal%20Bus!5e0!3m2!1str!2sit' },
+            { name: 'Chieti Tren İstasyonu', category: 'Ulaşım Durakları', embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.327351470915!2d14.135724676602551!3d42.35686243530287!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331adc91c06bc2b%3A0x5fa2e2b6a1a56b30!2sChieti!5e0!3m2!1str!2sit!4v1751374383422!5m2!1str!2sit' },
+            { name: 'Università "G. d\'Annunzio" - Pescara Kampüsü', category: 'Eğitim Kurumları', embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2475.485928200533!2d14.224750716199678!3d42.45187821828915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331a74d5acdfbdf%3A0x4389fccd7763c874!2sUniversit%C3%A0%20degli%20studi%20%22G.d&#39;Annunzio%22%20sede%20Pescara!5e0!3m2!1str!2sit!4v1751374183376!5m2!1str!2sit' },
+            { name: 'Università "G. d\'Annunzio" - Chieti Kampüsü', category: 'Eğitim Kurumları', embedSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2947.818381006485!2d14.145993791340658!3d42.36770971072167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1331ac2c83d2a581%3A0x977b2ecbe971b3e1!2sDipartimento%20di%20Farmacia%2C%20Universit%C3%A0%20D&#39;Annunzio!5e0!3m2!1str!2sit!4v1751374276681!5m2!1str!2sit' },
         ];
         
         const busRoutes = [
-            { name: 'Pescara - Chieti (Tüm Seferler)', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/pescara-chieti.pdf' },
-            { name: 'Hat 1/', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/1Slash.pdf' }, 
-            { name: 'Hat 1', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/1.pdf' },
-            { name: 'Hat 3/', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/3Slash.pdf' },
-            { name: 'Hat 2', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/2.pdf' },
-            { name: 'Hat 3', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/3.pdf' },
-            { name: 'Hat 4', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/4.pdf' }
+            { name: 'Pescara - Chieti (Tüm Seferler)', category: 'Chieti-Pescara Hatları', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/pescara-chieti.pdf' },
+            { name: '(CH) Hat 1/', category: 'Chieti Hatları', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/1Slash.pdf' }, 
+            { name: '(CH) Hat 1', category: 'Chieti Hatları', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/1.pdf' },
+            { name: '(CH) Hat 3/', category: 'Chieti Hatları', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/3Slash.pdf' },
+            { name: '(CH) Hat 2', category: 'Chieti Hatları', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/2.pdf' },
+            { name: '(CH) Hat 3', category: 'Chieti Hatları', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/3.pdf' },
+            { name: '(CH) Hat 4', category: 'Chieti Hatları', pdfSrc: 'https://uruntunalitr.github.io/Planner/Bus_TimeTables/4.pdf' },
+            { name: '(PE) Hat 38 (Şehir İçi)', category: 'Pescara Hatları', pdfSrc: '#' },
+            { name: '(PE) Hat 21 (Sahil Hattı)', category: 'Pescara Hatları', pdfSrc: '#' }
         ];
+
+        function groupByCategory(items) {
+            return items.reduce((acc, item) => {
+                (acc[item.category] = acc[item.category] || []).push(item);
+                return acc;
+            }, {});
+        }
 
         const busContent = `
             <div class="bg-white p-6 rounded-lg shadow-md">
                 <h3 class="text-2xl font-bold mb-4 text-slate-800">🚌 Otobüs Hatları (TUA)</h3>
                 <p class="text-sm text-slate-500 mb-4">İlgili sefer saatlerini yeni sekmede açmak için bir hat seçin.</p>
-                <div id="bus-route-list" class="space-y-3">
-                    ${busRoutes.map(route => `
-                        <a href="${route.pdfSrc}" target="_blank" rel="noopener noreferrer" class="route-link block p-4 border rounded-lg cursor-pointer transition-colors font-semibold text-teal-800">
-                            ${route.name}
-                        </a>
+                <div id="bus-groups" class="space-y-4">
+                    ${Object.entries(groupByCategory(busRoutes)).map(([category, routes]) => `
+                        <div class="border rounded-lg">
+                            <button class="group-box-toggle w-full p-4 text-left bg-slate-100 hover:bg-slate-200 font-bold text-lg text-teal-800 transition-colors flex justify-between items-center">
+                                ${category}
+                                <span class="transform transition-transform duration-300">▼</span>
+                            </button>
+                            <div class="group-box-content p-4 space-y-3">
+                                ${routes.map(route => `
+                                    <a href="${route.pdfSrc}" target="_blank" rel="noopener noreferrer" class="route-link block p-3 border rounded-md cursor-pointer transition-colors font-semibold text-slate-700">
+                                        ${route.name}
+                                    </a>
+                                `).join('')}
+                            </div>
+                        </div>
                     `).join('')}
+                </div>
+                <a href="https://www.tuabruzzo.it/" target="_blank" rel="noopener noreferrer" class="mt-6 inline-block bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                    Resmi TUA Sitesini Ziyaret Et
+                </a>
+            </div>
+        `;
+
+        const trainContent = `
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4 text-slate-800">🚆 Tren (Trenitalia)</h3>
+                <p class="text-sm text-slate-500 mb-4">Pescara Centrale - Chieti arası tahmini seferler.</p>
+                 <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-slate-100">
+                            <tr>
+                                <th class="p-3">Kalkış (Pescara)</th>
+                                <th class="p-3">Varış (Chieti)</th>
+                                <th class="p-3">Notlar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b"><td class="p-3 font-semibold">07:50</td><td class="p-3">08:05</td><td class="p-3">Regionale</td></tr>
+                            <tr class="border-b"><td class="p-3 font-semibold">09:02</td><td class="p-3">09:17</td><td class="p-3">Regionale</td></tr>
+                            <tr class="border-b"><td class="p-3 font-semibold">12:25</td><td class="p-3">12:40</td><td class="p-3">Regionale</td></tr>
+                            <tr class="border-b"><td class="p-3 font-semibold">16:10</td><td class="p-3">16:25</td><td class="p-3">Regionale</td></tr>
+                            <tr><td class="p-3 font-semibold">18:55</td><td class="p-3">19:10</td><td class="p-3">Regionale</td></tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         `;
@@ -91,11 +139,20 @@
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-md">
                     <h3 class="text-2xl font-bold mb-4 text-slate-800">📍 Konumlar</h3>
-                    <div id="location-list" class="space-y-2">
-                        ${locations.map(loc => `
-                            <div data-embed-src="${loc.embedSrc}" class="location-item p-3 rounded-md cursor-pointer transition-colors">
-                                <p class="font-semibold text-teal-800">${loc.name}</p>
-                                <p class="text-sm text-slate-500">${loc.type}</p>
+                    <div id="location-groups" class="space-y-4">
+                        ${Object.entries(groupByCategory(locations)).map(([category, locs]) => `
+                            <div class="border rounded-lg">
+                                <button class="group-box-toggle w-full p-4 text-left bg-slate-100 hover:bg-slate-200 font-bold text-lg text-teal-800 transition-colors flex justify-between items-center">
+                                    ${category}
+                                    <span class="transform transition-transform duration-300">▼</span>
+                                </button>
+                                <div class="group-box-content p-2 space-y-2">
+                                    ${locs.map(loc => `
+                                        <div data-embed-src="${loc.embedSrc}" class="location-item p-3 rounded-md cursor-pointer transition-colors">
+                                            <p class="font-semibold text-slate-700">${loc.name}</p>
+                                        </div>
+                                    `).join('')}
+                                </div>
                             </div>
                         `).join('')}
                     </div>
@@ -109,10 +166,13 @@
             const contentEl = document.getElementById('tab-content');
             if (tab === 'bus') {
                 contentEl.innerHTML = busContent;
+            } else if (tab === 'train') {
+                contentEl.innerHTML = trainContent;
             } else if (tab === 'locations') {
                 contentEl.innerHTML = locationsContent;
                 addLocationListeners();
             }
+            addGroupBoxListeners();
         }
 
         function handleTabClick(e) {
@@ -125,11 +185,28 @@
             }
         }
         
+        function addGroupBoxListeners() {
+            const toggles = document.querySelectorAll('.group-box-toggle');
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const arrow = toggle.querySelector('span');
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        arrow.style.transform = 'rotate(0deg)';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        arrow.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+        }
+
         function addLocationListeners() {
-            const locationList = document.getElementById('location-list');
+            const locationGroups = document.getElementById('location-groups');
             const mapIframe = document.getElementById('map-iframe');
             
-            locationList.addEventListener('click', (e) => {
+            locationGroups.addEventListener('click', (e) => {
                 const target = e.target.closest('.location-item');
                 if (target) {
                     const embedSrc = target.dataset.embedSrc;
