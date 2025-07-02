@@ -852,6 +852,96 @@
           "en": "Finally, the train arrives at its destination. Giulia is happy to have arrived in Florence."
         }
       ]
+    },
+    {
+        "title": "Il Caffè Perfetto",
+        "translation": "The Perfect Coffee",
+        "story": [
+            {
+                "it": "Ogni mattina, Leonardo va allo stesso bar vicino al suo ufficio. Conosce bene il barista, si chiama Massimo. \"Buongiorno, Massimo! Un cappuccino, per favore,\" dice Leonardo.",
+                "en": "Every morning, Leonardo goes to the same café near his office. He knows the barista well, his name is Massimo. \"Good morning, Massimo! A cappuccino, please,\" says Leonardo."
+            },
+            {
+                "it": "Massimo sorride e inizia a preparare il caffè. Usa la grande macchina per l'espresso, che fa un rumore forte e familiare. Il profumo del caffè riempie l'aria.",
+                "en": "Massimo smiles and starts to prepare the coffee. He uses the large espresso machine, which makes a loud and familiar noise. The aroma of coffee fills the air."
+            },
+            {
+                "it": "Pochi minuti dopo, il cappuccino è pronto. La schiuma è densa e cremosa, con un disegno a forma di cuore. Per Leonardo, è il modo perfetto per iniziare la giornata di lavoro.",
+                "en": "A few minutes later, the cappuccino is ready. The foam is thick and creamy, with a heart-shaped design. For Leonardo, it is the perfect way to start the workday."
+            }
+        ]
+    },
+    {
+        "title": "Una Passeggiata sulla Spiaggia",
+        "translation": "A Walk on the Beach",
+        "story": [
+            {
+                "it": "È una domenica pomeriggio di luglio. Il sole è caldo, quindi Sofia e Davide decidono di andare al mare. La spiaggia di Pescara è lunga e sabbiosa.",
+                "en": "It is a Sunday afternoon in July. The sun is hot, so Sofia and Davide decide to go to the sea. The beach in Pescara is long and sandy."
+            },
+            {
+                "it": "Lasciano le scarpe sulla sabbia e camminano vicino all'acqua. Le onde sono piccole e gentili. Raccolgono alcune conchiglie colorate.",
+                "en": "They leave their shoes on the sand and walk near the water. The waves are small and gentle. They collect some colorful shells."
+            },
+            {
+                "it": "Si siedono a guardare il tramonto. Il cielo diventa arancione e rosa. \"È così tranquillo qui,\" dice Sofia. Davide è d'accordo. È un momento semplice, ma molto felice.",
+                "en": "They sit down to watch the sunset. The sky turns orange and pink. \"It's so peaceful here,\" says Sofia. Davide agrees. It is a simple, but very happy moment."
+            }
+        ]
+    },
+    {
+        "title": "Perso nel Centro Storico",
+        "translation": "Lost in the Old Town",
+        "story": [
+            {
+                "it": "Tom è un turista a Chieti. Sta esplorando il centro storico, con le sue strade strette e antiche. Ad un certo punto, si rende conto di non sapere dove si trova.",
+                "en": "Tom is a tourist in Chieti. He is exploring the old town, with its narrow and ancient streets. At a certain point, he realizes he does not know where he is."
+            },
+            {
+                "it": "Guarda la sua mappa, ma non aiuta molto. Vede una signora anziana seduta su una panchina e decide di chiedere aiuto. \"Mi scusi, signora. Cerco il Duomo.\"",
+                "en": "He looks at his map, but it does not help much. He sees an elderly lady sitting on a bench and decides to ask for help. \"Excuse me, madam. I am looking for the Cathedral.\""
+            },
+            {
+                "it": "La signora sorride gentilmente. \"Non è lontano,\" dice. \"Deve andare sempre dritto, poi girare a sinistra alla seconda strada. Lo vedrà sulla sua destra.\" Tom la ringrazia molto e segue le sue indicazioni.",
+                "en": "The lady smiles kindly. \"It is not far,\" she says. \"You must go straight ahead, then turn left at the second street. You will see it on your right.\" Tom thanks her very much and follows her directions."
+            }
+        ]
+    },
+    {
+        "title": "La Cena in Famiglia",
+        "translation": "The Family Dinner",
+        "story": [
+            {
+                "it": "A casa di Isabella, c'è una grande cena. Tutta la famiglia è riunita: genitori, zii, cugini. La tavola è piena di cibo delizioso preparato dalla nonna.",
+                "en": "At Isabella's house, there is a big dinner. The whole family is gathered: parents, uncles, aunts, cousins. The table is full of delicious food prepared by the grandmother."
+            },
+            {
+                "it": "Ci sono lasagne, polpette al sugo e una grande insalata. Tutti parlano, ridono e raccontano storie. Il rumore è forte ma felice. È una tipica cena di famiglia italiana.",
+                "en": "There are lasagna, meatballs in sauce, and a large salad. Everyone talks, laughs, and tells stories. The noise is loud but happy. It is a typical Italian family dinner."
+            },
+            {
+                "it": "Dopo cena, mangiano il tiramisù e bevono il caffè. Isabella si sente fortunata ad avere una famiglia così unita e calorosa. Questi momenti sono i più importanti per lei.",
+                "en": "After dinner, they eat tiramisu and drink coffee. Isabella feels lucky to have such a close and warm family. These moments are the most important for her."
+            }
+        ]
+    },
+    {
+        "title": "Pianificare un Viaggio",
+        "translation": "Planning a Trip",
+        "story": [
+            {
+                "it": "Chiara e Matteo stanno pianificando un viaggio per il prossimo mese. Aprono una grande mappa dell'Italia sul tavolo del soggiorno.",
+                "en": "Chiara and Matteo are planning a trip for next month. They open a large map of Italy on the living room table."
+            },
+            {
+                "it": "\"Dove vogliamo andare?\" chiede Matteo. Chiara punta il dito sul sud. \"Forse in Sicilia? O in Puglia? Voglio vedere il mare e mangiare buon pesce.\"",
+                "en": "\"Where do we want to go?\" asks Matteo. Chiara points her finger to the south. \"Maybe to Sicily? Or Puglia? I want to see the sea and eat good fish.\""
+            },
+            {
+                "it": "Decidono per la Puglia. Iniziano a cercare online i posti da visitare: Alberobello con i suoi trulli, le spiagge del Salento e la città di Lecce. Sono molto emozionati e non vedono l'ora di partire.",
+                "en": "They decide on Puglia. They start searching online for places to visit: Alberobello with its trulli, the beaches of Salento, and the city of Lecce. They are very excited and can't wait to leave."
+            }
+        ]
     }
   ]
 }
