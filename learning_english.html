@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Learning Planner (B1-B2)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tab-button { transition: all 0.2s ease; border-bottom: 4px solid transparent; }
+        .tab-button.active { border-color: #0d9488; color: #0d9488; }
+        .tab-button:not(.active):hover { border-color: #ccfbf1; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-6xl">
+        <div class="mb-6">
+            <a href="./index.html" class="inline-block bg-white py-2 px-4 border border-slate-300 rounded-lg shadow-sm text-teal-700 hover:bg-teal-50 font-semibold transition-colors">
+                &larr; Back to Main Menu
+            </a>
+        </div>
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-teal-700">English Learning Planner</h1>
+            <p class="mt-2 text-slate-600">Practical resources for B1-B2 level learners.</p>
+        </header>
+
+        <main>
+            <!-- Tabs -->
+            <div class="mb-8 border-b border-slate-200">
+                <nav class="flex flex-wrap justify-center -mb-px sm:space-x-6">
+                    <button data-tab="phrasal_verbs" class="tab-button active py-4 px-2 text-lg font-semibold">Phrasal Verbs</button>
+                    <button data-tab="idioms" class="tab-button py-4 px-2 text-lg font-semibold">Idioms & Expressions</button>
+                    <button data-tab="confusing_words" class="tab-button py-4 px-2 text-lg font-semibold">Confusing Words</button>
+                    <button data-tab="conjunctions" class="tab-button py-4 px-2 text-lg font-semibold">Conjunctions</button>
+                    <button data-tab="topic_vocab" class="tab-button py-4 px-2 text-lg font-semibold">Topic Vocabulary</button>
+                </nav>
+            </div>
+            
+            <!-- Tab Content -->
+            <div id="tab-content">
+                <p class="text-center text-slate-500">Loading data...</p>
+            </div>
+        </main>
+        
+        <footer class="text-center mt-12 text-slate-500">
+           <p>Consistency is the key to mastering a language.</p>
+        </footer>
+    </div>
+
+    <script>
+        let englishData = {};
+        let activeTab = 'phrasal_verbs';
+
+        function renderContent(tab) {
+            const contentEl = document.getElementById('tab-content');
+            const items = englishData[tab] || [];
+            if (items.length === 0) {
+                contentEl.innerHTML = `<p class="text-center text-slate-500">No data available for this section.</p>`;
+                return;
+            }
+            
+            let html = '<div class="space-y-8">';
+
+            if (tab === 'phrasal_verbs' || tab === 'idioms') {
+                items.forEach(item => {
+                    const title = item.verb || item.idiom;
+                    html += `
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold text-slate-800">${title}</h3>
+                            <p class="text-teal-700 font-semibold italic mt-1">${item.meaning}</p>
+                            <div class="mt-4 space-y-2">
+                                ${item.examples.map(ex => `
+                                    <blockquote class="border-l-4 border-slate-200 pl-4">
+                                        <p class="text-slate-600">“${ex}”</p>
+                                    </blockquote>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                });
+            } else if (tab === 'confusing_words') {
+                items.forEach(item => {
+                    html += `
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold text-slate-800">${item.pair}</h3>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                ${item.explanation.map(exp => `
+                                    <div>
+                                        <h4 class="font-bold text-lg text-teal-700">${exp.word}</h4>
+                                        <p class="italic text-slate-500">${exp.meaning}</p>
+                                        <blockquote class="mt-2 border-l-4 border-slate-200 pl-4">
+                                            <p class="text-slate-600">“${exp.example}”</p>
+                                        </blockquote>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                });
+            } else if (tab === 'topic_vocab') {
+                 items.forEach(topicItem => {
+                    html += `
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-4">${topicItem.topic}</h3>
+                            <div class="space-y-4">
+                                ${topicItem.words.map(wordItem => `
+                                    <div>
+                                        <h4 class="font-semibold text-lg text-teal-700">${wordItem.word}</h4>
+                                        <p class="italic text-slate-500">${wordItem.meaning}</p>
+                                        <blockquote class="mt-2 border-l-4 border-slate-200 pl-4">
+                                            <p class="text-slate-600">“${wordItem.example}”</p>
+                                        </blockquote>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                });
+            } else if (tab === 'conjunctions') {
+                items.forEach(group => {
+                    html += `
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-4">${group.group}</h3>
+                            <div class="space-y-6">
+                                ${group.items.map(item => `
+                                    <div>
+                                        <h4 class="font-semibold text-lg text-teal-700">${item.word}</h4>
+                                        <p class="italic text-slate-500">${item.meaning}</p>
+                                        <blockquote class="mt-2 border-l-4 border-slate-200 pl-4">
+                                            <p class="text-slate-600">“${item.example}”</p>
+                                        </blockquote>
+                                        ${item.trick ? `
+                                            <div class="mt-3 bg-teal-50 border-l-4 border-teal-500 text-teal-800 p-4 rounded-r-lg">
+                                                <p>${item.trick}</p>
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+
+            html += '</div>';
+            contentEl.innerHTML = html;
+        }
+
+        function handleTabClick(e) {
+            const clickedTab = e.target.dataset.tab;
+            if (clickedTab && clickedTab !== activeTab) {
+                document.querySelector('.tab-button.active').classList.remove('active');
+                e.target.classList.add('active');
+                activeTab = clickedTab;
+                renderContent(activeTab);
+            }
+        }
+        
+        async function loadData() {
+            try {
+                const response = await fetch('./english_data.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                englishData = await response.json();
+                renderContent(activeTab);
+            } catch (error) {
+                console.error("Could not load English data:", error);
+                document.getElementById('tab-content').innerHTML = `<p class="text-center text-red-500">Error: Could not load data. Make sure 'english_data.json' is in the same directory.</p>`;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadData();
+            document.querySelector('nav').addEventListener('click', handleTabClick);
+        });
+
+    </script>
+</body>
+</html>

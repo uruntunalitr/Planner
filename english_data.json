@@ -1,0 +1,307 @@
+{
+  "phrasal_verbs": [
+    {
+      "verb": "Look up",
+      "meaning": "To find information in a book, dictionary, or online.",
+      "examples": [
+        "If you don't know the word, you should look it up in the dictionary.",
+        "I'll look up the train times on the internet."
+      ]
+    },
+    {
+      "verb": "Give up",
+      "meaning": "To stop trying to do something.",
+      "examples": [
+        "Even though it was difficult, she didn't give up.",
+        "He gave up smoking last year."
+      ]
+    },
+    {
+      "verb": "Take off",
+      "meaning": "1. To remove clothing. 2. For an airplane to leave the ground.",
+      "examples": [
+        "Please take off your shoes before you enter the house.",
+        "The plane is scheduled to take off at 8:00 AM."
+      ]
+    },
+    {
+      "verb": "Bring up",
+      "meaning": "1. To mention a topic. 2. To raise a child.",
+      "examples": [
+        "Don't bring up politics at the dinner table.",
+        "She was brought up by her grandparents."
+      ]
+    },
+    {
+      "verb": "Call off",
+      "meaning": "To cancel an event.",
+      "examples": [
+        "They had to call off the meeting due to the storm.",
+        "The wedding was called off at the last minute."
+      ]
+    },
+    {
+      "verb": "Come across",
+      "meaning": "To find something or meet someone by chance.",
+      "examples": [
+        "I came across some old photos while cleaning my room.",
+        "She came across as a very confident person."
+      ]
+    },
+    {
+      "verb": "Figure out",
+      "meaning": "To understand or solve something.",
+      "examples": [
+        "I can't figure out how to use this new software.",
+        "We need to figure out a way to reduce costs."
+      ]
+    },
+    {
+      "verb": "Get along",
+      "meaning": "To have a friendly relationship with someone.",
+      "examples": [
+        "Do you get along with your new colleagues?",
+        "My sister and I get along very well."
+      ]
+    },
+    {
+      "verb": "Hold on",
+      "meaning": "To wait for a short time.",
+      "examples": [
+        "Please hold on, I'll be with you in a moment.",
+        "Hold on, I think I forgot my wallet."
+      ]
+    },
+    {
+      "verb": "Run into",
+      "meaning": "To meet someone unexpectedly.",
+      "examples": [
+        "I ran into an old friend at the supermarket yesterday.",
+        "Guess who I ran into at the library!"
+      ]
+    },
+    {
+      "verb": "Set up",
+      "meaning": "To arrange or organize something.",
+      "examples": [
+        "We need to set up a meeting for next week.",
+        "He set up his own company five years ago."
+      ]
+    },
+    {
+      "verb": "Turn down",
+      "meaning": "To refuse an offer or request.",
+      "examples": [
+        "She turned down the job offer because the salary was too low.",
+        "He asked her to the party, but she turned him down."
+      ]
+    }
+  ],
+  "idioms": [
+    {
+      "idiom": "Bite the bullet",
+      "meaning": "To decide to do something difficult or unpleasant that one has been putting off.",
+      "examples": [
+        "I decided to bite the bullet and finally go to the dentist.",
+        "She had to bite the bullet and tell her friend the bad news."
+      ]
+    },
+    {
+      "idiom": "Break the ice",
+      "meaning": "To do or say something to relieve tension or get conversation going.",
+      "examples": [
+        "He told a joke to break the ice at the start of the meeting.",
+        "Playing a small game is a great way to break the ice at a party."
+      ]
+    },
+    {
+      "idiom": "Cost an arm and a leg",
+      "meaning": "To be very expensive.",
+      "examples": [
+        "That new car must have cost him an arm and a leg.",
+        "I'd love to buy that house, but it costs an arm and a leg."
+      ]
+    },
+    {
+      "idiom": "Hit the nail on the head",
+      "meaning": "To describe exactly what is causing a situation or problem.",
+      "examples": [
+        "You hit the nail on the head when you said the company needs better marketing.",
+        "Her analysis of the situation really hit the nail on the head."
+      ]
+    },
+    {
+      "idiom": "Let the cat out of the bag",
+      "meaning": "To reveal a secret carelessly or by mistake.",
+      "examples": [
+        "It was supposed to be a surprise party, but someone let the cat out of the bag.",
+        "I can't believe you let the cat out of the bag about my new job!"
+      ]
+    },
+    {
+      "idiom": "Once in a blue moon",
+      "meaning": "Very rarely.",
+      "examples": [
+        "I only see my cousins from Australia once in a blue moon.",
+        "An opportunity like this comes along once in a blue moon."
+      ]
+    },
+    {
+      "idiom": "See eye to eye",
+      "meaning": "To agree with someone.",
+      "examples": [
+        "My boss and I don't always see eye to eye on project management.",
+        "We finally saw eye to eye on the best way to proceed."
+      ]
+    },
+    {
+      "idiom": "The ball is in your court",
+      "meaning": "It is up to you to make the next decision or step.",
+      "examples": [
+        "I've done everything I can, so now the ball is in your court.",
+        "We've made our offer. The ball is in their court now."
+      ]
+    },
+    {
+      "idiom": "A blessing in disguise",
+      "meaning": "Something that seems bad at first, but results in something good.",
+      "examples": [
+        "Losing that job was a blessing in disguise because it led me to a better career.",
+        "Getting stuck in traffic was a blessing in disguise; it made me miss the accident."
+      ]
+    },
+    {
+      "idiom": "Cut corners",
+      "meaning": "To do something in the easiest, cheapest, or fastest way, often by omitting steps or ignoring quality.",
+      "examples": [
+        "The company went bankrupt because they were always cutting corners on safety.",
+        "If you cut corners on this project, you'll have to do it again later."
+      ]
+    }
+  ],
+  "confusing_words": [
+    {
+      "pair": "Affect vs. Effect",
+      "explanation": [
+        { "word": "Affect (verb)", "meaning": "To influence or cause a change in something.", "example": "The weather will affect our plans for the picnic." },
+        { "word": "Effect (noun)", "meaning": "The result or consequence of an action.", "example": "The special effects in the movie were amazing." }
+      ]
+    },
+    {
+      "pair": "Its vs. It's",
+      "explanation": [
+        { "word": "Its (possessive)", "meaning": "Belonging to \"it\".", "example": "The dog wagged its tail." },
+        { "word": "It's (contraction)", "meaning": "Short for \"it is\" or \"it has\".", "example": "It's a beautiful day outside." }
+      ]
+    },
+    {
+      "pair": "Then vs. Than",
+      "explanation": [
+        { "word": "Then (time/sequence)", "meaning": "Indicates time or the next step in a sequence.", "example": "First I will go to the store, then I will go home." },
+        { "word": "Than (comparison)", "meaning": "Used to make comparisons.", "example": "She is taller than her brother." }
+      ]
+    },
+    {
+      "pair": "Accept vs. Except",
+      "explanation": [
+        { "word": "Accept (verb)", "meaning": "To receive or agree to something.", "example": "I accept your apology." },
+        { "word": "Except (preposition)", "meaning": "Not including; other than.", "example": "Everyone is here except for John." }
+      ]
+    },
+    {
+      "pair": "Lose vs. Loose",
+      "explanation": [
+        { "word": "Lose (verb)", "meaning": "To be unable to find something or to not win.", "example": "Be careful not to lose your keys." },
+        { "word": "Loose (adjective)", "meaning": "Not firmly or tightly fixed in place.", "example": "My shoelaces are loose." }
+      ]
+    },
+    {
+      "pair": "Complement vs. Compliment",
+      "explanation": [
+        { "word": "Complement (verb/noun)", "meaning": "Something that completes or makes something else perfect.", "example": "The wine complements the cheese perfectly." },
+        { "word": "Compliment (verb/noun)", "meaning": "A polite expression of praise or admiration.", "example": "She gave me a nice compliment on my new haircut." }
+      ]
+    },
+    {
+      "pair": "Principal vs. Principle",
+      "explanation": [
+        { "word": "Principal (noun/adjective)", "meaning": "The head of a school; or main/most important.", "example": "The principal reason for our success is teamwork." },
+        { "word": "Principle (noun)", "meaning": "A fundamental truth, rule, or belief.", "example": "It's against my principles to lie." }
+      ]
+    }
+  ],
+  "conjunctions": [
+    {
+      "group": "Coordinating Conjunctions (FANBOYS)",
+      "items": [
+        { "word": "For", "meaning": "Used to explain a reason or purpose (more formal).", "example": "I went to bed, for I was very tired." },
+        { "word": "And", "meaning": "Connects two or more similar ideas.", "example": "He likes tea and coffee." },
+        { "word": "Nor", "meaning": "Connects two negative ideas (used after another negative).", "example": "She doesn't like apples, nor does she like pears." },
+        { "word": "But", "meaning": "Shows a contrast.", "example": "The movie was good, but it was very long." },
+        { "word": "Or", "meaning": "Presents a choice or option.", "example": "Would you like tea or coffee?" },
+        { "word": "Yet", "meaning": "Shows a contrast, similar to 'but' (often implies surprise).", "example": "He is very rich, yet he is not happy." },
+        { "word": "So", "meaning": "Indicates a result or consequence.", "example": "It was raining, so I took an umbrella." }
+      ]
+    },
+    {
+      "group": "Tricky Pairs: Contrast",
+      "items": [
+        { "word": "Although / Even though", "meaning": "Used to show a contrast between two clauses.", "example": "Although it was raining, we went for a walk.", "trick": "<strong>Trick:</strong> Use these with a full clause (subject + verb). <br>Example: '...<strong>it was</strong> raining.'" },
+        { "word": "Despite / In spite of", "meaning": "Used to show a contrast, but with a different grammar structure.", "example": "We went for a walk despite the rain.", "trick": "<strong>Trick:</strong> Use these with a noun or a gerund (-ing form). <br>Example: '...<strong>the rain</strong>' (noun) or '...<strong>raining</strong>' (gerund)." },
+        { "word": "However", "meaning": "Used to introduce a statement that contrasts with or seems to contradict something that has been said previously.", "example": "The hotel is expensive. However, it is very comfortable.", "trick": "<strong>Trick:</strong> Often used at the beginning of a sentence, followed by a comma." },
+        { "word": "Nevertheless", "meaning": "Similar to 'however', but often used for a more surprising or stronger contrast.", "example": "He was very tired; nevertheless, he continued to work.", "trick": "<strong>Trick:</strong> A more formal and emphatic way to say 'however'." }
+      ]
+    },
+    {
+      "group": "Tricky Pairs: Cause & Reason",
+      "items": [
+        { "word": "Because", "meaning": "Gives the direct reason for something.", "example": "I stayed home because I was sick.", "trick": "<strong>Trick:</strong> Answers the question 'Why?'. It's the most common way to give a reason." },
+        { "word": "Because of", "meaning": "Gives the reason, but is followed by a noun.", "example": "I stayed home because of the sickness.", "trick": "<strong>Trick:</strong> 'Because of' + Noun. Use it when you don't need a full clause." },
+        { "word": "Due to", "meaning": "Gives the reason, often in a more formal way. Usually explains the cause of a noun.", "example": "The cancellation was due to bad weather.", "trick": "<strong>Trick:</strong> Often follows the verb 'to be' (is, was, etc.). Think of it as 'caused by'." },
+        { "word": "Since", "meaning": "Gives a reason that is already known to the listener.", "example": "Since you're not busy, could you help me?", "trick": "<strong>Trick:</strong> Can also refer to time ('since 2020'), but for reason, it implies the reason is obvious." }
+      ]
+    }
+  ],
+  "topic_vocab": [
+    {
+      "topic": "Work & Career",
+      "words": [
+        { "word": "Promotion", "meaning": "Advancement to a more important job or position.", "example": "She worked hard and earned a promotion to manager." },
+        { "word": "Deadline", "meaning": "The latest time or date by which something should be completed.", "example": "We have a tight deadline to finish this project." },
+        { "word": "Collaborate", "meaning": "To work jointly with others on an activity or project.", "example": "The marketing and sales teams will collaborate on the new campaign." },
+        { "word": "Negotiate", "meaning": "To have formal discussions with someone in order to reach an agreement.", "example": "He is trying to negotiate a better salary for his new role." },
+        { "word": "Resume / CV", "meaning": "A document used by a person to present their background, skills, and accomplishments.", "example": "I need to update my resume before I start applying for jobs." }
+      ]
+    },
+    {
+      "topic": "Travel",
+      "words": [
+        { "word": "Itinerary", "meaning": "A planned route or journey.", "example": "Our itinerary includes visits to Rome, Florence, and Venice." },
+        { "word": "Accommodation", "meaning": "A room, group of rooms, or building in which someone may live or stay.", "example": "We need to book our accommodation for the trip soon." },
+        { "word": "Excursion", "meaning": "A short journey or trip, especially one engaged in as a leisure activity.", "example": "We went on a full-day excursion to the nearby islands." },
+        { "word": "Souvenir", "meaning": "A thing that is kept as a reminder of a person, place, or event.", "example": "I bought a small statue as a souvenir of my trip to Greece." },
+        { "word": "Boarding pass", "meaning": "A pass for boarding an aircraft, given to a passenger when they check in.", "example": "You need to show your boarding pass at the gate." }
+      ]
+    },
+    {
+      "topic": "Technology",
+      "words": [
+        { "word": "Innovative", "meaning": "Featuring new methods; advanced and original.", "example": "The company is known for its innovative approach to software design." },
+        { "word": "User-friendly", "meaning": "Easy to use or understand.", "example": "The new app has a very user-friendly interface." },
+        { "word": "Algorithm", "meaning": "A process or set of rules to be followed in calculations or other problem-solving operations, especially by a computer.", "example": "The search engine uses a complex algorithm to rank websites." },
+        { "word": "Cybersecurity", "meaning": "The state of being protected against the criminal or unauthorized use of electronic data.", "example": "Cybersecurity is a major concern for online businesses." },
+        { "word": "Bandwidth", "meaning": "The maximum rate of data transfer across a given path.", "example": "We need more bandwidth to support all the employees video conferencing at the same time." }
+      ]
+    },
+    {
+      "topic": "Environment",
+      "words": [
+        { "word": "Sustainable", "meaning": "Able to be maintained at a certain rate or level; conserving an ecological balance.", "example": "We need to find sustainable sources of energy." },
+        { "word": "Biodiversity", "meaning": "The variety of plant and animal life in the world or in a particular habitat.", "example": "The rainforest is known for its rich biodiversity." },
+        { "word": "Conservation", "meaning": "The protection of animals, plants, and natural resources.", "example": "Wildlife conservation is essential for future generations." },
+        { "word": "Pollution", "meaning": "The presence of harmful substances or contaminants in the environment.", "example": "Air pollution is a serious problem in many large cities." },
+        { "word": "Renewable energy", "meaning": "Energy from a source that is not depleted when used, such as wind or solar power.", "example": "Investing in renewable energy is crucial for combating climate change." }
+      ]
+    }
+  ]
+}
