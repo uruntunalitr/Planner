@@ -59,7 +59,7 @@
 
     <script>
         // Default data structure if no saved data is found
-        let mediaData = {
+        mediaData = {
             books: [
                 { id: Date.now() + 1, title: 'Dune', creator: 'Frank Herbert', genre: 'Bilim Kurgu', rating: 5, notes: 'Muhteşem bir evren.' }
             ],
@@ -71,14 +71,14 @@
             ]
         };
 
-        const creatorLabels = {
+        creatorLabels = {
             books: 'Yazar',
             movies: 'Yönetmen',
             series: 'Yaratıcı / Yönetmen'
         };
 
-        let activeTab = 'books';
-        let currentRating = 0;
+        activeTab = 'books';
+        currentRating = 0;
 
         // --- Data Persistence Functions ---
         // Verileri tarayıcının yerel deposuna JSON formatında kaydeder.
@@ -494,7 +494,7 @@
                 activeTab = clickedTab;
                 renderContent(activeTab);
             }
-        });
+        };
 
     </script>
 </body>
