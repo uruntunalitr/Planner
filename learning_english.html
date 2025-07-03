@@ -37,6 +37,7 @@
                     <button data-tab="confusing_words" class="tab-button py-4 px-2 text-lg font-semibold">Confusing Words</button>
                     <button data-tab="conjunctions" class="tab-button py-4 px-2 text-lg font-semibold">Conjunctions</button>
                     <button data-tab="topic_vocab" class="tab-button py-4 px-2 text-lg font-semibold">Topic Vocabulary</button>
+                    <button data-tab="conversation" class="tab-button py-4 px-2 text-lg font-semibold">Conversation</button>
                 </nav>
             </div>
             
@@ -138,6 +139,21 @@
                                                 <p>${item.trick}</p>
                                             </div>
                                         ` : ''}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                });
+            } else if (tab === 'conversation') {
+                items.forEach(convo => {
+                    html += `
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-4">${convo.title}</h3>
+                            <div class="space-y-4">
+                                ${convo.lines.map(line => `
+                                    <div>
+                                        <p><strong class="font-semibold text-teal-700">${line.speaker}:</strong> ${line.dialogue}</p>
                                     </div>
                                 `).join('')}
                             </div>

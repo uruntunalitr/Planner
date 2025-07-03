@@ -303,5 +303,45 @@
         { "word": "Renewable energy", "meaning": "Energy from a source that is not depleted when used, such as wind or solar power.", "example": "Investing in renewable energy is crucial for combating climate change." }
       ]
     }
+  ],
+  "conversation": [
+    {
+      "title": "Making Plans for the Weekend",
+      "lines": [
+        { "speaker": "Alex", "dialogue": "Hi Jamie, do you have any plans for the weekend?" },
+        { "speaker": "Jamie", "dialogue": "Not really, I was thinking of just relaxing at home. Why do you ask?" },
+        { "speaker": "Alex", "dialogue": "Well, there's a new art exhibition downtown. I thought we could check it out on Saturday." },
+        { "speaker": "Jamie", "dialogue": "Oh, that sounds interesting! I'm not usually a big art person, but I'm willing to give it a try. What time were you thinking?" },
+        { "speaker": "Alex", "dialogue": "How about around 2 PM? We could grab a coffee afterwards." },
+        { "speaker": "Jamie", "dialogue": "Perfect! That sounds like a great plan. Should I meet you there?" },
+        { "speaker": "Alex", "dialogue": "Yeah, let's meet at the entrance of the gallery. I'll text you the address." },
+        { "speaker": "Jamie", "dialogue": "Great, see you on Saturday then!" }
+      ]
+    },
+    {
+      "title": "At a Coffee Shop",
+      "lines": [
+        { "speaker": "Barista", "dialogue": "Good morning! What can I get for you today?" },
+        { "speaker": "Chloe", "dialogue": "Good morning. Could I have a large latte with oat milk, please?" },
+        { "speaker": "Barista", "dialogue": "Certainly. Anything else? A pastry, perhaps?" },
+        { "speaker": "Chloe", "dialogue": "Oh, that's tempting. What would you recommend?" },
+        { "speaker": "Barista", "dialogue": "The almond croissant is very popular. It's freshly baked this morning." },
+        { "speaker": "Chloe", "dialogue": "In that case, I'll take one of those as well. Is it possible to have it warmed up?" },
+        { "speaker": "Barista", "dialogue": "Of course. Is that for here or to go?" },
+        { "speaker": "Chloe", "dialogue": "For here, please." },
+        { "speaker": "Barista", "dialogue": "Alright, that will be $7.50. I'll bring it over to your table when it's ready." }
+      ]
+    },
+    {
+      "title": "Discussing a Movie",
+      "lines": [
+        { "speaker": "Liam", "dialogue": "Did you see the new sci-fi movie that came out last week?" },
+        { "speaker": "Mia", "dialogue": "Yes, I saw it on Friday! What did you think? I thought the special effects were incredible." },
+        { "speaker": "Liam", "dialogue": "I agree, the visuals were stunning. However, I found the plot a bit predictable. I felt like I knew what was going to happen from the beginning." },
+        { "speaker": "Mia", "dialogue": "Really? I thought there were some good twists. The main character's decision at the end completely surprised me." },
+        { "speaker": "Liam", "dialogue": "That's a fair point. I guess I was hoping for something a little more original. The acting was top-notch, though." },
+        { "speaker": "Mia", "dialogue": "Definitely. The lead actress was fantastic. Overall, I'd still recommend it." }
+      ]
+    }
   ]
 }
