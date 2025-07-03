@@ -545,6 +545,142 @@
             { "it": "Dammi la mano.", "en": "Give me your hand." },
             { "it": "Ha scritto una nota a mano.", "en": "He wrote a note by hand." }
         ]
+    },
+    {
+        "word": "Occhio",
+        "translation": "Eye",
+        "examples": [
+            { "it": "Hai degli occhi bellissimi.", "en": "You have beautiful eyes." },
+            { "it": "Tieni d'occhio il bambino, per favore.", "en": "Keep an eye on the child, please." }
+        ]
+    },
+    {
+        "word": "Famiglia",
+        "translation": "Family",
+        "examples": [
+            { "it": "La mia famiglia vive a Milano.", "en": "My family lives in Milan." },
+            { "it": "Passo il Natale con la famiglia.", "en": "I spend Christmas with the family." }
+        ]
+    },
+    {
+        "word": "Scuola",
+        "translation": "School",
+        "examples": [
+            { "it": "I bambini vanno a scuola la mattina.", "en": "The children go to school in the morning." },
+            { "it": "Questa è la scuola dove ho studiato.", "en": "This is the school where I studied." }
+        ]
+    },
+    {
+        "word": "Macchina",
+        "translation": "Car",
+        "examples": [
+            { "it": "La mia macchina è rossa.", "en": "My car is red." },
+            { "it": "Andiamo in macchina o in treno?", "en": "Are we going by car or by train?" }
+        ]
+    },
+    {
+        "word": "Ristorante",
+        "translation": "Restaurant",
+        "examples": [
+            { "it": "Conosco un buon ristorante qui vicino.", "en": "I know a good restaurant near here." },
+            { "it": "Ceniamo al ristorante stasera.", "en": "We are having dinner at the restaurant tonight." }
+        ]
+    },
+    {
+        "word": "Madre",
+        "translation": "Mother",
+        "examples": [
+            { "it": "Mia madre cucina molto bene.", "en": "My mother cooks very well." },
+            { "it": "La festa della mamma è a maggio.", "en": "Mother's Day is in May." }
+        ]
+    },
+    {
+        "word": "Padre",
+        "translation": "Father",
+        "examples": [
+            { "it": "Mio padre lavora in banca.", "en": "My father works at a bank." },
+            { "it": "Ho ricevuto una lettera da mio padre.", "en": "I received a letter from my father." }
+        ]
+    },
+    {
+        "word": "Fratello",
+        "translation": "Brother",
+        "examples": [
+            { "it": "Mio fratello si chiama Marco.", "en": "My brother's name is Marco." },
+            { "it": "Ho due fratelli.", "en": "I have two brothers." }
+        ]
+    },
+    {
+        "word": "Sorella",
+        "translation": "Sister",
+        "examples": [
+            { "it": "Mia sorella è più grande di me.", "en": "My sister is older than me." },
+            { "it": "Vado al cinema con mia sorella.", "en": "I'm going to the cinema with my sister." }
+        ]
+    },
+    {
+        "word": "Paese",
+        "translation": "Country / Town",
+        "examples": [
+            { "it": "L'Italia è un paese bellissimo.", "en": "Italy is a beautiful country." },
+            { "it": "Vivo in un piccolo paese di montagna.", "en": "I live in a small mountain town." }
+        ]
+    },
+    {
+        "word": "Posto",
+        "translation": "Place / Spot",
+        "examples": [
+            { "it": "Questo è il mio posto preferito.", "en": "This is my favorite spot." },
+            { "it": "C'è un posto libero?", "en": "Is there a free seat?" }
+        ]
+    },
+    {
+        "word": "Problema",
+        "translation": "Problem",
+        "examples": [
+            { "it": "Non c'è problema, posso aiutarti.", "en": "No problem, I can help you." },
+            { "it": "Abbiamo un problema da risolvere.", "en": "We have a problem to solve." }
+        ]
+    },
+    {
+        "word": "Domanda",
+        "translation": "Question",
+        "examples": [
+            { "it": "Posso farti una domanda?", "en": "Can I ask you a question?" },
+            { "it": "La risposta alla tua domanda è sì.", "en": "The answer to your question is yes." }
+        ]
+    },
+    {
+        "word": "Ragazzo / Ragazza",
+        "translation": "Boy / Girl",
+        "examples": [
+            { "it": "Quel ragazzo con la maglietta blu è mio cugino.", "en": "That boy with the blue t-shirt is my cousin." },
+            { "it": "La ragazza sta leggendo un libro.", "en": "The girl is reading a book." }
+        ]
+    },
+    {
+        "word": "Notte",
+        "translation": "Night",
+        "examples": [
+            { "it": "Di notte, mi piace guardare le stelle.", "en": "At night, I like to watch the stars." },
+            { "it": "È stata una lunga notte.", "en": "It was a long night." }
+        ]
+    },
+    {
+        "word": "Signore / Signora",
+        "translation": "Mr. / Mrs. / Gentleman / Lady",
+        "examples": [
+            { "it": "Buongiorno, signor Rossi.", "en": "Good morning, Mr. Rossi." },
+            { "it": "Quella signora è molto elegante.", "en": "That lady is very elegant." }
+        ]
+    },
+    {
+        "word": "Parte",
+        "translation": "Part",
+        "examples": [
+            { "it": "Questa è la parte più difficile del lavoro.", "en": "This is the hardest part of the job." },
+            { "it": "Voglio una parte della torta.", "en": "I want a part of the cake." }
+        ]
     }
   ],
   "adjectives": [
@@ -687,60 +823,148 @@
   ],
   "conjunctions": [
     {
-      "word": "E", "translation": "And",
+      "word": "E", 
+      "translation": "And",
       "examples": [
         { "it": "Io bevo caffè e leggo un libro.", "en": "I drink coffee and read a book." },
         { "it": "Pane e burro.", "en": "Bread and butter." }
       ]
     },
     {
-      "word": "Ma", "translation": "But",
+      "word": "Ma", 
+      "translation": "But",
       "examples": [
         { "it": "Vorrei uscire, ma piove.", "en": "I would like to go out, but it's raining." },
         { "it": "È difficile, ma interessante.", "en": "It's difficult, but interesting." }
       ]
     },
     {
-      "word": "Perché", "translation": "Because / Why",
+      "word": "Perché", 
+      "translation": "Because / Why",
       "examples": [
         { "it": "Studio italiano perché amo l'Italia.", "en": "I study Italian because I love Italy." },
         { "it": "Perché sei triste?", "en": "Why are you sad?" }
       ]
     },
     {
-      "word": "O / Oppure", "translation": "Or",
+      "word": "O / Oppure", 
+      "translation": "Or",
       "examples": [
         { "it": "Vuoi il tè o il caffè?", "en": "Do you want tea or coffee?" },
         { "it": "Possiamo andare al cinema oppure restare a casa.", "en": "We can go to the cinema or stay at home." }
       ]
     },
     {
-      "word": "Quando", "translation": "When",
+      "word": "Quando", 
+      "translation": "When",
       "examples": [
         { "it": "Ti chiamo quando finisco di lavorare.", "en": "I'll call you when I finish work." },
         { "it": "Quando sei arrivato?", "en": "When did you arrive?" }
       ]
     },
     {
-      "word": "Se", "translation": "If",
+      "word": "Se", 
+      "translation": "If",
       "examples": [
         { "it": "Se hai tempo, possiamo vederci.", "en": "If you have time, we can meet." },
         { "it": "Non so se lui verrà alla festa.", "en": "I don't know if he will come to the party." }
       ]
     },
     {
-      "word": "Mentre", "translation": "While",
+      "word": "Mentre", 
+      "translation": "While",
       "examples": [
         { "it": "Ascolto la musica mentre cucino.", "en": "I listen to music while I cook." },
         { "it": "Lui è uscito mentre io dormivo.", "en": "He went out while I was sleeping." }
       ]
     },
     {
-      "word": "Quindi", "translation": "Therefore / So",
+      "word": "Quindi", 
+      "translation": "Therefore / So",
       "examples": [
         { "it": "Piove, quindi prendo l'ombrello.", "en": "It's raining, so I'm taking the umbrella." },
         { "it": "Ho studiato, quindi sono pronto per l'esame.", "en": "I studied, therefore I am ready for the exam." }
       ]
+    },
+    {
+        "word": "Anche",
+        "translation": "Also / Too",
+        "examples": [
+            { "it": "Vengo anch'io alla festa.", "en": "I'm coming to the party too." },
+            { "it": "Lui non è solo intelligente, ma anche gentile.", "en": "He is not only intelligent, but also kind." }
+        ]
+    },
+    {
+        "word": "Allora",
+        "translation": "Then / So",
+        "examples": [
+            { "it": "Se non piove, allora possiamo uscire.", "en": "If it doesn't rain, then we can go out." },
+            { "it": "Allora, cosa facciamo?", "en": "So, what do we do?" }
+        ]
+    },
+    {
+        "word": "Come",
+        "translation": "As / Like",
+        "examples": [
+            { "it": "Fai come ti dico.", "en": "Do as I tell you." },
+            { "it": "È bianco come la neve.", "en": "It is white as snow." }
+        ]
+    },
+    {
+        "word": "Dopo che",
+        "translation": "After",
+        "examples": [
+            { "it": "Siamo partiti dopo che ha smesso di piovere.", "en": "We left after it stopped raining." },
+            { "it": "Ti chiamo dopo che finisco la riunione.", "en": "I'll call you after I finish the meeting." }
+        ]
+    },
+    {
+        "word": "Prima di",
+        "translation": "Before",
+        "examples": [
+            { "it": "Lavati le mani prima di mangiare.", "en": "Wash your hands before eating." },
+            { "it": "Devo finire questo lavoro prima di partire.", "en": "I have to finish this work before leaving." }
+        ]
+    },
+    {
+        "word": "Finché",
+        "translation": "As long as / Until",
+        "examples": [
+            { "it": "Puoi restare finché vuoi.", "en": "You can stay as long as you want." },
+            { "it": "Aspetta qui finché non torno.", "en": "Wait here until I come back." }
+        ]
+    },
+    {
+        "word": "Poiché",
+        "translation": "Since / As",
+        "examples": [
+            { "it": "Poiché sei stanco, dovresti riposare.", "en": "Since you are tired, you should rest." },
+            { "it": "Non sono uscito, poiché faceva troppo freddo.", "en": "I didn't go out, as it was too cold." }
+        ]
+    },
+    {
+        "word": "Tuttavia",
+        "translation": "However / Nevertheless",
+        "examples": [
+            { "it": "È un buon piano, tuttavia, ci sono dei rischi.", "en": "It's a good plan, however, there are some risks." },
+            { "it": "Era stanco, tuttavia ha continuato a lavorare.", "en": "He was tired, nevertheless he continued to work." }
+        ]
+    },
+    {
+        "word": "Cioè",
+        "translation": "That is / I mean",
+        "examples": [
+            { "it": "Partiamo domani, cioè, martedì.", "en": "We leave tomorrow, that is, Tuesday." },
+            { "it": "Non mi sento bene, cioè, ho mal di testa.", "en": "I don't feel well, I mean, I have a headache." }
+        ]
+    },
+    {
+        "word": "Sia... sia...",
+        "translation": "Both... and...",
+        "examples": [
+            { "it": "Mi piacciono sia il caffè sia il tè.", "en": "I like both coffee and tea." },
+            { "it": "Parla sia italiano sia spagnolo.", "en": "He speaks both Italian and Spanish." }
+        ]
     }
   ],
   "daily_conversation": [
