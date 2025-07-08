@@ -1260,6 +1260,96 @@
                 "en": "Their laughter filled the cold air. Even though their hands and feet were frozen, they didn't want to go back inside. The first day of snow is always special, a day of pure joy and fun."
             }
         ]
+    },
+    {
+        "title": "Il Mercato del Pesce",
+        "translation": "The Fish Market",
+        "story": [
+            {
+                "it": "Ogni venerdì mattina, il padre di Sofia, un pescatore, va al mercato del pesce di Pescara. Il mercato è un posto vivace, pieno di voci e dell'odore del mare. I banchi sono coperti di pesce fresco di ogni tipo: alici, calamari, cozze e vongole.",
+                "en": "Every Friday morning, Sofia's father, a fisherman, goes to the fish market in Pescara. The market is a lively place, full of voices and the smell of the sea. The stalls are covered with fresh fish of all kinds: anchovies, squid, mussels, and clams."
+            },
+            {
+                "it": "Lui vende il pesce che ha pescato durante la notte. La gente del posto sa che il suo pesce è il più fresco. Molti clienti sono ristoratori che cercano i migliori ingredienti per i loro piatti.",
+                "en": "He sells the fish he caught during the night. The local people know that his fish is the freshest. Many customers are restaurant owners looking for the best ingredients for their dishes."
+            },
+            {
+                "it": "A fine mattinata, quando quasi tutto il pesce è venduto, il padre di Sofia torna a casa stanco ma soddisfatto. Porta sempre qualcosa di speciale per la cena della famiglia, un modo per condividere i frutti del suo duro lavoro.",
+                "en": "At the end of the morning, when almost all the fish is sold, Sofia's father returns home tired but satisfied. He always brings something special for the family dinner, a way to share the fruits of his hard work."
+            }
+        ]
+    },
+    {
+        "title": "La Pausa Caffè",
+        "translation": "The Coffee Break",
+        "story": [
+            {
+                "it": "In Italia, la pausa caffè è un rito sacro. Verso le undici, Marco e i suoi colleghi lasciano l'ufficio e vanno al bar più vicino. Non si siedono; bevono il loro caffè in piedi, al bancone.",
+                "en": "In Italy, the coffee break is a sacred ritual. Around eleven o'clock, Marco and his colleagues leave the office and go to the nearest café. They don't sit down; they drink their coffee standing at the counter."
+            },
+            {
+                "it": "Ordinano un espresso, che viene servito in una piccola tazzina. Bevono il caffè velocemente, in due o tre sorsi. Mentre bevono, parlano del lavoro, del calcio o dei piani per il weekend. È una pausa breve, ma essenziale.",
+                "en": "They order an espresso, which is served in a small cup. They drink the coffee quickly, in two or three sips. While they drink, they talk about work, football, or plans for the weekend. It's a short, but essential break."
+            },
+            {
+                "it": "Questa piccola interruzione li aiuta a ricaricare le energie per il resto della mattinata. Per loro, non è solo bere un caffè, ma è un momento sociale importante della giornata lavorativa.",
+                "en": "This small interruption helps them recharge their energy for the rest of the morning. For them, it is not just about drinking coffee, but it is an important social moment of the workday."
+            }
+        ]
+    },
+    {
+        "title": "Una Gita in Campagna",
+        "translation": "A Trip to the Countryside",
+        "story": [
+            {
+                "it": "La famiglia Rossi decide di fare una gita in campagna per sfuggire al caldo della città. Guidano per circa un'ora e arrivano in un agriturismo circondato da uliveti e vigneti.",
+                "en": "The Rossi family decides to take a trip to the countryside to escape the city heat. They drive for about an hour and arrive at a farmhouse inn surrounded by olive groves and vineyards."
+            },
+            {
+                "it": "I bambini, Leo e Anna, corrono felici nei campi. Raccolgono fiori selvatici e guardano le galline che razzolano libere. I genitori si rilassano all'ombra di un grande albero, leggendo un libro.",
+                "en": "The children, Leo and Anna, run happily in the fields. They pick wildflowers and watch the chickens scratching freely. The parents relax in the shade of a large tree, reading a book."
+            },
+            {
+                "it": "Per pranzo, mangiano prodotti locali: formaggio pecorino, salumi, pane fatto in casa e olio d'oliva fresco. Il cibo ha un sapore diverso, più autentico. È una giornata semplice, dedicata a riscoprire i ritmi lenti e i sapori genuini della natura.",
+                "en": "For lunch, they eat local products: pecorino cheese, cured meats, homemade bread, and fresh olive oil. The food has a different, more authentic taste. It is a simple day, dedicated to rediscovering the slow rhythms and genuine flavors of nature."
+            }
+        ]
+    },
+    {
+        "title": "Il Cinema all'Aperto",
+        "translation": "The Open-Air Cinema",
+        "story": [
+            {
+                "it": "Durante l'estate, in molte piazze italiane, vengono organizzati i cinema all'aperto. Una sera, Elena e i suoi amici decidono di andare a vedere un vecchio film classico in una piazza di Trastevere a Roma.",
+                "en": "During the summer, open-air cinemas are organized in many Italian squares. One evening, Elena and her friends decide to go see an old classic film in a square in Trastevere, Rome."
+            },
+            {
+                "it": "Portano delle coperte e si siedono per terra, sotto un cielo pieno di stelle. L'atmosfera è magica. C'è il suono dei grilli e il mormorio della gente intorno. Mangiano popcorn e si godono il film.",
+                "en": "They bring blankets and sit on the ground, under a sky full of stars. The atmosphere is magical. There is the sound of crickets and the murmur of the people around. They eat popcorn and enjoy the film."
+            },
+            {
+                "it": "Guardare un film così, all'aperto, è un'esperienza completamente diversa dal cinema tradizionale. È più informale, più sociale e sembra di far parte di una grande comunità. È una delle cose che Elena ama di più dell'estate romana.",
+                "en": "Watching a film like this, outdoors, is a completely different experience from a traditional cinema. It's more informal, more social, and it feels like being part of a large community. It is one of the things Elena loves most about the Roman summer."
+            }
+        ]
+    },
+    {
+        "title": "La Lezione di Cucina",
+        "translation": "The Cooking Class",
+        "story": [
+            {
+                "it": "David, uno studente americano in Italia, decide di partecipare a una lezione di cucina per imparare a fare la pasta fresca. La lezione si tiene nella cucina di una signora di nome Sofia, una cuoca esperta.",
+                "en": "David, an American student in Italy, decides to take a cooking class to learn how to make fresh pasta. The class is held in the kitchen of a lady named Sofia, an expert cook."
+            },
+            {
+                "it": "Sofia gli mostra come mescolare la farina e le uova, come impastare l'impasto con forza e come stenderlo in una sfoglia sottile. David all'inizio è un po' goffo, ma con l'aiuto di Sofia, inizia a migliorare.",
+                "en": "Sofia shows him how to mix flour and eggs, how to knead the dough with strength, and how to roll it out into a thin sheet. David is a bit clumsy at first, but with Sofia's help, he starts to improve."
+            },
+            {
+                "it": "Alla fine, riescono a preparare delle bellissime tagliatelle. Le cucinano e le condiscono con un semplice sugo al pomodoro. Mangiare la pasta che ha fatto con le sue mani dà a David una grande soddisfazione. Ha imparato non solo una ricetta, ma anche un pezzo di cultura italiana.",
+                "en": "In the end, they manage to prepare beautiful tagliatelle. They cook them and season them with a simple tomato sauce. Eating the pasta he made with his own hands gives David great satisfaction. He has learned not only a recipe, but also a piece of Italian culture."
+            }
+        ]
     }
   ]
 }
