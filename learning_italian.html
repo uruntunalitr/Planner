@@ -13,13 +13,25 @@
         .tab-button { transition: all 0.2s ease; border-bottom: 4px solid transparent; }
         .tab-button.active { border-color: #0d9488; color: #0d9488; }
         .tab-button:not(.active):hover { border-color: #ccfbf1; }
+        .speaker-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.25rem; /* text-xl */
+            vertical-align: middle;
+            transition: transform 0.2s ease;
+            margin-left: 0.5rem; /* ml-2 */
+        }
+        .speaker-icon:hover {
+            transform: scale(1.2);
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
 
     <div class="container mx-auto p-4 md:p-8 max-w-6xl">
         <div class="mb-6">
-            <a href="./main.html" class="inline-block bg-white py-2 px-4 border border-slate-300 rounded-lg shadow-sm text-teal-700 hover:bg-teal-50 font-semibold transition-colors">
+            <a href="./index.html" class="inline-block bg-white py-2 px-4 border border-slate-300 rounded-lg shadow-sm text-teal-700 hover:bg-teal-50 font-semibold transition-colors">
                 &larr; Back to Main Menu
             </a>
         </div>
@@ -55,6 +67,38 @@
     <script>
         let italianData = {};
         let activeTab = 'verbs';
+        let italianVoice = null;
+
+        // --- New Pronunciation Function using Web Speech API ---
+        function loadVoices() {
+            const voices = window.speechSynthesis.getVoices();
+            italianVoice = voices.find(voice => voice.lang === 'it-IT');
+            if (!italianVoice) {
+                 // Fallback to any Italian voice
+                italianVoice = voices.find(voice => voice.lang.startsWith('it-'));
+            }
+        }
+
+        function playPronunciation(textToSpeak) {
+            if (!textToSpeak || !window.speechSynthesis) {
+                console.error("Speech Synthesis not supported.");
+                return;
+            }
+            if (!italianVoice) {
+                console.warn("Italian voice not found. Pronunciation may be incorrect.");
+            }
+            
+            const utterance = new SpeechSynthesisUtterance(textToSpeak);
+            utterance.voice = italianVoice;
+            utterance.lang = 'it-IT';
+            utterance.rate = 0.9;
+            window.speechSynthesis.cancel(); // Cancel any previous speech
+            window.speechSynthesis.speak(utterance);
+        }
+        
+        // Load voices when they are ready
+        window.speechSynthesis.onvoiceschanged = loadVoices;
+        loadVoices(); // Initial attempt to load voices
 
         function renderContent(tab) {
             const contentEl = document.getElementById('tab-content');
@@ -72,8 +116,8 @@
                         <table class="w-full text-left">
                             <thead class="bg-slate-100">
                                 <tr>
-                                    <th class="p-3 text-sm font-semibold text-slate-600 uppercase">Singular</th>
-                                    <th class="p-3 text-sm font-semibold text-slate-600 uppercase">Plural</th>
+                                    <th class="p-3 text-sm font-semibold text-slate-600 uppercase">Singular (with Article)</th>
+                                    <th class="p-3 text-sm font-semibold text-slate-600 uppercase">Plural (with Article)</th>
                                     <th class="p-3 text-sm font-semibold text-slate-600 uppercase">Examples</th>
                                 </tr>
                             </thead>
@@ -83,19 +127,19 @@
                     html += `
                         <tr class="border-b border-slate-200">
                             <td class="p-4 align-top">
-                                <p class="font-bold text-lg text-teal-700">${item.singular}</p>
+                                <p class="font-bold text-lg text-teal-700 flex items-center">${item.singular} <button class="speaker-icon !text-lg" data-text="${item.singular}" title="Listen">🔊</button></p>
                                 <p class="text-sm text-slate-500">${item.translation}</p>
                             </td>
                             <td class="p-4 align-top">
-                                <p class="font-bold text-lg text-teal-700">${item.plural}</p>
+                                <p class="font-bold text-lg text-teal-700 flex items-center">${item.plural} <button class="speaker-icon !text-lg" data-text="${item.plural}" title="Listen">🔊</button></p>
                             </td>
                             <td class="p-4 align-top space-y-2">
                                 <div>
-                                    <p class="text-slate-700 italic">“${item.examples.singular}”</p>
+                                    <p class="text-slate-700 italic flex items-center">“${item.examples.singular}” <button class="speaker-icon !text-base" data-text="${item.examples.singular}" title="Listen">🔊</button></p>
                                     <p class="text-xs text-slate-500">${item.examples.singular_en}</p>
                                 </div>
                                 <div>
-                                    <p class="text-slate-700 italic">“${item.examples.plural}”</p>
+                                    <p class="text-slate-700 italic flex items-center">“${item.examples.plural}” <button class="speaker-icon !text-base" data-text="${item.examples.plural}" title="Listen">🔊</button></p>
                                     <p class="text-xs text-slate-500">${item.examples.plural_en}</p>
                                 </div>
                             </td>
@@ -112,7 +156,7 @@
                     categoryItem.phrases.forEach(phrase => {
                         html += `
                             <blockquote class="border-l-4 border-teal-500 bg-teal-50 p-3 my-2">
-                                <p class="text-lg text-slate-700"><em>${phrase.it}</em></p>
+                                <p class="text-lg text-slate-700 flex items-center"><em>${phrase.it}</em> <button class="speaker-icon" data-text="${phrase.it}" title="Listen">🔊</button></p>
                                 <p class="text-sm text-slate-500 mt-1">${phrase.en}</p>
                             </blockquote>
                         `;
@@ -123,13 +167,13 @@
                 items.forEach(story => {
                     html += `
                         <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-2xl font-bold text-slate-800 mb-1">${story.title}</h3>
+                            <h3 class="text-2xl font-bold text-slate-800 mb-1 flex items-center">${story.title} <button class="speaker-icon" data-text="${story.title}" title="Listen">🔊</button></h3>
                             <p class="text-lg font-normal text-slate-500 mb-4">- ${story.translation}</p>
                     `;
                     story.story.forEach(paragraph => {
                         html += `
                             <div class="my-4">
-                                <p class="text-lg text-slate-700 italic leading-relaxed">${paragraph.it}</p>
+                                <p class="text-lg text-slate-700 italic leading-relaxed flex items-start">${paragraph.it} <button class="speaker-icon !text-lg !ml-1" data-text="${paragraph.it}" title="Listen">🔊</button></p>
                                 <p class="text-sm text-slate-500 mt-1">${paragraph.en}</p>
                             </div>
                         `;
@@ -140,7 +184,7 @@
                 items.forEach(item => {
                     html += `
                         <div class="bg-white p-6 rounded-lg shadow-md">
-                            <h3 class="text-2xl font-bold text-slate-800">${item.word} <span class="text-lg font-normal text-slate-500">- ${item.translation}</span></h3>
+                            <h3 class="text-2xl font-bold text-slate-800 flex items-center">${item.word} <button class="speaker-icon" data-text="${item.word}" title="Listen">🔊</button> <span class="text-lg font-normal text-slate-500 ml-3">- ${item.translation}</span></h3>
                     `;
                     if (item.conjugations) {
                         html += '<div class="mt-4 grid grid-cols-1 lg:grid-cols-3 gap-6">';
@@ -160,7 +204,7 @@
                                                 ${Object.entries(item.conjugations[tense]).map(([person, verb]) => `
                                                     <tr>
                                                         <td class="p-2 border border-slate-200 font-mono text-sm">${person}</td>
-                                                        <td class="p-2 border border-slate-200 font-semibold text-sm">${verb}</td>
+                                                        <td class="p-2 border border-slate-200 font-semibold text-sm flex justify-between items-center"><span>${verb}</span> <button class="speaker-icon !text-base !ml-1" data-text="${verb}" title="Listen">🔊</button></td>
                                                     </tr>
                                                 `).join('')}
                                             </tbody>
@@ -177,7 +221,7 @@
                         item.examples.forEach(ex => {
                             html += `
                                 <blockquote class="border-l-4 border-teal-500 bg-teal-50 p-3 my-2">
-                                    <p class="text-lg text-slate-700"><em>${ex.it}</em></p>
+                                    <p class="text-lg text-slate-700 flex items-center"><em>${ex.it}</em> <button class="speaker-icon" data-text="${ex.it}" title="Listen">🔊</button></p>
                                     <p class="text-sm text-slate-500 mt-1">${ex.en}</p>
                                 </blockquote>
                             `;
@@ -204,6 +248,7 @@
         
         async function loadData() {
             try {
+                // Corrected the file path
                 const response = await fetch('./json/italian_data.json');
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -219,6 +264,15 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadData();
             document.querySelector('nav').addEventListener('click', handleTabClick);
+            
+            // Add a single, efficient event listener to the content area
+            document.getElementById('tab-content').addEventListener('click', function(e) {
+                const target = e.target.closest('.speaker-icon');
+                if (target) {
+                    const text = target.dataset.text;
+                    playPronunciation(text);
+                }
+            });
         });
 
     </script>
