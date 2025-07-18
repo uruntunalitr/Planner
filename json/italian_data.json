@@ -897,6 +897,103 @@
         { "it": "Commessa: Controllo subito in magazzino. Un momento.", "en": "Shop assistant: I'll check in the stockroom right away. One moment." },
         { "it": "Cliente: La prendo. Posso pagare con la carta?", "en": "Customer: I'll take it. Can I pay by card?" }
       ]
+    },
+    {
+      "category": "Making a Phone Call (Fare una Telefonata)",
+      "phrases": [
+        { "it": "Marco: Pronto?", "en": "Marco: Hello?" },
+        { "it": "Giulia: Ciao Marco, sono Giulia. Ti disturbo?", "en": "Giulia: Hi Marco, it's Giulia. Am I disturbing you?" },
+        { "it": "Marco: No, affatto. Dimmi tutto.", "en": "Marco: No, not at all. Tell me everything." },
+        { "it": "Giulia: Ti chiamo per sapere se sei libero venerdì sera.", "en": "Giulia: I'm calling to see if you are free on Friday evening." },
+        { "it": "Marco: Sì, non ho impegni. Perfetto, ci sentiamo più tardi.", "en": "Marco: Yes, I don't have any plans. Perfect, we'll talk later." }
+      ]
+    },
+    {
+      "category": "At the Doctor (Dal Medico)",
+      "phrases": [
+        { "it": "Paziente: Buongiorno dottore, non mi sento molto bene.", "en": "Patient: Good morning doctor, I don't feel very well." },
+        { "it": "Medico: Quali sono i sintomi?", "en": "Doctor: What are the symptoms?" },
+        { "it": "Paziente: Ho mal di testa e un po' di febbre.", "en": "Patient: I have a headache and a bit of a fever." },
+        { "it": "Medico: Capisco. Le misuro la temperatura. Deve riposare e bere molti liquidi.", "en": "Doctor: I see. I'll measure your temperature. You need to rest and drink plenty of fluids." },
+        { "it": "Paziente: Va bene, grazie dottore.", "en": "Patient: Alright, thank you doctor." }
+      ]
+    },
+    {
+      "category": "Booking a Hotel Room (Prenotare una Camera d'Albergo)",
+      "phrases": [
+        { "it": "Cliente: Salve, vorrei prenotare una camera matrimoniale per due notti.", "en": "Customer: Hello, I would like to book a double room for two nights." },
+        { "it": "Receptionist: Certamente. Per quali date?", "en": "Receptionist: Certainly. For which dates?" },
+        { "it": "Cliente: Per il prossimo weekend, da venerdì a domenica.", "en": "Customer: For next weekend, from Friday to Sunday." },
+        { "it": "Receptionist: Abbiamo disponibilità. La colazione è inclusa. Posso avere un nome?", "en": "Receptionist: We have availability. Breakfast is included. May I have a name?" },
+        { "it": "Cliente: Certo, il nome è Rossi.", "en": "Customer: Of course, the name is Rossi." }
+      ]
+    },
+    {
+      "category": "Talking About Hobbies (Parlare di Hobby)",
+      "phrases": [
+        { "it": "Anna: Cosa ti piace fare nel tempo libero?", "en": "Anna: What do you like to do in your free time?" },
+        { "it": "Luca: Mi piace molto leggere e ascoltare la musica. E tu?", "en": "Luca: I really like to read and listen to music. And you?" },
+        { "it": "Anna: Io preferisco fare sport. Vado a correre al parco quasi ogni giorno.", "en": "Anna: I prefer to do sports. I go running in the park almost every day." },
+        { "it": "Luca: Che bello! A volte dovremmo andare insieme.", "en": "Luca: That's great! We should go together sometime." }
+      ]
+    },
+    {
+      "category": "At the Post Office (In Posta)",
+      "phrases": [
+        { "it": "Cliente: Buongiorno, dovrei spedire questo pacco in Germania.", "en": "Customer: Good morning, I need to send this package to Germany." },
+        { "it": "Impiegato: Va bene. Vuole una spedizione standard o espressa?", "en": "Employee: Alright. Do you want standard or express shipping?" },
+        { "it": "Cliente: Standard va benissimo. Quanto tempo ci vuole?", "en": "Customer: Standard is fine. How long does it take?" },
+        { "it": "Impiegato: Circa cinque giorni lavorativi.", "en": "Employee: About five working days." },
+        { "it": "Cliente: Perfetto, grazie.", "en": "Customer: Perfect, thank you." }
+      ]
+    },
+    {
+      "category": "Discussing Weekend Plans (Discutere i Piani per il Weekend)",
+      "phrases": [
+        { "it": "Paolo: Ciao Chiara! Cosa fai di bello questo weekend?", "en": "Paolo: Hi Chiara! Are you doing anything nice this weekend?" },
+        { "it": "Chiara: Non ho ancora deciso. Forse vado a trovare i miei genitori. E tu?", "en": "Chiara: I haven't decided yet. Maybe I'll go visit my parents. And you?" },
+        { "it": "Paolo: Pensavo di fare una gita al lago. Il tempo dovrebbe essere bello.", "en": "Paolo: I was thinking of taking a trip to the lake. The weather is supposed to be nice." },
+        { "it": "Chiara: Che bella idea! Se cambio i miei piani, ti faccio sapere.", "en": "Chiara: What a great idea! If I change my plans, I'll let you know." }
+      ]
+    },
+    {
+      "category": "Ordering a Pizza for Delivery (Ordinare una Pizza a Domicilio)",
+      "phrases": [
+        { "it": "Pizzeria: Pizzeria da Mario, buonasera.", "en": "Pizzeria: Mario's Pizzeria, good evening." },
+        { "it": "Cliente: Buonasera, vorrei ordinare due pizze margherita da portare via.", "en": "Customer: Good evening, I'd like to order two margherita pizzas for takeaway." },
+        { "it": "Pizzeria: Certo. L'indirizzo per la consegna?", "en": "Pizzeria: Certainly. The address for the delivery?" },
+        { "it": "Cliente: Via Roma, numero 10. Quanto tempo ci vuole?", "en": "Customer: 10 Roma Street. How long will it take?" },
+        { "it": "Pizzeria: Circa trenta minuti. Il totale è 14 euro.", "en": "Pizzeria: About thirty minutes. The total is 14 euros." }
+      ]
+    },
+    {
+      "category": "In a Taxi (In Taxi)",
+      "phrases": [
+        { "it": "Passeggero: Buongiorno, per la stazione centrale, per favore.", "en": "Passenger: Good morning, to the central station, please." },
+        { "it": "Tassista: Va bene. C'è un po' di traffico a quest'ora.", "en": "Taxi Driver: Alright. There's a bit of traffic at this hour." },
+        { "it": "Passeggero: Ho un treno tra venti minuti, pensa che ce la facciamo?", "en": "Passenger: I have a train in twenty minutes, do you think we'll make it?" },
+        { "it": "Tassista: Penso di sì, prenderò una scorciatoia.", "en": "Taxi Driver: I think so, I'll take a shortcut." },
+        { "it": "Passeggero: Grazie, molto gentile.", "en": "Passenger: Thank you, very kind." }
+      ]
+    },
+    {
+      "category": "Talking about the Weather (Parlare del Tempo)",
+      "phrases": [
+        { "it": "Marco: Che freddo oggi!", "en": "Marco: It's so cold today!" },
+        { "it": "Elisa: Sì, è vero. Dicono che domani potrebbe nevicare.", "en": "Elisa: Yes, it's true. They say it might snow tomorrow." },
+        { "it": "Marco: Speriamo di no! Preferisco il sole.", "en": "Marco: I hope not! I prefer the sun." },
+        { "it": "Elisa: Anch'io. Non vedo l'ora che arrivi la primavera.", "en": "Elisa: Me too. I can't wait for spring to arrive." }
+      ]
+    },
+    {
+      "category": "At the Pharmacy (In Farmacia)",
+      "phrases": [
+        { "it": "Cliente: Buongiorno, avrei bisogno di qualcosa per il mal di gola.", "en": "Customer: Good morning, I need something for a sore throat." },
+        { "it": "Farmacista: Ha anche la tosse o solo dolore?", "en": "Pharmacist: Do you also have a cough, or just pain?" },
+        { "it": "Cliente: Solo un po' di dolore quando ingoio.", "en": "Customer: Just a little pain when I swallow." },
+        { "it": "Farmacista: Le consiglio queste pastiglie. Ne prenda una ogni quattro ore.", "en": "Pharmacist: I recommend these lozenges. Take one every four hours." },
+        { "it": "Cliente: Va bene, grazie mille.", "en": "Customer: Alright, thank you very much." }
+      ]
     }
   ],
   "short_stories": [
