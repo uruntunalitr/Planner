@@ -837,6 +837,66 @@
         { "it": "Sei mai stato/a in Italia?", "en": "Have you ever been to Italy?" },
         { "it": "Mi piace molto la cucina italiana.", "en": "I really like Italian food." }
       ]
+    },
+    {
+      "category": "Shopping (Tabaccheria)",
+      "phrases": [
+        { "it": "Cliente: Salve, vorrei un pacchetto di sigarette, per favore.", "en": "Customer: Hello, I would like a pack of cigarettes, please." },
+        { "it": "Tabaccaio: Da dieci o da venti?", "en": "Tobacconist: A ten-pack or a twenty-pack?" },
+        { "it": "Cliente: Da venti grazie. Poi mi dia anche un pacchetto di gomme da masticare.", "en": "Customer: A twenty-pack, thank you. Then also give me a pack of chewing gum." },
+        { "it": "Tabaccaio: Fanno 4 euro e 90 centesimi.", "en": "Tobacconist: That's 4 euros and 90 cents." },
+        { "it": "Cliente: Grazie, arrivederci.", "en": "Customer: Thank you, goodbye." }
+      ]
+    },
+    {
+      "category": "Ordering at a Café (Al Bar)",
+      "phrases": [
+        { "it": "Cliente: Buongiorno, vorrei un caffè e un cornetto alla crema.", "en": "Customer: Good morning, I'd like a coffee and a cream croissant." },
+        { "it": "Barista: Certo. Qualcos'altro?", "en": "Barista: Of course. Anything else?" },
+        { "it": "Cliente: No, grazie. Quanto le devo?", "en": "Customer: No, thank you. How much do I owe you?" },
+        { "it": "Barista: Sono 2 euro e 50.", "en": "Barista: That's 2 euros and 50 cents." },
+        { "it": "Cliente: Ecco a lei. Buona giornata!", "en": "Customer: Here you are. Have a good day!" }
+      ]
+    },
+    {
+      "category": "Buying a Train Ticket (In Stazione)",
+      "phrases": [
+        { "it": "Viaggiatore: Salve, un biglietto per Roma, per favore.", "en": "Traveler: Hello, one ticket to Rome, please." },
+        { "it": "Bigliettaio: Solo andata o andata e ritorno?", "en": "Ticket agent: One-way or round trip?" },
+        { "it": "Viaggiatore: Solo andata. Quanto costa?", "en": "Traveler: One-way. How much is it?" },
+        { "it": "Bigliettaio: Sono 15 euro. Il prossimo treno parte dal binario 3 alle 10:30.", "en": "Ticket agent: It's 15 euros. The next train leaves from platform 3 at 10:30." },
+        { "it": "Viaggiatore: Perfetto, grazie mille.", "en": "Traveler: Perfect, thank you very much." }
+      ]
+    },
+    {
+      "category": "At the Market (Al Mercato)",
+      "phrases": [
+        { "it": "Cliente: Buongiorno, quanto costano le mele?", "en": "Customer: Good morning, how much are the apples?" },
+        { "it": "Venditore: Vengono 2 euro al chilo. Sono molto dolci.", "en": "Vendor: They are 2 euros per kilo. They are very sweet." },
+        { "it": "Cliente: Ottimo. Ne prendo un chilo, per favore.", "en": "Customer: Great. I'll take a kilo, please." },
+        { "it": "Venditore: Ecco a lei. Desidera altro?", "en": "Vendor: Here you are. Would you like anything else?" },
+        { "it": "Cliente: No, a posto così. Grazie.", "en": "Customer: No, that's all. Thanks." }
+      ]
+    },
+    {
+      "category": "Asking for Directions (Chiedere Indicazioni)",
+      "phrases": [
+        { "it": "Turista: Mi scusi, sa dov'è il Colosseo?", "en": "Tourist: Excuse me, do you know where the Colosseum is?" },
+        { "it": "Passante: Certo. Deve andare sempre dritto e poi girare alla seconda a destra.", "en": "Passerby: Of course. You have to go straight ahead and then turn at the second right." },
+        { "it": "Turista: È lontano da qui?", "en": "Tourist: Is it far from here?" },
+        { "it": "Passante: No, sono circa dieci minuti a piedi.", "en": "Passerby: No, it's about a ten-minute walk." },
+        { "it": "Turista: Grazie infinite per l'aiuto!", "en": "Tourist: Thank you so much for the help!" }
+      ]
+    },
+    {
+      "category": "In a Clothing Store (In un Negozio di Abbigliamento)",
+      "phrases": [
+        { "it": "Cliente: Salve, posso provare questa maglietta?", "en": "Customer: Hello, can I try this t-shirt on?" },
+        { "it": "Commessa: Certo, i camerini sono in fondo a destra.", "en": "Shop assistant: Of course, the fitting rooms are at the back on the right." },
+        { "it": "Cliente: Grazie. Avete una taglia più grande?", "en": "Customer: Thank you. Do you have a larger size?" },
+        { "it": "Commessa: Controllo subito in magazzino. Un momento.", "en": "Shop assistant: I'll check in the stockroom right away. One moment." },
+        { "it": "Cliente: La prendo. Posso pagare con la carta?", "en": "Customer: I'll take it. Can I pay by card?" }
+      ]
     }
   ],
   "short_stories": [
